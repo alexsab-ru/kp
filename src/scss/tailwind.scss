@@ -7,7 +7,7 @@
 		@apply font-light text-dark dark:text-white dark:bg-dark;
 	}
 	h1{
-		font-size: calc((1vw + 1vh) * 3.6);
+		font-size: calc((1vw + 1vh) * 4);
 	}
 	h2{
 		font-size: calc((1vw + 1vh) * 2);
@@ -16,7 +16,7 @@
 		font-size: calc((1vw + 1vh) * 1.4);
 	}
 	section{
-		@apply h-screen relative;
+		@apply min-h-[600px] h-screen relative overflow-hidden;
 	}
 }
 
@@ -43,4 +43,42 @@
 		opacity: 0.16;
 		filter: blur(10px);
 	}
+}
+
+.fade-down{
+	transform: translateY(-300px);
+	opacity: 0;
+	transition: transform 1s ease;
+}
+.fade-up{
+	transform: translateY(300px);
+	opacity: 0;
+	transition: transform 1s ease;
+}
+.fade-right{
+	transform: translateX(100%);
+	opacity: 0;
+	transition: transform 1s ease;
+}
+.opacity{
+	opacity: 0;
+	transition: opacity 3s ease;
+}
+
+.active .fade-down{
+	transform: translateY(0px);
+	opacity: 1;
+}
+.active .fade-up{
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+.active .fade-right{
+	transform: translateX(0px);
+	opacity: 1;
+}
+
+.active .opacity{
+	opacity: 1;
 }
