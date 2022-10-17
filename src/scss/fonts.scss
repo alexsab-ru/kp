@@ -1,0 +1,11 @@
+@mixin font($fname, $fstyle, $fweight, $furl){
+	@font-face{
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		src: url($furl) format('woff');
+	}
+}
+
+@include font('hyunday-st', normal, 400, '../fonts/HyundaiSansHead-Regular.woff');
+@include font('hyunday-st', normal, 700, '../fonts/HyundaiSansHead-Bold.woff');
