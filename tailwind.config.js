@@ -10,7 +10,7 @@ module.exports = {
 			padding: '1rem',
 		},
 		colors: {
-			dark: '#232429',
+			dark: '#25262B',
 			blue: '#00a6ec',
 			transparent: 'transparent',
 			current: 'currentColor',
