@@ -28,8 +28,8 @@
 	overflow: hidden;
 	&:before{
 		content: '';
-		width: 1000px;
-		height: 1000px;
+		width: 1150px;
+		height: 1350px;
 		border-radius: 100%;
 		position: absolute;
 		left: 50%;
@@ -41,7 +41,7 @@
 		hsl(4 5% 100% / 100%) 5%,
 		hsl(4 10% 70% / 70%) 30%,
 		hsl(4 0% 50% / 30%) 55%,
-		hsl(4 0% 10% / 5%) 85%,
+		hsl(4 0% 10% / 5%) 95%,
 		);
 		opacity: 0.16;
 		filter: blur(10px);
