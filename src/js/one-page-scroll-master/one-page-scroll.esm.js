@@ -25,10 +25,11 @@ let init = () => {
 };
 class onePageScroll {
     constructor({el, time = 600, easing = 'ease-out', loop = false, throttling} = {}) {
-        init();
-        if (!el || !el.length) {
-            throw new Error('el is undefined');
-        }
+			if (!el || !el.length) {
+				// throw new Error('el is undefined');
+				return
+			}
+			init();
         this.time = time;
         this.easing = easing;
         this.loop = loop;

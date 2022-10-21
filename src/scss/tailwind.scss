@@ -16,7 +16,10 @@
 		font-size: calc((1vw + 1vh) * 1.4);
 	}
 	section{
-		@apply min-h-[600px] h-screen relative overflow-hidden;
+		@apply lg:min-h-[600px] lg:h-screen relative overflow-hidden;
+		.container{
+			@apply max-w-[1500px] p-0
+		}
 	}
 }
 
