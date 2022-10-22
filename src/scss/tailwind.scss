@@ -15,7 +15,7 @@
 	h3{
 		font-size: calc((1vw + 1vh) * 1.3);
 	}
-	section{
+	.pdf-images section{
 		@apply xl:min-h-[600px] xl:h-screen relative overflow-hidden;
 		.container{
 			@apply max-w-[1530px] p-0
@@ -23,15 +23,13 @@
 	}
 }
 
-.highlight{
-	z-index: 1;
-	overflow: hidden;
+body{
 	&:before{
 		content: '';
-		width: 1150px;
-		height: 1350px;
+		width: 1650px;
+		height: 1650px;
 		border-radius: 100%;
-		position: absolute;
+		position: fixed;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
@@ -46,6 +44,10 @@
 		opacity: 0.16;
 		filter: blur(10px);
 	}
+}
+.highlight{
+	z-index: 1;
+	overflow: hidden;
 }
 
 .fade-down{
