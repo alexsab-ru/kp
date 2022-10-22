@@ -11,7 +11,7 @@ var elements = document.querySelectorAll('section');
 let page = null;
 function init() {
 	const winWidth = window.innerWidth;
-	if(winWidth > 1040){
+	if(winWidth > 1280){
 		elements.forEach(el => {
 			el.classList.remove('!translate-y-0')
 		})
