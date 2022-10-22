@@ -31,8 +31,8 @@ function init() {
 	}
 }
 
-//init()
+init()
 
 window.addEventListener('resize', event => {
-	// init()
+	init()
 })
