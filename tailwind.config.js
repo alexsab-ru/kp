@@ -17,6 +17,12 @@ module.exports = {
 			black: colors.black,
 			gray: colors.gray,
 			white: colors.white,
+			red: '#ED1C24',
+			orange: '#F26621',
+			yellowLigth: '#F1EB2F',
+			yellow: '#F2C230',
+			greenLigth: '#7AA342',
+			green: '#269447',
 		},
 		extend: {
 			fontFamily: {
@@ -24,6 +30,8 @@ module.exports = {
 			},
 			dropShadow: {
         'blue': '0px 0px 9px #00A6EB',
+        'red': '0px 0px 20px #ED1C24',
+        'green': '0px 0px 20px #269447',
       },
 		},
 	},
