@@ -20,8 +20,11 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
+				sans: ['Raleway', 'hyunday-st', ...defaultTheme.fontFamily.sans],
 			},
+			dropShadow: {
+        'blue': '0px 0px 9px #00A6EB',
+      },
 		},
 	},
 }
