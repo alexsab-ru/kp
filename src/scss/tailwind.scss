@@ -7,18 +7,18 @@
 		@apply font-light text-dark dark:text-white dark:bg-dark;
 	}
 	h1{
-		font-size: calc((1vw + 1vh) * 4);
+		font-size: calc($index * 4);
 	}
 	h2{
-		font-size: calc((1vw + 1vh) * 2.6);
+		font-size: calc($index * 2.6);
 	}
 	h3{
-		font-size: calc((1vw + 1vh) * 1.3);
+		font-size: calc($index * 1.5);
 	}
 	.pdf-images section{
 		@apply xl:min-h-[600px] xl:h-screen relative overflow-hidden;
 		.container{
-			@apply max-w-[1530px] p-0
+			@apply max-w-[1530px] p-0 h-full;
 		}
 	}
 }
@@ -48,6 +48,39 @@ body{
 .highlight{
 	z-index: 1;
 	overflow: hidden;
+	.container{
+		@apply h-full;
+	}
+}
+
+header{
+	nav{
+		a{
+			@apply 
+			py-6 inline-block relative text-lg font-medium
+			before:content-[''] 
+			before:absolute 
+			before:bottom-0 
+			before:left-0 
+			before:h-0.5 
+			before:w-0 
+			before:bg-white 
+			before:transition-all 
+			before:duration-500
+			hover:before:w-full;
+		}
+	}
+	label{
+		input[type="checkbox"]:checked ~ *.opacity-0{
+			@apply visible opacity-100 translate-y-0
+		}
+		input[type="checkbox"]:checked ~ *.burger{
+			@apply hidden
+		}
+		input[type="checkbox"]:checked ~ *.burger-close{
+			@apply block
+		}
+	}
 }
 
 .fade-down{
