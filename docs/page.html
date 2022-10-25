@@ -33,18 +33,19 @@
 <body>
 	<div class="">
 		<header class="fixed w-full border-b border-gray-50 border-opacity-20 z-10 transition-all duration-[400ms]">
-			<div class="container flex justify-end lg:block">
+			<div class="container flex justify-between lg:block">
+				<div class="inline-block py-3 lg:hidden text-xl">SERM Karma</div>
 				<div class="hidden lg:flex justify-between">
 					<nav class="flex-grow">
 						<ul class="flex gap-6">
-							<li><a href="#">Какие задачи решает</a></li>
-							<li><a href="#">Как это работает</a></li>
+							<li><a href="#what-tasks-does-it-solve">Какие задачи решает</a></li>
+							<li><a href="#how-id-works">Как это работает</a></li>
 						</ul>
 					</nav>
 					<nav class="flex-grow">
 						<ul class="flex justify-end gap-6">
 							<li><a href="#">Е-Бейдж</a></li>
-							<li><a href="#">Сохранить контакт Елены Микушкиной</a></li>
+							<li><a href="#">Контакты</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -89,10 +90,10 @@
 					</svg>
 					<div
 						class="absolute top-0 bg-dark w-full left-0 text-center py-16 invisible opacity-0 -translate-y-3 transition-all">
-						<a href="#" class="p-4 block uppercase font-semibold hover:text-blue">Какие задачи решает</a>
-						<a href="#" class="p-4 block uppercase font-semibold hover:text-blue">Как это работает</a>
+						<a href="#what-tasks-does-it-solve" class="p-4 block uppercase font-semibold hover:text-blue">Какие задачи решает</a>
+						<a href="#how-id-works" class="p-4 block uppercase font-semibold hover:text-blue">Как это работает</a>
 						<a href="#" class="p-4 block uppercase font-semibold hover:text-blue">Е-Бейдж</a>
-						<a href="#" class="p-4 block uppercase font-semibold hover:text-blue">Сохранить контакт Елены Микушкиной</a>
+						<a href="#" class="p-4 block uppercase font-semibold hover:text-blue">Контакты</a>
 					</div>
 				</label>
 			</div>
@@ -103,7 +104,7 @@
 					<div class="h-full flex flex-col justify-between xl:w-2/3">
 						<h1 class="pb-10 leading-tight" data-duration="3000"><span class="font-semibold">Система управления</span>
 							репутацией <br>в&nbsp;интернете</h1>
-						<h3 class="text-blue font-medium uppercase py-10 sm:whitespace-nowrap text-3xl lg:text-1vw 2xl:text-4xl">
+						<h3 class="text-blue font-medium uppercase py-10 sm:whitespace-nowrap text-4xl lg:text-1vw 2xl:text-4xl">
 							Коммерческое предложение</h3>
 					</div>
 					<div
@@ -121,6 +122,7 @@
 				<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -top-16 blur-md shadow-2xl shadow-dark"></span>
 				<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -bottom-16 blur-md shadow-2xl shadow-dark"></span>
 				<div class="container py-16 xl:py-40 relative">
+					<a id="what-tasks-does-it-solve" class="invisible relative block -top-36"></a>
 					<h2 class="text-blue leading-none mb-10">Система купирования <br class="hidden xl:block">негативных отзывов
 					</h2>
 					<h3 class="xl:mb-20 px-4 py-1 rounded-lg bg-blue inline-block">Задачи, которые система помогает решить:</h3>
@@ -167,6 +169,7 @@
 			class="highlight py-16 bg-no-repeat bg-contain lg:bg-[length:37%] bg-right-bottom lg:bg-right-top relative z-[1] bg-dark bg-blend-multiply bg-opacity-90"
 			style="background-image: url(img/phone-1.png);">
 			<div class="container">
+				<a id="how-id-works" class="invisible relative block -top-36"></a>
 				<h2 class="text-blue leading-none mb-10">Как это работает</h2>
 				<h3 class="mb-10">Для каждого сотрудника первой линии шоу-рума создается <br><span
 						class="text-blue">персонализированная ссылка</span> с данными о сотруднике и его отделе,<br> которой он
@@ -207,7 +210,7 @@
 			<div class="container">
 				<div class="flex flex-col lg:flex-row gap-10 pt-16 pb-12">
 					<div class="lg:w-1/2 xl:w-[45%]">
-						<h3>Для клиентов, которые поставили низкую оценку <br><span class="text-blue">с 1 до 3</span> выходит окно,
+						<h3>Для клиентов, которые поставили низкую оценку <span class="text-blue">с 1 до 3</span> выходит окно,
 							в котором они могут написать, что именно не устроило. Это позволяет оперативно решить проблему и купирует
 							дальнейшее распространение негатива.</h3>
 							<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-10">
