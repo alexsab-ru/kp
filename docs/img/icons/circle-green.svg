@@ -1,0 +1,11 @@
+<svg width="930" height="930" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+			<stop offset="20%" stop-color="#7AA342" />
+			<stop offset="100%" stop-color="#269447" />
+		</linearGradient>
+	</defs>
+	<!-- <circle cx="50" cy="50" r="49" fill="transparent" /> -->
+	<circle cx="50" cy="50" r="48" stroke="url(#gradient)" stroke-width="0.5" stroke-dasharray="0 2"
+		stroke-linecap="round" transform='rotate(90 50 50)' fill="transparent" />
+</svg>
