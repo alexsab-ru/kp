@@ -50,6 +50,9 @@ module.exports = {
 				'red': '0px 0px 20px #ED1C24',
 				'green': '0px 0px 20px #269447',
 			},
+			boxShadow: {
+				'3xl': '0 0 35px rgba(0, 166, 235, 0.35)',
+			}
 		},
 	},
 }
