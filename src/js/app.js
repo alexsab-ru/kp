@@ -10,7 +10,6 @@ window.addEventListener('scroll', function() {
 })
 
 const body = document.body;
-
 const qualityLinks = document.querySelectorAll('.quality-item');
 const modal = document.getElementById('quality-modal');
 const badText = 'Расскажите нам, что вам непонятно или что нужно добавить в наш проект, чтобы получить Ваше ❤️!';
