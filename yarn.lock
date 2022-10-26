@@ -2597,11 +2597,6 @@
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
-"docslider@^3.0.1":
-  "integrity" "sha512-CJZDnags1bvMblU2BuXEKd6AzThH4Zw0z5nSz4C/BXbaKaWJ/bH5nQwcMpssoxCAc+1Wh2eTPfrm7ZnMgdlrKQ=="
-  "resolved" "https://registry.npmjs.org/docslider/-/docslider-3.0.1.tgz"
-  "version" "3.0.1"
-
 "dom-serializer@^1.0.1":
   "integrity" "sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag=="
   "resolved" "https://registry.npmjs.org/dom-serializer/-/dom-serializer-1.4.1.tgz"
@@ -3046,11 +3041,6 @@
   "integrity" "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
-
-"fullpage.js@^4.0.11":
-  "integrity" "sha512-2YWG9mIfUqAPz8eFPHsSq/rMWT5xv+2C6dxQ6bljj1m31MgvhWNU3r+sa5+Ds35QThyrL3uo9RUPCxolp3SjuQ=="
-  "resolved" "https://registry.npmjs.org/fullpage.js/-/fullpage.js-4.0.11.tgz"
-  "version" "4.0.11"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
