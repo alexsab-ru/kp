@@ -44,12 +44,12 @@
 				<nav class="flex-grow">
 					<ul class="flex justify-end gap-6">
 						<li><a href="#">Е-Бейдж</a></li>
-						<li><a href="#">Контакты</a></li>
+						<li><a href="#contacts">Контакты</a></li>
 					</ul>
 				</nav>
 			</div>
 			<label class="inline-block lg:hidden py-3">
-				<input type="checkbox" class="absolute opacity-0 invisible w-0 h-0">
+				<input type="checkbox" class="absolute opacity-0 invisible w-0 h-0" id="mobile-toggle-menu-btn">
 				<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
 					class="burger fill-white transition-colors w-8 h-8">
 					<defs>
@@ -87,12 +87,11 @@
 						<line class="cls-2" x1="7" x2="25" y1="25" y2="7" />
 					</g>
 				</svg>
-				<div
-					class="absolute top-0 bg-dark w-full left-0 text-center py-16 invisible opacity-0 -translate-y-3 transition-all">
-					<a href="#what-tasks-does-it-solve" class="p-4 block uppercase font-semibold hover:text-blue">Какие задачи решает</a>
-					<a href="#how-id-works" class="p-4 block uppercase font-semibold hover:text-blue">Как это работает</a>
-					<a href="#" class="p-4 block uppercase font-semibold hover:text-blue">Е-Бейдж</a>
-					<a href="#" class="p-4 block uppercase font-semibold hover:text-blue">Контакты</a>
+				<div class="absolute top-0 bg-dark w-full left-0 text-center py-16 invisible opacity-0 -translate-y-3 transition-all">
+					<a href="#what-tasks-does-it-solve" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue">Какие задачи решает</a>
+					<a href="#how-id-works" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue">Как это работает</a>
+					<a href="https://yandex.ru" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" target="_blank">Е-Бейдж</a>
+					<a href="#contacts" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue">Контакты</a>
 				</div>
 			</label>
 		</div>
@@ -115,13 +114,11 @@
 				</div>
 			</div>
 		</section>
-		<section class="highlight">
-			<div
-				class="relative bg-cover bg-center z-[1] before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black before:bg-opacity-80 before:z-[-1]"
-				style="background-image: url(img/map-1.jpg);">
+		<section class="highlight" id="what-tasks-does-it-solve">
+			<div class="relative bg-cover bg-center z-[1] before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black before:bg-opacity-80 before:z-[-1]" style="background-image: url(img/map-1.jpg);">
 				<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -top-16 blur-md shadow-2xl shadow-dark"></span>
 				<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -bottom-10 blur-md shadow-2xl shadow-dark"></span>
-				<div class="container py-16 xl:py-40 relative">
+				<div class="container py-24 xl:py-40 relative">
 					<a id="what-tasks-does-it-solve" class="invisible relative block -top-36"></a>
 					<h2 class="text-blue leading-none mb-10">Система купирования <br class="hidden xl:block">негативных отзывов
 					</h2>
@@ -172,8 +169,7 @@
 				</div>
 			</div>
 		</section>
-		<section
-			class="highlight py-16 bg-no-repeat bg-[length:80%] lg:bg-[length:37%] bg-right-bottom lg:bg-right-top relative z-[1] bg-dark bg-blend-multiply bg-opacity-90"
+		<section id="how-it-works" class="highlight pt-16 lg:pt-24 pb-16 bg-no-repeat bg-[length:80%] lg:bg-[length:37%] bg-right-bottom lg:bg-right-top relative z-[1] bg-dark bg-blend-multiply bg-opacity-90"
 			style="background-image: url(img/phone-1.png);">
 			<div class="container">
 				<a id="how-id-works" class="invisible relative block -top-36"></a>
@@ -353,7 +349,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="py-16 sm:py-24">
+		<section class="py-16 sm:py-24" id="contacts">
 			<div class="container">
 				<h2 class="leading-tight text-blue text-center mb-16">Наши контакты</h2>
 				<div class="flex justify-center items-center gap-5 sm:gap-10">
@@ -420,7 +416,8 @@
 			</div>
 		</section>
 	</main>
-	<div class="fixed w-screen h-screen left-0 top-0 bg-dark bg-opacity-90 z-20 overflow-y-auto hidden modal-overlay" id="video-modal" data-close data-type="video">
+	<!-- MODALS -->
+	<div class="fixed w-screen h-screen left-0 top-0 bg-dark bg-opacity-90 z-20 overflow-y-auto hidden modal-overlay" id="quality-modal" data-close>
 		<div class="modal-content relative top-20 mb-10 left-1/2 translate-x-[-50%] -translate-y-10 transition-all duration-1000 max-w-xl w-full bg-white font-medium text-dark p-8">
 			<div class="w-10 h-10 flex items-center justify-center absolute right-0 top-0 opacity-50 transition-opacity hover:opacity-100 cursor-pointer rotate-45" data-close><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-close>
 				<line y1="9.5" x2="20" y2="9.5" stroke="black"/>
@@ -438,6 +435,7 @@
 			</form>
 		</div>
 	</div>
+	<!-- MODALS END -->
 	<script src="js/scripts.js"></script>
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript">

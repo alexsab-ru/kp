@@ -12,7 +12,7 @@ window.addEventListener('scroll', function() {
 const body = document.body;
 
 const qualityLinks = document.querySelectorAll('.quality-item');
-const modal = document.getElementById('video-modal');
+const modal = document.getElementById('quality-modal');
 const badText = 'Расскажите нам, что вам непонятно или что нужно добавить в наш проект, чтобы получить Ваше ❤️!';
 const goodText = '<b class="text-bold block text-2xl mb-4">Спасибо за оценку!</b> Давайте поговорим, как мы можем внедрить нашу систему в Ваш бизнес процесс. Оставьте контакт и укажите время когда удобно с Вами связаться.';
 
@@ -68,4 +68,38 @@ document.querySelectorAll('.modal-overlay').forEach(el => {
 function closeModal(modal){
 	modal.classList.add('hidden');
 	body.classList.remove('overflow-hidden', 'lg:pr-[17px]');
+}
+
+const inputMenuBtn = document.getElementById('mobile-toggle-menu-btn');
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+mobileMenuLinks.forEach(link => {
+	link.onclick = e =>{
+		inputMenuBtn.checked = false;
+	}
+})
+
+window.onresize = () => {
+	if (window.innerWidth > 1023) {
+		inputMenuBtn.checked = false;
+	}
+}
+
+const scrollLinks = document.querySelectorAll("a[href^='#']");
+scrollLinks.forEach(link => {
+	link.onclick = e =>{
+		e.preventDefault()
+		const id = link.getAttribute('href')
+		if(id === '#' || !id) return;
+		scrollIntoElement(id)
+		if(link.classList.contains('mobile-menu-link')){
+			inputMenuBtn.checked = false;
+		}
+	}
+})
+
+function scrollIntoElement(id){
+	document.querySelector(id).scrollIntoView({
+		behavior: "smooth",
+		block: "start"
+	});
 }
