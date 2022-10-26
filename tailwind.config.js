@@ -47,6 +47,7 @@ module.exports = {
 			},
 			dropShadow: {
 				'blue': '0px 0px 15px #00A6EB',
+				'blue2': ['3px 0 0 #00A6EB', '-3px 0 0 #00A6EB', '0 3px 0 #00A6EB', '0 -3px 0 #00A6EB', '0px 0px 20px #00A6EB'],
 				'red': '0px 0px 20px #ED1C24',
 				'green': '0px 0px 20px #269447',
 			},

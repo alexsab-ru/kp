@@ -46,8 +46,7 @@ qualityLinks.forEach(link => {
 				break;
 		}
 		modal.classList.remove('hidden');
-		body.classList.add('overflow-hidden');
-		body.style.paddingRight = '17px';
+		body.classList.add('overflow-hidden', 'lg:pr-[17px]');
 	}
 })
 
@@ -68,6 +67,5 @@ document.querySelectorAll('.modal-overlay').forEach(el => {
 
 function closeModal(modal){
 	modal.classList.add('hidden');
-	body.classList.remove('overflow-hidden');
-	body.style.paddingRight = '0px';
+	body.classList.remove('overflow-hidden', 'lg:pr-[17px]');
 }
