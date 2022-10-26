@@ -1,10 +1,3 @@
-// document.querySelectorAll('*').forEach(el => {
-// 	const dataset = el.dataset
-// 	if(dataset.duration){
-// 		el.style.transitionDuration = dataset.duration+'ms'
-// 	}
-// })
-
 let scrollpos = window.scrollY
 const header = document.querySelector("header")
 const scrollChange = 1
@@ -16,37 +9,65 @@ window.addEventListener('scroll', function() {
   else { remove_class_on_scroll() }  
 })
 
+const body = document.body;
 
-import onePageScroll from './one-page-scroll-master/one-page-scroll.esm'
+const qualityLinks = document.querySelectorAll('.quality-item');
+const modal = document.getElementById('video-modal');
+const badText = 'Расскажите нам, что вам непонятно или что нужно добавить в наш проект, чтобы получить Ваше ❤️!';
+const goodText = '<b class="text-bold block text-2xl mb-4">Спасибо за оценку!</b> Давайте поговорим, как мы можем внедрить нашу систему в Ваш бизнес процесс. Оставьте контакт и укажите время когда удобно с Вами связаться.';
 
-const elements = document.querySelectorAll('section');
-let page = null;
-function init() {
-	const winWidth = window.innerWidth;
-	if(winWidth > 1280){
-		elements.forEach(el => {
-			el.classList.remove('!translate-y-0')
-		})
-		page = new onePageScroll({
-			el: elements,
-			throttling: 1000
-		});
-		document.body.removeAttribute('style')
-	}else{
-		page = null;
-		elements.forEach(el => {
-			el.classList.remove('one-page-scroll--page')
-			el.classList.add('!translate-y-0')
-			el.classList.add('active')
-			el.removeAttribute('style')
-		})
-		
-		document.body.style.overflow = 'auto'
+qualityLinks.forEach(link => {
+	link.onclick = e => {
+		e.preventDefault();
+		const quality = link.dataset.quality;
+		if (!quality || quality < 1 || quality > 5) {
+			return;
+		}
+		const date = new Date();
+		const hour = date.getHours();
+		const minutes = date.getMinutes();
+		const icon = link.querySelector('span').innerHTML;
+		modal.querySelector('#icon').innerHTML = icon;
+		const textarea = modal.querySelector('textarea');
+		const inputTime = modal.querySelector('input[type="time"]');
+		const textBlock = modal.querySelector('p');
+		switch (quality) {
+			case '4':
+			case '5':
+				textBlock.innerHTML = goodText;
+				textarea.classList.add('hidden');
+				inputTime.classList.remove('hidden');
+				inputTime.value = hour +':'+ minutes;
+				break;		
+			default:
+				textBlock.innerHTML = badText;
+				textarea.classList.remove('hidden');
+				inputTime.classList.add('hidden');
+				break;
+		}
+		modal.classList.remove('hidden');
+		body.classList.add('overflow-hidden');
+		body.style.paddingRight = '17px';
 	}
-}
-
-//init()
-
-window.addEventListener('resize', event => {
-	//init()
 })
+
+document.querySelectorAll('.modal-overlay').forEach(el => {
+	document.addEventListener('keydown', event => {
+		if(event.key == 'Escape'){
+			closeModal(el)
+		}
+	});
+
+	el.addEventListener('click', event => {
+		//console.log(event.target.dataset.close)
+		if(typeof event.target.dataset.close != 'undefined'){
+			closeModal(el)
+		}
+	})
+})
+
+function closeModal(modal){
+	modal.classList.add('hidden');
+	body.classList.remove('overflow-hidden');
+	body.style.paddingRight = '0px';
+}
