@@ -62,7 +62,7 @@ header{
 
 .grid-tr{
 	div{
-		@apply lg:text-xl leading-none px-3 py-2 even:bg-white even:bg-opacity-10 min-h-[3rem] lg:min-h-[3.5rem] flex items-center justify-center;
+		@apply text-xs sm:text-base lg:text-xl leading-none px-3 py-2 even:bg-white even:bg-opacity-10 flex items-center justify-center;
 	}
 	&:nth-child(1){
 		div{
@@ -78,13 +78,34 @@ header{
 		before:top-1/2 
 		before:-translate-x-1/2
 		before:-translate-y-1/2
-		before:w-5 before:h-5
+		before:w-4 before:h-4 sm:before:w-5 sm:before:h-5
 		before:border before:border-blue 
 		before:rounded-full
 		before:bg-blue
 	}
 	.no{
 		@apply before:bg-transparent
+	}
+}
+
+.package{
+	@apply absolute lg:relative w-full h-full;
+	div{
+		@apply translate-x-full lg:translate-x-0 transition-transform duration-[350ms] opacity-0 lg:opacity-100;
+		transition-delay: calc(0.05s * var(--i))
+	}
+	&.active{
+		div{
+			@apply translate-x-0 opacity-100;
+			transition-delay: 0
+		}
+	}
+}
+
+.toggle-package-link{
+	@apply text-xs sm:text-base px-4 py-2 border-2 border-white border-opacity-10 rounded-sm whitespace-nowrap transition-all;
+	&.active{
+		@apply border-blue border-dotted shadow-3xl;
 	}
 }
 

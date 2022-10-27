@@ -77,12 +77,6 @@ mobileMenuLinks.forEach(link => {
 	}
 })
 
-window.onresize = () => {
-	if (window.innerWidth > 1023) {
-		inputMenuBtn.checked = false;
-	}
-}
-
 const scrollLinks = document.querySelectorAll("a[href^='#']");
 scrollLinks.forEach(link => {
 	link.onclick = e =>{
@@ -110,3 +104,50 @@ AOS.init({
 	duration: 700,
 	once: true,
 });
+
+const priceTds = document.querySelectorAll('.grid-tr div');
+const priceTable = document.querySelector('.price-table');
+const setHeightPraceTableTd = () => {
+	let h = 0;
+	priceTable.removeAttribute('style')
+	priceTds.forEach(td => {
+		td.style.height = '';
+		if(td.clientHeight > h){
+			h = td.clientHeight;
+		}
+	})
+	priceTds.forEach(td => {
+		td.style.height = h+'px';
+	})
+	if (window.innerWidth < 1024) {
+		priceTable.style.marginTop = '-'+h+'px';
+	}
+}
+setHeightPraceTableTd()
+
+window.onresize = () => {
+	if (window.innerWidth > 1023) {
+		inputMenuBtn.checked = false;
+	}
+	setHeightPraceTableTd()
+}
+
+const togglePackageLinks = document.querySelectorAll('.toggle-package-link');
+const packages = document.querySelectorAll('.package');
+
+togglePackageLinks.forEach(link => {
+	link.onclick = e => {
+		e.preventDefault();
+		const id = link.dataset.id;
+		if(!id) return;
+		togglePackageLinks.forEach(l => {
+			l.classList.remove('active');
+		})
+		link.classList.add('active');
+		packages.forEach(pack => {
+			pack.classList.remove('active');
+			document.querySelector('.package#'+id).classList.add('active')
+		})
+		console.log(id);
+	}
+})
