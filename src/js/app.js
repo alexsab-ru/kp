@@ -12,9 +12,10 @@ window.addEventListener('scroll', function() {
 })
 
 const body = document.body;
-const qualityLinks = document.querySelectorAll('.quality-item');
-const modal = document.getElementById('quality-modal');
+const ratingLinks = document.querySelectorAll('.rating-item');
+const modal = document.getElementById('rating-modal');
 const policyModal = document.getElementById('policy-modal');
+const ratingForm = document.getElementById('rating-form');
 const badText = 'Расскажите нам, что вам непонятно или что нужно добавить в наш проект, чтобы получить Ваше ❤️!';
 const goodText = '<b class="text-bold block text-2xl mb-4">Спасибо за оценку!</b> Давайте поговорим, как мы можем внедрить нашу систему в Ваш бизнес процесс. Оставьте контакт и укажите время когда удобно с Вами связаться.';
 
@@ -23,11 +24,11 @@ document.querySelector('.policy-popup-link').onclick = e => {
 	policyModal.classList.remove('hidden')
 }
 
-qualityLinks.forEach(link => {
+ratingLinks.forEach(link => {
 	link.onclick = e => {
 		e.preventDefault();
-		const quality = link.dataset.quality;
-		if (!quality || quality < 1 || quality > 5) {
+		const rating = link.dataset.rating;
+		if (!rating || rating < 1 || rating > 5) {
 			return;
 		}
 		const date = new Date();
@@ -38,18 +39,20 @@ qualityLinks.forEach(link => {
 		const textarea = modal.querySelector('textarea');
 		const inputTime = modal.querySelector('input[type="time"]');
 		const textBlock = modal.querySelector('p');
-		switch (quality) {
+		switch (rating) {
 			case '4':
 			case '5':
 				textBlock.innerHTML = goodText;
 				textarea.closest('div').classList.add('hidden');
 				inputTime.closest('label').classList.remove('hidden');
 				inputTime.value = hour +':'+ minutes;
+				ratingForm.dataset.type = 'good';
 				break;
 			default:
 				textBlock.innerHTML = badText;
 				textarea.closest('div').classList.remove('hidden');
 				inputTime.closest('label').classList.add('hidden');
+				ratingForm.dataset.type = 'bad';
 				break;
 		}
 		modal.classList.remove('hidden');

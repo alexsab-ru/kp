@@ -123,12 +123,12 @@ header{
 	before:transition-opacity
 }
 
-input[type="checkbox"]:checked ~ .fake-checkbox{
+input[type="checkbox"]:checked ~ div>.fake-checkbox{
 	@apply border-blue before:opacity-100;
 }
 
 ol{
-	@apply list-decimal pl-4;
+	@apply list-decimal pl-3 sm:pl-4;
 	li{
 		@apply mb-2;
 		p{
