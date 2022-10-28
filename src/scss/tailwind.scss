@@ -109,6 +109,33 @@ header{
 	}
 }
 
-// [data-aos]{
-// 	opacity: 0;
-// }
+.fake-checkbox{
+	@apply 
+	before:content-[''] 
+	before:absolute 
+	before:left-1/2 
+	before:top-1/2 
+	before:-translate-x-1/2
+	before:-translate-y-1/2
+	before:w-2.5 before:h-2.5
+	before:bg-blue
+	before:opacity-0
+	before:transition-opacity
+}
+
+input[type="checkbox"]:checked ~ .fake-checkbox{
+	@apply border-blue before:opacity-100;
+}
+
+ol{
+	@apply list-decimal pl-4;
+	li{
+		@apply mb-2;
+		p{
+			@apply mb-2;
+		}
+		a{
+			@apply text-blue underline hover:no-underline font-bold
+		}
+	}
+}

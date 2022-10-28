@@ -1,3 +1,5 @@
+import './modules/form';
+
 let scrollpos = window.scrollY
 const header = document.querySelector("header")
 const scrollChange = 1
@@ -12,8 +14,14 @@ window.addEventListener('scroll', function() {
 const body = document.body;
 const qualityLinks = document.querySelectorAll('.quality-item');
 const modal = document.getElementById('quality-modal');
+const policyModal = document.getElementById('policy-modal');
 const badText = 'Расскажите нам, что вам непонятно или что нужно добавить в наш проект, чтобы получить Ваше ❤️!';
 const goodText = '<b class="text-bold block text-2xl mb-4">Спасибо за оценку!</b> Давайте поговорим, как мы можем внедрить нашу систему в Ваш бизнес процесс. Оставьте контакт и укажите время когда удобно с Вами связаться.';
+
+document.querySelector('.policy-popup-link').onclick = e => {
+	e.preventDefault();
+	policyModal.classList.remove('hidden')
+}
 
 qualityLinks.forEach(link => {
 	link.onclick = e => {
@@ -34,14 +42,14 @@ qualityLinks.forEach(link => {
 			case '4':
 			case '5':
 				textBlock.innerHTML = goodText;
-				textarea.classList.add('hidden');
-				inputTime.classList.remove('hidden');
+				textarea.closest('div').classList.add('hidden');
+				inputTime.closest('label').classList.remove('hidden');
 				inputTime.value = hour +':'+ minutes;
-				break;		
+				break;
 			default:
 				textBlock.innerHTML = badText;
-				textarea.classList.remove('hidden');
-				inputTime.classList.add('hidden');
+				textarea.closest('div').classList.remove('hidden');
+				inputTime.closest('label').classList.add('hidden');
 				break;
 		}
 		modal.classList.remove('hidden');
