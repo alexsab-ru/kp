@@ -65,12 +65,6 @@ $$("textarea").forEach(function (textarea) {
 		});
 	}
 });
-// Показ ошибки
-const showErrorTextarea = (textarea, message) => {
-	textarea.nextSibling.nextElementSibling.innerText = message;
-	textarea.nextSibling.nextElementSibling.classList.remove('hidden');
-	textarea.focus();
-}
 
 // BUTTON
 // Состояние кнопки
@@ -85,6 +79,15 @@ const showErrorMes = (form, el, text) => {
 	field.classList.remove('hidden');
 }
 
+const showMessageModal = (messageModal, icon, message) => {
+	document.querySelectorAll('.modal-overlay').forEach(el => {
+		el.classList.add('hidden');
+	});
+	messageModal.querySelector('#icon').innerHTML = icon;
+	messageModal.querySelector('p').innerHTML = message;
+	messageModal.classList.remove('hidden');
+}
+
 // FORMS
 // Отправка всех форм
 $$('form').forEach(form => {
@@ -93,24 +96,45 @@ $$('form').forEach(form => {
 		event.preventDefault();
 		stateBtn(btn, 'Отправляем...', true);
 
-		const formType = form.dataset.type; //тип формы (для оценок)
+		const ratingValue = form.querySelector('input[name="rating"]').value;
 		const agree = form.querySelector('[name="agree"]');
+		const phone = form.querySelector('[name="phone"]');
+		const errorIcon = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#ed1c24" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2ZM39.65,40.69a.93.93,0,0,1-.45.11,1,1,0,0,1-.89-.55,13.81,13.81,0,0,0-24.62,0,1,1,0,1,1-1.78-.9,15.8,15.8,0,0,1,28.18,0A1,1,0,0,1,39.65,40.69Z"></path></svg>';
+		const successIcon = '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a2,2,0,1,1-2,2A2,2,0,0,1,16.4,17.5ZM40.09,32.15a15.8,15.8,0,0,1-28.18,0,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9Z"></path></svg>';
+		const errorText = '<b class="text-bold block text-2xl mb-4">Упс!</b> Что-то пошло не так. Перезагрузите страницу и попробуйте снова. ';
+		let successText = '';
+		const messageModal = document.getElementById('message-modal');
 
 		// если плохая оценка и textarea пустая - фронт
-		if(formType && formType == 'bad'){
+		if(ratingValue < 4){
+			successText = '<b class="text-bold block text-2xl mb-4">Спасибо за Ваш комментарий!</b> Для нас очень важно Ваше мнение!';
 			const textarea = form.querySelector('textarea');
 			if (!textarea.value.length) {
-				showErrorTextarea(textarea, `Поле обязательно для заполнения и минимальное количество символов - ${minLengthTextareaField}`);
+				showErrorMes(form, '#comment', 'Поле обязательно для заполнения и минимальное количество символов - '+minLengthTextareaField);
 				stateBtn(btn, 'Отправить');
 				return;
 			}
+		}else{
+			successText = '<b class="text-bold block text-2xl mb-4">Спасибо за Вашу оценку!</b> В скором времени мы свяжемся с Вами!';
+			if(!phone.value.length){
+				showErrorMes(form, '#phone', 'Телефон является обязательным полем');
+				stateBtn(btn, 'Отправить');
+				return;
+			}else{
+				const phoneRe = new RegExp(/^\+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}$/);
+				if(!phoneRe.test(phone.value)){
+					showErrorMes(form, '#phone', 'Введен некорректный номер телефона');
+					stateBtn(btn, 'Отправить');
+					return;
+				}
+			}
 		}
 		// если флажок не установлен - фронт
-		// if (!agree.checked) {
-		// 	showErrorAgree(agree);
-		// 	stateBtn(btn, 'Отправить');
-		// 	return;
-		// }
+		if (!agree.checked) {
+			showErrorMes(form, '#agree', 'Чтобы продолжить, установите флажок');
+			stateBtn(btn, 'Отправить');
+			return;
+		}
 		let formData = new FormData(form);
 		const params = new URLSearchParams([...new FormData(event.target).entries()]);
 		formData.append("page_url", window.location.origin + window.location.pathname);
@@ -137,12 +161,18 @@ $$('form').forEach(form => {
 			if (data.answer == 'required') {
 				showErrorMes(form, data.field, data.message);
 				return;
+			}else if (data.answer == 'ERROR') {
+				showMessageModal(messageModal, errorIcon, errorText+'<br>'+data.error);
+			}else{
+				showMessageModal(messageModal, successIcon, successText);
 			}
-			console.log(data);
+			// console.log(data);
 			form.reset();
 		})
 		.catch(error => {
 			console.error("Ошибка отправки данных формы: " + error);
+			showMessageModal(messageModal, errorIcon, errorText+'<br>'+error);
+			stateBtn(btn, 'Отправить');
 		});
 		return false;
 	}

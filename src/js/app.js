@@ -31,11 +31,9 @@ ratingLinks.forEach(link => {
 		if (!rating || rating < 1 || rating > 5) {
 			return;
 		}
-		const date = new Date();
-		const hour = date.getHours();
-		const minutes = date.getMinutes();
 		const icon = link.querySelector('span').innerHTML;
 		modal.querySelector('#icon').innerHTML = icon;
+		const inputRating = modal.querySelector('input[name="rating"]');
 		const textarea = modal.querySelector('textarea');
 		const inputTime = modal.querySelector('input[type="time"]');
 		const textBlock = modal.querySelector('p');
@@ -45,16 +43,14 @@ ratingLinks.forEach(link => {
 				textBlock.innerHTML = goodText;
 				textarea.closest('div').classList.add('hidden');
 				inputTime.closest('label').classList.remove('hidden');
-				inputTime.value = hour +':'+ minutes;
-				ratingForm.dataset.type = 'good';
 				break;
 			default:
 				textBlock.innerHTML = badText;
 				textarea.closest('div').classList.remove('hidden');
 				inputTime.closest('label').classList.add('hidden');
-				ratingForm.dataset.type = 'bad';
 				break;
 		}
+		inputRating.value = rating;
 		modal.classList.remove('hidden');
 		body.classList.add('overflow-hidden', 'lg:pr-[17px]');
 	}
@@ -77,6 +73,13 @@ document.querySelectorAll('.modal-overlay').forEach(el => {
 
 function closeModal(modal){
 	modal.classList.add('hidden');
+	const form = modal.querySelector('form');
+	if(form){
+		form.reset();
+	}
+	document.querySelectorAll('.error-message').forEach(mes => {
+		mes.classList.add('hidden');
+	});
 	body.classList.remove('overflow-hidden', 'lg:pr-[17px]');
 }
 
