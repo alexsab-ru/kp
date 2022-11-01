@@ -1,4 +1,6 @@
+import './modules/helpers';
 import './modules/form';
+require('fslightbox');
 
 let scrollpos = window.scrollY
 const header = document.querySelector("header")
@@ -12,7 +14,7 @@ window.addEventListener('scroll', function() {
 })
 
 const body = document.body;
-const ratingLinks = document.querySelectorAll('.rating-item');
+const ratingLinks = $$('.rating-item');
 const modal = document.getElementById('rating-modal');
 const policyModal = document.getElementById('policy-modal');
 const ratingForm = document.getElementById('rating-form');
@@ -160,8 +162,8 @@ togglePackageLinks.forEach(link => {
 		link.classList.add('active');
 		packages.forEach(pack => {
 			pack.classList.remove('active');
-			document.querySelector('.package#'+id).classList.add('active')
 		})
-		console.log(id);
+		document.querySelector('.package#'+id).classList.add('active')
+		// console.log(id);
 	}
 })

@@ -1,5 +1,4 @@
-const $$ = function (name) { return document.querySelectorAll(name) };
-
+// import $$ from './helpers'
 // PHONE MASK
 function maskphone(e) {
 	let num = this.value.replace(/^(\+7|8)/g, '').replace(/\D/g, '').split(/(?=.)/),
@@ -38,11 +37,6 @@ $$("input[name=agree]").forEach(function (element) {
 		}
 	});
 });
-// показ ошибки, если чекбокс не установлен
-const showErrorAgree = (agree) => {
-	agree.parentElement.querySelector('#agree').classList.remove('hidden');
-}
-
 // TEXTAREA
 const minLengthTextareaField = 10; // минимальное кол-во символов
 // проверка на минимальное кол-во символов и скрытие ошибки
