@@ -1,6 +1,7 @@
 import './modules/helpers';
 import './modules/form';
 require('fslightbox');
+import './modules/swipe'
 
 let scrollpos = window.scrollY
 const header = document.querySelector("header")
@@ -10,7 +11,7 @@ const remove_class_on_scroll = () => header.classList.remove('bg-dark', 'shadow-
 window.addEventListener('scroll', function() { 
   scrollpos = window.scrollY;
   if (scrollpos >= scrollChange) { add_class_on_scroll() }
-  else { remove_class_on_scroll() }  
+  else { remove_class_on_scroll() }
 })
 
 const body = document.body;
@@ -147,23 +148,3 @@ window.onresize = () => {
 	}
 	setHeightPraceTableTd()
 }
-
-const togglePackageLinks = document.querySelectorAll('.toggle-package-link');
-const packages = document.querySelectorAll('.package');
-
-togglePackageLinks.forEach(link => {
-	link.onclick = e => {
-		e.preventDefault();
-		const id = link.dataset.id;
-		if(!id) return;
-		togglePackageLinks.forEach(l => {
-			l.classList.remove('active');
-		})
-		link.classList.add('active');
-		packages.forEach(pack => {
-			pack.classList.remove('active');
-		})
-		document.querySelector('.package#'+id).classList.add('active')
-		// console.log(id);
-	}
-})
