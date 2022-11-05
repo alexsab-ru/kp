@@ -92,7 +92,7 @@ header{
 	@apply absolute lg:relative w-full h-full;
 	div{
 		@apply translate-x-full lg:translate-x-0 transition-transform duration-[350ms] opacity-0 lg:opacity-100;
-		transition-delay: calc(0.05s * var(--i))
+		transition-delay: calc(0.03s * var(--i))
 	}
 	&.active{
 		div{
@@ -103,7 +103,7 @@ header{
 }
 
 .toggle-package-link{
-	@apply text-xs sm:text-base px-4 py-2 border-2 border-white border-opacity-10 rounded-sm whitespace-nowrap transition-all;
+	@apply text-[10px] sm:text-base px-2 sm:px-4 py-2 border-2 border-white border-opacity-10 rounded-sm whitespace-nowrap transition-all;
 	&.active{
 		@apply border-blue border-dotted shadow-3xl;
 	}

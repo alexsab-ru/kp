@@ -48,9 +48,8 @@ var yDiff = yDown - yUp;
 
 let activ;
 
-if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/* отлавливаем разницу в движении */
-	if ( xDiff > 0 ) {
-		/* swipe влево */
+function switchingPackage(left = true){
+	if( left ){
 		togglePackageLinks.forEach((activeLink, idx) => {
 			if(activeLink.classList.contains('active')){
 				activ = idx+1;
@@ -59,18 +58,7 @@ if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/* отлавливаем разн
 		if(activ > togglePackageLinks.length - 1){
 			activ = 0;
 		}
-		console.log(activ);
-		console.log('LEFT');
-		togglePackageLinks.forEach(l => {
-			l.classList.remove('active');
-		})
-		packages.forEach(pack => {
-			pack.classList.remove('active');
-		})
-		togglePackageLinks[activ].classList.add('active')
-		packages[activ].classList.add('active')
-	} else {
-		/* swipe вправо */
+	}else{
 		togglePackageLinks.forEach((activeLink, idx) => {
 			if(activeLink.classList.contains('active')){
 				activ = idx-1;
@@ -79,16 +67,24 @@ if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/* отлавливаем разн
 		if(activ < 0){
 			activ = togglePackageLinks.length - 1;
 		}
-		console.log(activ);
-		console.log('Right');
-		togglePackageLinks.forEach(l => {
-			l.classList.remove('active');
-		})
-		packages.forEach(pack => {
-			pack.classList.remove('active');
-		})
-		togglePackageLinks[activ].classList.add('active')
-		packages[activ].classList.add('active')
+	}
+	togglePackageLinks.forEach(l => {
+		l.classList.remove('active');
+	})
+	packages.forEach(pack => {
+		pack.classList.remove('active');
+	})
+	togglePackageLinks[activ].classList.add('active');
+	packages[activ].classList.add('active');
+}
+
+if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/* отлавливаем разницу в движении */
+	if ( xDiff > 0 ) {
+		/* swipe влево */
+		switchingPackage();
+	} else {
+		/* swipe вправо */
+		switchingPackage(false);
 	}
 } else { // Это вам, в общем-то, не надо, вы ведь только влево-вправо собираетесь двигать
 	if ( yDiff > 0 ) {
