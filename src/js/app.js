@@ -1,7 +1,11 @@
 import './modules/helpers';
 import './modules/form';
-require('fslightbox');
+// require('fslightbox');
+import GLightbox from 'glightbox';
+import 'glightbox/dist/css/glightbox.min.css';
 import './modules/swipe'
+
+const lightbox = GLightbox();
 
 let scrollpos = window.scrollY
 const header = document.querySelector("header")

@@ -3042,11 +3042,6 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
-"fslightbox@^3.3.1":
-  "integrity" "sha512-r8mS2lnqw+4F7fQmIXZ4Y+tulxqGsZyG7wzMhWKl8MHvVZRJnclUyt+n+hfTkUa+e1bvlzpw4tY/X9mwqC4wCg=="
-  "resolved" "https://registry.npmjs.org/fslightbox/-/fslightbox-3.3.1.tgz"
-  "version" "3.3.1"
-
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
   "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -3075,6 +3070,11 @@
   "integrity" "sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg=="
   "resolved" "https://registry.npmjs.org/get-stream/-/get-stream-6.0.1.tgz"
   "version" "6.0.1"
+
+"glightbox@^3.2.0":
+  "integrity" "sha512-iit1xYixqL4YVL+I2YJLfMeyJwvLi6FE6kY3qNKeZHEJgRIz80QU8Rm7YCyw1wOTgXvmNDnXGVhHOHRCwnDltQ=="
+  "resolved" "https://registry.npmjs.org/glightbox/-/glightbox-3.2.0.tgz"
+  "version" "3.2.0"
 
 "glob-parent@^5.1.2", "glob-parent@~5.1.2":
   "integrity" "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="
