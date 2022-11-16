@@ -1,6 +1,6 @@
 let mix = require('laravel-mix');
 require('mix-tailwindcss');
-mix
+mix.setPublicPath('/')
 	.js('src/js/app.js', 'docs/js/scripts.js')
 	.sass('src/scss/app.scss', 'docs/css/styles.css')
 	.tailwind();

@@ -4,7 +4,9 @@
   "description": "Simple starter using Laravel Mix",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx mix watch",
+    "prod": "npx mix --production"
   },
   "author": "",
   "license": "ISC",
