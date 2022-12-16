@@ -1,0 +1,9 @@
+.banner{
+	background-position: right -200px top;
+	@media(min-width: 400px){
+		background-position: right -120px top;
+	}
+	@media(min-width: 640px){
+		background-position: right top;
+	}
+}
