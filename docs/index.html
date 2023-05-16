@@ -30,7 +30,10 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body 
+	x-data="data"
+	x-init="getLang()"
+>
 	<header class="fixed w-full border-b border-gray-50 border-opacity-20 z-10 transition-all duration-[400ms]">
 		<div class="container flex justify-between lg:block">
 			<div class="flex lg:hidden items-center gap-x-2">
@@ -40,8 +43,8 @@
 			<div class="hidden lg:flex justify-between items-center">
 				<nav class="">
 					<ul class="flex gap-6">
-						<li><a href="#what-tasks-does-it-solve">Какие задачи решает</a></li>
-						<li><a href="#how-id-works">Как это работает</a></li>
+						<li><a href="#what-tasks-does-it-solve" x-text="lang.tasks_solve"></a></li>
+						<li><a href="#how-id-works" x-text="lang.how_it_works"></a></li>
 					</ul>
 				</nav>
 				<div class="flex items-center flex-shrink-0 h-14 gap-x-2">
@@ -50,8 +53,8 @@
 				</div>
 				<nav class="min-w-[357px]">
 					<ul class="flex justify-end gap-6">
-						<li><a href="#price-package">Стоимость</a></li>
-						<li><a href="#contacts">Контакты</a></li>
+						<li><a href="#price-package" x-text="lang.price"></a></li>
+						<li><a href="#contacts" x-text="lang.contacts"></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -95,10 +98,10 @@
 					</g>
 				</svg>
 				<div class="absolute top-0 bg-dark w-full left-0 text-center py-16 invisible opacity-0 -translate-y-3 transition-all">
-					<a href="#what-tasks-does-it-solve" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue">Какие задачи решает</a>
-					<a href="#how-id-works" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue">Как это работает</a>
-					<a href="#price-package" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue">Стоимость</a>
-					<a href="#contacts" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue">Контакты</a>
+					<a href="#what-tasks-does-it-solve" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.tasks_solve"></a>
+					<a href="#how-id-works" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.how_it_works"></a>
+					<a href="#price-package" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.price"></a>
+					<a href="#contacts" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.contacts"></a>
 				</div>
 			</label>
 		</div>
