@@ -7,3 +7,5 @@
 @import "vars";
 
 @import "tailwind";
+
+[x-cloak] { display: none !important; }
