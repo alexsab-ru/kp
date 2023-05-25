@@ -284,14 +284,56 @@
 						</template>
 					</div>
 				</div>
-				<h3 class="mt-10 inline-block px-5 py-1 border-[5px] border-blue border-dotted rounded-2xl" data-aos="fade-left">С помощью этой <a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">ссылки</a> клиенты смогут оценить работу сотрудника.</h3>
+				<h3 class="mt-10 inline-block px-5 py-1 border-[5px] border-blue border-dotted rounded-2xl" data-aos="fade-left">
+					<template x-if="param === 'ru'">
+						<span>
+							<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'ссылки')"></span>
+							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">ссылки</a>
+							<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'ссылки')"></span>
+						</span>
+					</template>
+					<template x-if="param === 'en'">
+						<span>
+							<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'page,')"></span>
+							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">page</a>,
+							<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'page,')"></span>
+						</span>
+					</template>
+					<template x-if="param === 'hi'">
+						<span>
+							<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'लिंक')"></span>
+							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">लिंक</a>,
+							<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'लिंक')"></span>
+						</span>
+					</template>
+				</h3>
 			</div>
 		</section>
 		<section class="highlight">
 			<div class="container">
 				<div class="flex flex-col lg:flex-row gap-10 pt-16 pb-12">
 					<div class="lg:w-1/2 xl:w-[45%]">
-						<h3 data-aos="fade-up">Для клиентов, которые поставили низкую оценку <span class="text-blue">с 1 до 3</span> выходит окно, в котором они могут написать, что именно не устроило. Это позволяет оперативно решить проблему и купирует дальнейшее распространение негатива.</h3>
+						<template x-if="param === 'ru'">
+							<h3 data-aos="fade-up">
+								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, 'с 1 до 3')"></span>
+								<span class="text-blue">с 1 до 3</span> 
+								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, 'с 1 до 3')"></span>
+							</h3>
+						</template>
+						<template x-if="param === 'en'">
+							<h3 data-aos="fade-up">
+								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, '1 to 3,')"></span>
+								<span class="text-blue">1 to 3</span>,
+								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, '1 to 3,')"></span>
+							</h3>
+						</template>
+						<template x-if="param === 'hi'">
+							<h3 data-aos="fade-up">
+								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, '1 से 3')"></span>
+								<span class="text-blue">1 से 3</span>
+								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, '1 से 3')"></span>
+							</h3>
+						</template>
 						<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-12 sm:my-10">
 							<img src="img/icons/smile-1.svg" class="w-20 h-20" data-aos="fade-right" data-aos-delay="400"/>
 							<img src="img/icons/smile-2.svg" class="w-20 h-20" data-aos="fade-right" data-aos-delay="200"/>
@@ -320,21 +362,39 @@
 						</div>
 					</div>
 					<div class="lg:w-1/2 xl:w-[45%]">
-						<h3 data-aos="fade-left">Клиентам, поставившим оценки <br><span class="text-blue">от 4 до 5</span> предлагается перейти на
-							картографические сервисы, где клиент, в случае регистрации на них, может оставить положительный отзыв и
-							оценку. Мы рекомендуем внедрить KPI в систему мотивации для сотрудников первой линии 50% оценок от всего
-							количества клиентов за месяц.</h3>
-							<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-12 sm:my-10">
-								<img src="img/icons/smile-4.svg" class="w-20 h-20" data-aos="fade-left" />
-								<img src="img/icons/smile-5.svg" class="w-20 h-20" data-aos="fade-left" data-aos-delay="200"/>
-							</div>
+						<template x-if="param === 'ru'">
+							<h3 data-aos="fade-left">
+								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'от 4 до 5')"></span>
+								<br><span class="text-blue">от 4 до 5</span> 
+								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'от 4 до 5')"></span>
+							</h3>
+						</template>
+						<template x-if="param === 'en'">
+							<h3 data-aos="fade-left">
+								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'from 4 to 5')"></span>
+								<span class="text-blue">from 4 to 5</span> 
+								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'from 4 to 5')"></span>
+							</h3>
+						</template>
+						<template x-if="param === 'hi'">
+							<h3 data-aos="fade-left">
+								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'ने 4 से 5')"></span>
+								<span class="text-blue">ने 4 से 5</span> 
+								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'ने 4 से 5')"></span>
+							</h3>
+						</template>
+						<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-12 sm:my-10">
+							<img src="img/icons/smile-4.svg" class="w-20 h-20" data-aos="fade-left" />
+							<img src="img/icons/smile-5.svg" class="w-20 h-20" data-aos="fade-left" data-aos-delay="200"/>
+						</div>
 					</div>
 				</div>
 				<div class="flex flex-col lg:flex-row gap-10 py-10 sm:py-16">
 					<div class="lg:w-2/5">
-						<h3 data-aos="fade-up">После того, как клиент ставит оценку, данные отправляются в группу <span
-							class="text-blue">Telegram</span> с ответственными сотрудниками или на их <span
-							class="text-blue">E-mail</span></h3>
+					<template x-if="lang.after_the_client_leaves_a_rating">
+						<h3 data-aos="fade-up" x-html="lang.after_the_client_leaves_a_rating.replace('Telegram', '<span class=text-blue>Telegram</span>').replace('E-mail', '<span class=text-blue>E-mail</span>').replace('email', '<span class=text-blue>email</span>').replace('ई-मेल', '<span class=text-blue>ई-मेल</span>').replace('टेलीग्राम समूह', '<span class=text-blue>टेलीग्राम समूह</span>')">
+						</h3>
+					</template>
 					</div>
 					<div class="lg:w-3/5 grid sm:grid-cols-2 gap-10">
 						<div class="rounded-2xl overflow-hidden drop-shadow-blue relative" data-aos="fade-left">
@@ -347,8 +407,10 @@
 				</div>
 				<div class="flex flex-col lg:flex-row gap-10 py-10 sm:py-16">
 					<div class="lg:w-1/3">
-						<h3 data-aos="fade-right">Также вся статистика по каждому сотруднику с его оценкой автоматически собирается в
-							таблице <span class="text-blue">Google&nbsp;Docs</span>.</h3>
+						<template x-if="lang.all_the_statistics_for_each_employee">
+							<h3 data-aos="fade-right" x-html="lang.all_the_statistics_for_each_employee.replace('Google Docs', '<span class=text-blue>Google Docs</span>').replace('Google Spreadsheet', '<span class=text-blue>Google Spreadsheet</span>').replace('Google डॉक्स', '<span class=text-blue>Google डॉक्स</span>')">
+							</h3>
+						</template>
 					</div>
 					<div class="lg:w-2/3">
 						<a href="img/screen-google-table-1.jpg" class="glightbox" data-gallery="g-3">
