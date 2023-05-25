@@ -1,28 +1,31 @@
 document.addEventListener('alpine:init', () => {
 	Alpine.data('data', () => ({
+        param: new URLSearchParams(location.search.substring(1)).get('lang'),
         async init() {            
             await fetch('data/translate.json')
             .then(response => response.json())
             .then(async data => {
-                const param = new URLSearchParams(location.search.substring(1));
-                if(!param.get('lang')){
+                if(!this.param){
                     this.lang = await data.ru
-                }else if(!Object.keys(data).includes(param.get('lang'))){
+                    this.param = 'ru'
+                }else if(!Object.keys(data).includes(this.param)){
                     this.lang = await data.ru
+                    this.param = 'ru'
                 }else{
-                    this.lang = await data[param.get('lang')]
+                    this.lang = await data[this.param]
                 }
+                console.log(this.param);
             })            
         },
         lang: {},
-        findWord(str, key, slice = 0){
+        findWords(str, key, slice = 0, target = ' '){
             if(str !== undefined){
                 try {
                     if(str){
                         if(slice){
-                            return str.split(' ').slice(slice).join(' ')
+                            return str.split(target).slice(slice).join(' ')
                         }
-                        return str.split(' ')[key];
+                        return str.split(target)[key];
                     }
                     
                 } catch (error) {

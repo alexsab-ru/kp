@@ -35,14 +35,14 @@
 </head>
 
 
-<body x-cloak>
+<body>
 	<header class="fixed w-full border-b border-gray-50 border-opacity-20 z-10 transition-all duration-[400ms]">
 		<div class="container flex justify-between lg:block">
 			<div class="flex lg:hidden items-center gap-x-2">
 				<img src="img/logo.svg" class="max-h-[45px] h-full w-auto object-cover" alt="Serm Karma">
 				<span class="text-lg">
-					<span class="font-semibold uppercase" x-text="findWord(lang.serm_karma, 0)"></span> 
-					<span x-text="findWord(lang.serm_karma, 1)"></span>
+					<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span> 
+					<span x-text="findWords(lang.serm_karma, 1)"></span>
 				</span>
 			</div>
 			<div class="hidden lg:flex justify-between items-center">
@@ -55,8 +55,8 @@
 				<div class="flex items-center flex-shrink-0 h-14 gap-x-2">
 					<img src="img/logo.svg" class="max-h-full h-full w-auto object-cover" alt="Serm Karma">
 					<span class="text-2xl">
-						<span class="font-semibold uppercase" x-text="findWord(lang.serm_karma, 0)"></span> 
-						<span x-text="findWord(lang.serm_karma, 1)"></span>
+						<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span> 
+						<span x-text="findWords(lang.serm_karma, 1)"></span>
 					</span>
 				</div>
 				<nav class="min-w-[357px]">
@@ -120,8 +120,8 @@
 				<div class="h-full flex items-center">
 					<div class="h-full flex flex-col justify-center xl:w-2/3">
 						<h1 class="pb-10 leading-tight">
-							<span class="font-semibold" x-text="findWord(lang.online_reputation, 0)+' '+findWord(lang.online_reputation, 1)"></span>
-							<span x-html="findWord(lang.online_reputation, 0, 2)"></span>
+							<span class="font-semibold" x-text="findWords(lang.online_reputation, 0)+' '+findWords(lang.online_reputation, 1)"></span>
+							<span x-html="findWords(lang.online_reputation, 0, 2)"></span>
 						</h1>
 					</div>
 					<div class="h-full w-[90%] sm:w-[60%] md:w-1/2 xl:w-auto flex items-center justify-center absolute top-5 xl:top-0 left-1/2 xl:left-0 -translate-x-1/2 xl:translate-x-0 xl:relative z-[-1] opacity-10 xl:opacity-100">
@@ -137,13 +137,19 @@
 				<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -bottom-10 blur-md shadow-2xl shadow-dark"></span>
 				<div class="container py-24 xl:py-40 relative">
 					<a id="what-tasks-does-it-solve" class="invisible relative block -top-36"></a>
-					<h2 class="text-blue leading-none mb-10" data-aos="fade-up">Система купирования <br class="hidden xl:block">негативных отзывов
+					<h2 class="text-blue leading-none mb-10" data-aos="fade-up">
+						<span x-text="findWords(lang.negative_reviews, 0)+' '+findWords(lang.negative_reviews, 1)"></span> 
+						<br class="hidden xl:block">
+						<span x-text="findWords(lang.negative_reviews, 0, 2)"></span>
 					</h2>
-					<h3 class="xl:mb-20 px-4 py-1 rounded-lg bg-blue inline-block" data-aos="fade-up">Задачи, которые система помогает решить:</h3>
-					<h3 class="my-10 xl:hidden" data-aos="fade-up"><span class="text-blue text-3xl font-semibold"><span
-								class="font-['hyunday-st'] text-4xl">1.</span> Внедрение</span> системы контроля и мотивации сотрудников
-						первой линии позволит улучшить качество их работы, увеличит количество естественных положительных отзывов в
-						картографических сервисах и на других популярных сайтах-отзовиках.</h3>
+					<h3 class="xl:mb-20 px-4 py-1 rounded-lg bg-blue inline-block" data-aos="fade-up" x-text="lang.helps_to_solve"></h3>
+					<h3 class="my-10 xl:hidden" data-aos="fade-up">
+						<span class="text-blue text-3xl font-semibold">
+							<span class="font-['hyunday-st'] text-4xl">1.</span> 
+							<span x-text="findWords(lang.implementation_system, 0)"></span>
+						</span>
+						<span x-text="findWords(lang.implementation_system, 0, 1)"></span>
+					</h3>
 					<div class="flex flex-col-reverse sm:flex-row items-center sm:items-start gap-5 xl:max-w-[50%] w-full" data-aos="fade-up">
 						<div class="rounded-xl border-4 border-blue drop-shadow-blue overflow-hidden relative z-[1]">
 							<img src="img/screen-review.jpg" />
@@ -154,10 +160,10 @@
 					</div>
 					<div class="h-full w-1/2 absolute top-0 right-0 bg-no-repeat bg-center bg-[length:90%] hidden xl:flex flex-col justify-center items-center" style="background-image: url(img/icons/icons-05.svg);">
 						<span class="font-['hyunday-st'] text-[200px] text-blue -ml-4 mt-10">1</span>
-						<div class="text-center max-w-[50%] 2xl:mt-[7%]"><span class="text-blue text-3xl">Внедрение</span> системы
-							контроля и <br>мотивации сотрудников первой линии позволит <br>улучшить качество их работы, увеличит
-							<br>количество естественных <br>положительных отзывов <br>в картографических сервисах <br>и на других
-							популярных <br>сайтах-отзовиках.</div>
+						<div class="text-center max-w-[280px] 2xl:mt-[7%]">
+							<span class="text-blue text-3xl" x-text="findWords(lang.implementation_system, 0)"></span> 
+							<span x-text="findWords(lang.implementation_system, 0, 1)"></span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -168,12 +174,18 @@
 						<span
 							class="font-['hyunday-st'] text-[220px] text-blue leading-none absolute top-10 left-1/2 -translate-x-1/2">2</span>
 						<h3 class="w-full max-w-[200px] sm:max-w-[350px] absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2">
-							<span class="text-blue text-4xl">Удобная</span> аналитика и мониторинг отзывов в интернете</h3>
+							<span class="text-blue text-4xl" x-text="findWords(lang.analytics_and_monitoring, 0)"></span> 
+							<span x-text="findWords(lang.analytics_and_monitoring, 0, 1)"></span>
+						</h3>
 					</div>
 					<div class="xl:w-3/5">
-						<h3 class="mb-10 xl:hidden" data-aos="fade-up"><span class="text-blue text-3xl font-semibold"><span
-									class="font-['hyunday-st'] text-4xl">2.</span> Удобная</span> аналитика и мониторинг отзывов в
-							интернете.</h3>
+						<h3 class="mb-10 xl:hidden" data-aos="fade-up">
+							<span class="text-blue text-3xl font-semibold">
+								<span class="font-['hyunday-st'] text-4xl">2.</span> 
+								<span x-text="findWords(lang.analytics_and_monitoring, 0)"></span> 
+							</span> 
+							<span x-text="findWords(lang.analytics_and_monitoring, 0, 1)"></span>
+						</h3>
 						<div class="flex flex-col gap-10">
 							<a href="img/tg_image_2.jpeg" class="glightbox" data-gallery="g-1">
 								<img src="img/tg_image_2.jpeg" class="max-w-full w-full rounded-xl drop-shadow-blue object-cover object-left-top" alt="ALT" data-aos="fade-left">
@@ -190,39 +202,89 @@
 			style="background-image: url(img/phone-1.png);">
 			<div class="container">
 				<a id="how-id-works" class="invisible relative block -top-36"></a>
-				<h2 class="text-blue leading-none mb-10" data-aos="fade-up">Как это работает</h2>
-				<h3 class="mb-10" data-aos="fade-up">Для каждого сотрудника первой линии шоу-рума создается <br><a
-					href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">персонализированная ссылка</a> с данными о сотруднике и его отделе,<br> которой он
-					сможет делиться через точки контакта:</h3>
+				<h2 class="text-blue leading-none mb-10" data-aos="fade-up" x-text="lang.how_it_works"></h2>
+				<h3 class="mb-10" data-aos="fade-up">
+					<template x-if="param === 'ru' && lang.employee_personal_page">
+						<span>
+							<span x-text="findWords(lang.employee_personal_page, 0, 0, 'персонализированная ссылка')"></span><br>
+							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">персонализированная ссылка</a> 
+							<span x-html="findWords(lang.employee_personal_page, 0, 1, 'персонализированная ссылка').replace('которой он', '<br>которой он')"></span>
+						</span>
+					</template>
+					<template x-if="param === 'en' && lang.employee_personal_page">
+						<span>
+							<span x-text="findWords(lang.employee_personal_page, 0, 0, 'personal page')"></span>
+							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">personal page</a>
+							<span x-html="findWords(lang.employee_personal_page, 0, 1, 'personal page').replace('is created.', 'is created.<br>').replace('be downloaded', 'be<br> downloaded').replace('Link to', '<br>Link to')"></span>
+						</span>
+					</template>
+					<template x-if="param === 'hi' && lang.employee_personal_page">
+						<span>
+							<span x-text="findWords(lang.employee_personal_page, 0, 0, 'व्यक्तिगत लिंक')"></span><br>
+							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">व्यक्तिगत लिंक</a>
+							<span x-html="findWords(lang.employee_personal_page, 0, 1, 'व्यक्तिगत लिंक')"></span>
+						</span>
+					</template>
+				</h3>
 				<div class="grid grid-cols-2 gap-y-8 gap-x-4 lg:grid-cols-4 text-center text-base sm:text-xl font-semibold text-blue  my-8 sm:my-24">
 					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up">
 						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
 							<img src="img/icons/icons-01.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
 						</div>
-						<p>Размещение QR-кода <br>на рабочем месте</p>
+						<template x-if="param === 'ru' && lang.qr_at_the_workplace">
+							<p x-html="lang.qr_at_the_workplace.replace('на рабочем месте', '<br>на рабочем месте')"></p>
+						</template>
+						<template x-if="param === 'en' && lang.qr_at_the_workplace">
+							<p x-html="lang.qr_at_the_workplace.replace('code', 'code<br>')"></p>
+						</template>
+						<template x-if="param === 'hi' && lang.qr_at_the_workplace">
+							<p x-html="lang.qr_at_the_workplace.replace('कोड का स्थान', '<br>कोड का स्थान')"></p>
+						</template>
 					</div>
 					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="200">
 						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
 							<img src="img/icons/icons-02.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
 						</div>
-						<p>Сообщение <br>в мессенджере или смс</p>
+						<template x-if="param === 'ru' && lang.messaging_via_messenger_or_sms">
+							<p x-html="lang.messaging_via_messenger_or_sms.replace('Сообщение', 'Сообщение<br>')"></p>
+						</template>
+						<template x-if="param === 'en' && lang.messaging_via_messenger_or_sms">
+							<p x-html="lang.messaging_via_messenger_or_sms.replace('Messaging', 'Messaging<br>')"></p>
+						</template>
+						<template x-if="param === 'hi' && lang.messaging_via_messenger_or_sms">
+							<p x-html="lang.messaging_via_messenger_or_sms.replace('मैसेंजर', 'मैसेंजर<br>')"></p>
+						</template>
 					</div>
 					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="400">
 						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
 							<img src="img/icons/icons-03.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
 						</div>
-						<p>Электронный <br>бейдж</p>
+						<template x-if="param === 'ru' && lang.electronic_employee_id_card">
+							<p x-html="lang.electronic_employee_id_card.replace('Электронный', 'Электронный<br>')"></p>
+						</template>
+						<template x-if="param === 'en' && lang.electronic_employee_id_card">
+							<p x-html="lang.electronic_employee_id_card.replace('Electronic', 'Electronic<br>')"></p>
+						</template>
+						<template x-if="param === 'hi' && lang.electronic_employee_id_card">
+							<p x-html="lang.electronic_employee_id_card.replace('इलेक्ट्रॉनिक', 'इलेक्ट्रॉनिक<br>')"></p>
+						</template>
 					</div>
 					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="600">
 						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
 							<img src="img/icons/icons-04.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
 						</div>
-						<p>Печатная форма <br>первичной документации <br><span class="font-light">(заказ наряд или <br>договор купли
-								продажи)</span></p>
+						<template x-if="param === 'ru' && lang.printed_documents">
+							<p x-html="lang.printed_documents.replace('форма', 'форма<br>').replace('(заказ наряд или договор купли продажи)', '<br><span class=font-light>(заказ наряд или договор <br>купли продажи)</span>')"></p>
+						</template>
+						<template x-if="param === 'en' && lang.printed_documents">
+							<p x-html="lang.printed_documents.replace('primary', 'primary<br>').replace('(purchse order or sales contract)', '<br><span class=font-light>(purchse order<br> or sales contract)</span>')"></p>
+						</template>
+						<template x-if="param === 'hi' && lang.printed_documents">
+							<p x-html="lang.printed_documents.replace('प्राथमिक प्रलेखन', 'प्राथमिक प्रलेखन<br>').replace('(बिक्री का एक संगठन या अनुबंध का आदेश)', '<br><span class=font-light>(बिक्री का एक संगठन<br> या अनुबंध का आदेश)</span>')"></p>
+						</template>
 					</div>
 				</div>
-				<h3 class="mt-10 inline-block px-5 py-1 border-[5px] border-blue border-dotted rounded-2xl" data-aos="fade-left">С помощью этой <a
-						href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">ссылки</a> клиенты смогут оценить работу сотрудника.</h3>
+				<h3 class="mt-10 inline-block px-5 py-1 border-[5px] border-blue border-dotted rounded-2xl" data-aos="fade-left">С помощью этой <a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">ссылки</a> клиенты смогут оценить работу сотрудника.</h3>
 			</div>
 		</section>
 		<section class="highlight">
