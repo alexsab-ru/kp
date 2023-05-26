@@ -482,7 +482,7 @@
 							<div class="no" style="--i: 6"></div>
 							<div class="no" style="--i: 7"></div>
 							<div class="no" style="--i: 8"></div>
-							<div class="!justify-center font-['hyunday-st'] lg:!text-3xl" style="--i: 9">2&nbsp;000</div>
+							<div class="!justify-center font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.min_price_for_one_card).toLocaleString()"></div>
 							<div class="!justify-center" style="--i: 10">-</div>
 						</div>
 						<div class="package active text-center grid-tr lg:px-2 pb-4 pt-4 2xl:pt-0 relative before:rounded-md before:hidden lg:before:block before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:border-2 before:border-dotted before:border-blue before:shadow-3xl" id="opt-package">
@@ -496,8 +496,8 @@
 							<div class="no" style="--i: 6"></div>
 							<div class="no" style="--i: 7"></div>
 							<div class="no" style="--i: 8"></div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9">1&nbsp;000</div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10">5&nbsp;000</div>
+							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="param === 'en' ? lang.opt_price_for_one_card : Number(lang.opt_price_for_one_card).toLocaleString()"></div>
+							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.opt_package_price).toLocaleString()"></div>
 						</div>
 						<div class="package text-center grid-tr lg:pl-2 pt-4 2xl:pt-0" id="max-package">
 							<div class="lg:!text-lg"><span class="hidden lg:block" x-text="lang.maximum_package"></span></div>
@@ -510,8 +510,8 @@
 							<div class="yes" style="--i: 6"></div>
 							<div class="yes" style="--i: 7"></div>
 							<div class="yes" style="--i: 8"></div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9">7&nbsp;00</div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10">15&nbsp;000</div>
+							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.max_price_for_one_card).toLocaleString()"></div>
+							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.max_package_price).toLocaleString()"></div>
 						</div>
 					</div>
 				</div>
@@ -598,27 +598,47 @@
 				<!-- <input type="text" name="name" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2 text-lg outline-none" placeholder="Ваше имя"> -->
 				<input type="hidden" name="rating" value="1">
 				<div class="hidden">
-					<textarea name="comment" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 sm:text-lg outline-none h-28 resize-none overflow-y-auto w-full" placeholder="Ваш комментарий *"></textarea>
+					<textarea name="comment" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 sm:text-lg outline-none h-28 resize-none overflow-y-auto w-full" :placeholder="lang.comment"></textarea>
 					<div class="error-message text-xs text-red hidden" id="comment"></div>
 				</div>
 				<div>
-					<input type="tel" name="phone" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 mb-1.5 sm:text-lg outline-none w-full" placeholder="Ваш телефон">
+					<input type="tel" name="phone" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 mb-1.5 sm:text-lg outline-none w-full" :placeholder="lang.your_phone">
 					<div class="error-message text-xs text-red hidden" id="phone">Веден некорректный номер телефона</div>
 				</div>
 				<label class="hidden">
-					<p class="mb-2">Удобное время для звонка:</p>
+					<p class="mb-2" x-text="lang.best_time"></p>
 					<input type="time" name="time" class="w-full font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 sm:text-lg outline-none" value="09:00">
 				</label>
 				<label class="cursor-pointer flex items-center flex-wrap">
 					<input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
 					<div class="flex flex-wrap gap-x-2">
 						<span class="fake-checkbox mt-0.5 w-4 h-4 border border-dark inline-block flex-shrink-0 transition-all relative"></span>
-						<span>Я согласен на</span> <a href="javascript:void(0)" class="policy-popup-link text-blue underline transition-all hover:no-underline">обработку персональных данных</a>
+						<template x-if="param === 'ru'">
+						<span>
+							<span x-text="findWords(lang.personal_data, 0, 0, 'обработку')"></span> 
+							<a href="javascript:void(0)" class="policy-popup-link text-blue underline transition-all hover:no-underline">обработку персональных данных</a>
+						</span>
+						</template>
+						<span>
+						<template x-if="param === 'en'">
+						<span>
+							<span x-text="findWords(lang.personal_data, 0, 0, 'the')"></span> 
+							<a href="javascript:void(0)" class="policy-popup-link text-blue underline transition-all hover:no-underline">the processing of personal data</a>
+						</span>
+						</template>
+						</span>
+						<template x-if="param === 'hi'">
+						<span>
+							<span x-text="findWords(lang.personal_data, 0, 0, 'व्यक्तिगत')"></span> 
+							<a href="javascript:void(0)" class="policy-popup-link text-blue underline transition-all hover:no-underline">व्यक्तिगत डेटा के प्रसंस्करण</a>
+							<span x-text="findWords(lang.personal_data, 1, 0, 'प्रसंस्करण')"></span> 
+						</span>
+						</template>
 					</div>
 					<div class="error-message text-xs text-red mt-1 w-full hidden" id="agree">Чтобы продолжить, установите флажок</div>
 				</label>
 				<input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
-				<input type="submit" class="bg-blue px-4 py-3 transition-colors hover:bg-opacity-90 text-white font-medium cursor-pointer" value="Отправить">
+				<input type="submit" class="bg-blue px-4 py-3 transition-colors hover:bg-opacity-90 text-white font-medium cursor-pointer" :value="lang.send">
 			</form>
 		</div>
 	</div>
