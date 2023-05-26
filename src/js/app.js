@@ -2,6 +2,7 @@ import './modules/alpine'
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 window.Alpine.start()
+import langs from './modules/translate'
 
 import './modules/helpers';
 import './modules/form';
@@ -28,13 +29,21 @@ const ratingLinks = $$('.rating-item');
 const modal = document.getElementById('rating-modal');
 const policyModal = document.getElementById('policy-modal');
 const ratingForm = document.getElementById('rating-form');
-const badText = 'Расскажите нам, что вам непонятно или что нужно добавить в наш проект, чтобы получить Ваше ❤️!';
-const goodText = '<b class="text-bold block text-2xl mb-4">Спасибо за оценку!</b> Давайте поговорим, как мы можем внедрить нашу систему в Ваш бизнес процесс. Оставьте контакт и укажите время когда удобно с Вами связаться.';
 
-document.querySelector('.policy-popup-link').onclick = e => {
-	e.preventDefault();
-	policyModal.classList.remove('hidden')
-}
+const param = Alpine.store('state').param
+const lang = JSON.parse(langs)[param] || JSON.parse(langs).ru;
+
+const badText = lang.feedback;
+const tanksForRating = `<b class="text-bold block text-2xl mb-4">${lang.thanks_for_rating}</b>`;
+const goodText = tanksForRating + lang.lets_talk;
+
+document.querySelectorAll('.policy-popup-link').forEach(link => {
+	link.onclick = e => {
+		e.preventDefault();
+		policyModal.classList.remove('hidden')
+	}
+})
+
 
 ratingLinks.forEach(link => {
 	link.onclick = e => {

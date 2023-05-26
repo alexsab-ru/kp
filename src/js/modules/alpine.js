@@ -1,18 +1,19 @@
-import langs from './translate'
+import langs from './translate';
+let param = new URLSearchParams(location.search.substring(1)).get('lang');
 
-document.addEventListener('alpine:init', () => {
+document.addEventListener('alpine:init', (data) => {
 	Alpine.data('data', () => ({
-		param: new URLSearchParams(location.search.substring(1)).get('lang'),
+		param,
 		langs: JSON.parse(langs),
 		init() {
 			if(!this.param){
-				this.lang = this.langs.ru
-				this.param = 'ru'
+				this.lang = this.langs.ru;
+				this.param = 'ru';
 			}else if(!Object.keys(this.langs).includes(this.param)){
-				this.lang = this.langs.ru
-				this.param = 'ru'
+				this.lang = this.langs.ru;
+				this.param = 'ru';
 			}else{
-				this.lang = this.langs[this.param]
+				this.lang = this.langs[this.param];
 			}
 		},
 		lang: {},
@@ -21,7 +22,7 @@ document.addEventListener('alpine:init', () => {
 				try {
 					if(str){
 						if(slice){
-							return str.split(target).slice(slice).join(' ')
+							return str.split(target).slice(slice).join(' ');
 						}
 						return str.split(target)[key];
 					}
@@ -33,8 +34,9 @@ document.addEventListener('alpine:init', () => {
 		}
 	}))
 	Alpine.store('state', {
-		isModalOpen: false,
-		isTypeModalOpen: false,
-		isResponseModalOpen: false,
+		param,
+		// isModalOpen: false,
+		// isTypeModalOpen: false,
+		// isResponseModalOpen: false,
 	})
 })
