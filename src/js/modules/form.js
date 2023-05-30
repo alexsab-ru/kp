@@ -2,6 +2,7 @@
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 window.Alpine.start()
+import langs from './translate'
 // PHONE MASK
 function maskphone(e) {
 	let num = this.value.replace(/^(\+7|8)/g, '').replace(/\D/g, '').split(/(?=.)/),
@@ -75,53 +76,19 @@ const showMessageModal = (messageModal, icon, message) => {
 }
 
 const param = Alpine.store('state').param;
+const lang = JSON.parse(langs)[param] || JSON.parse(langs).ru;
 
-let sendBtn; 
-let	sendBtnAction;
-let errorText;
+let sendBtn = lang.send; 
+let	sendBtnAction = lang.send_btn_action;
+let errorText = `<b class="text-bold block text-2xl mb-4">${lang.oops}</b> ${lang.error_text}`;
 let successText;
-let commentError;
-let phoneError;
-let incorrectPhoneError;
-let agreeError;
-let thanksForComment;
-let thanksForRating;
+let commentError = lang.comment_error +' '+minLengthTextareaField;
+let phoneError = lang.phone_error;
+let incorrectPhoneError = lang.incorrect_phone_error;
+let agreeError = lang.agree_error;
+let thanksForComment = `<b class="text-bold block text-2xl mb-4">${lang.thanks_for_comment}</b> ${lang.thanks_for_comment_text}`;
+let thanksForRating = `<b class="text-bold block text-2xl mb-4">${lang.thanks_for_rating}</b> ${lang.thanks_for_rating_text}`;
 
-switch (param) {
-	case 'en':
-		sendBtn = 'Send';
-		sendBtnAction = 'Sending...';
-		errorText = '<b class="text-bold block text-2xl mb-4">Oops!</b> Something went wrong. Reload the page and try again.';
-		commentError = 'The field is required and the minimum number of characters is '+minLengthTextareaField;
-		phoneError = 'Phone is a required field';
-		incorrectPhoneError = 'Invalid phone number entered';
-		agreeError = 'To continue, check the box';
-		thanksForComment = '<b class="text-bold block text-2xl mb-4">Thank you for your comment!</b> Your opinion is very important for us!';
-		thanksForRating = '<b class="text-bold block text-2xl mb-4">Thank you for rating!</b> We will contact you shortly!';
-		break;
-	case 'hi':
-		sendBtn = 'भेजना';
-		sendBtnAction = 'भेजना...';
-		errorText = '<b class="text-bold block text-2xl mb-4">उफ़!</b> कुछ गलत हो गया। पृष्ठ को पुनः लोड करें और पुनः प्रयास करें।';
-		commentError = 'फ़ील्ड आवश्यक है और वर्णों की न्यूनतम संख्या '+minLengthTextareaField+' है';
-		phoneError = 'फ़ोन एक आवश्यक फ़ील्ड है';
-		incorrectPhoneError = 'अमान्य फ़ोन नंबर डाला गया';
-		agreeError = 'जारी रखने के लिए, बॉक्स को चेक करें';
-		thanksForComment = '<b class="text-bold block text-2xl mb-4">आपकी टिप्पणी के लिए धन्यवाद!</b> आपकी राय हमारे लिए बहुत महत्वपूर्ण है!';
-		thanksForRating = '<b class="text-bold block text-2xl mb-4">रेटिंग के लिए धन्यवाद!</b> हम आपसे शीघ्र ही संपर्क करेंगे!';
-		break;
-	default:
-		sendBtn = 'Отправить';
-		sendBtnAction = 'Отправляем...';
-		errorText = '<b class="text-bold block text-2xl mb-4">Упс!</b> Что-то пошло не так. Перезагрузите страницу и попробуйте снова. ';
-		commentError = 'Поле обязательно для заполнения и минимальное количество символов - '+minLengthTextareaField;
-		phoneError = 'Телефон является обязательным полем';
-		incorrectPhoneError = 'Введен некорректный номер телефона';
-		agreeError = 'Чтобы продолжить, установите флажок';
-		thanksForComment = '<b class="text-bold block text-2xl mb-4">Спасибо за Ваш комментарий!</b> Для нас очень важно Ваше мнение!';
-		thanksForRating = '<b class="text-bold block text-2xl mb-4">Спасибо за Вашу оценку!</b> В скором времени мы свяжемся с Вами!';
-		break;
-}
 
 // AGREE CHECKBOX
 // Проверка на состояние чекбокса, показ/скрытие ошибки
