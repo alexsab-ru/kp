@@ -13,9 +13,11 @@ document.addEventListener('alpine:init', (data) => {
 			if(!this.param){
 				this.lang = this.langs.ru;
 				this.param = 'ru';
+				localStorage.setItem('lang', 'ru')
 			}else if(!Object.keys(this.langs).includes(this.param)){
 				this.lang = this.langs.ru;
 				this.param = 'ru';
+				localStorage.setItem('lang', 'ru')
 			}else{
 				this.lang = this.langs[this.param];
 			}
