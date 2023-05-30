@@ -1,5 +1,9 @@
 import langs from './translate';
-let param = new URLSearchParams(location.search.substring(1)).get('lang');
+const locale = new URLSearchParams(location.search.substring(1)).get('lang');
+if(locale){
+	localStorage.setItem('lang', locale)
+}
+let param = localStorage.getItem('lang') || 'ru';
 
 document.addEventListener('alpine:init', (data) => {
 	Alpine.data('data', () => ({
