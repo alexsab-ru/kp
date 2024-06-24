@@ -1,0 +1,31 @@
+---
+interface Props {
+	title?: string;
+	h1?: string;
+	description?: string;
+	image?: string;
+	keywords?: string;
+}
+const {title, h1, description, image, keywords} = Astro.props;
+
+import Head from '@/components/Head.astro';
+import ScriptHead from '@/components/Scripts/Head.astro';
+import ScriptBodyBegin from '@/components/Scripts/BodyBegin.astro';
+import ScriptBodyEnd from '@/components/Scripts/BodyEnd.astro';
+---
+
+<!doctype html>
+<html lang="ru" class="dark" x-data="data">
+	<head>
+		<Head title={title || h1 } description={description } image={image} keywords={keywords} />
+		<ScriptHead />
+	</head>
+	<body class="min-h-screen flex flex-col">
+		<ScriptBodyBegin />
+		<slot />
+		<ScriptBodyEnd />
+	</body>
+</html>
+<style is:global lang="scss">
+	@import '@/scss/app.scss';
+</style>
