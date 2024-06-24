@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import alpinejs from '@astrojs/alpinejs';
-// import sitemap from "@astrojs/sitemap";
-// import robots from "astro-robots";
+import sitemap from "@astrojs/sitemap";
+import robots from "astro-robots";
 // import mdx from "@astrojs/mdx";
 // import icon from "astro-icon";
 
@@ -10,16 +10,16 @@ import alpinejs from '@astrojs/alpinejs';
 export default defineConfig({
 	integrations: [
 		tailwind(),
-		// sitemap(),
-		// robots({
-		// 	policy: [
-		// 		{
-		// 			userAgent: ["*"],
-		// 			allow: ["/"],
-		// 			disallow: ["/?*"],
-		// 		},
-		// 	  ],
-		// }),
+		sitemap(),
+		robots({
+			policy: [
+				{
+					userAgent: ["*"],
+					allow: ["/"],
+					disallow: ["/?*"],
+				},
+			  ],
+		}),
 		alpinejs(),
 		// mdx(),
 		// icon(),
