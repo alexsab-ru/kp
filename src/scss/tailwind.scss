@@ -21,6 +21,15 @@
 	}
 	.btn{
 		@apply bg-blue text-white py-3 sm:py-4 px-10 rounded transition-all duration-300 hover:opacity-90 hover:shadow-sm;
+		&.btn-success{
+			@apply bg-green hover:bg-greenLigth hover:opacity-100;
+		}
+		&.btn-danger{
+			@apply bg-red;
+		}
+		&.btn-sm{
+			@apply py-2 px-10;
+		}
 	}
 }
 .highlight{
