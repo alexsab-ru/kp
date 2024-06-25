@@ -1,17 +1,10 @@
 ---
-
+import Logo from '@/components/Logo/index.astro'
 ---
 <header class="fixed w-full border-b border-gray-50 border-opacity-20 z-10 transition-all duration-[400ms]">
 	<div class="container flex justify-between lg:block">
-		<div class="flex lg:hidden items-center gap-x-2">
-			<img src="img/logo.svg" class="max-h-[45px] h-full w-auto object-cover" alt="Serm Karma">
-			<span class="text-lg">
-				<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span>
-				<span x-text="findWords(lang.serm_karma, 1)"></span>
-			</span>
-		</div>
-		<div class="hidden lg:flex justify-between items-center">
-			<nav class="">
+		<div class="flex justify-between items-center">
+			<nav class="hidden lg:block">
 				<noindex>
 				<ul class="flex gap-6">
 					<li><a href="#what-tasks-does-it-solve" x-text="lang.tasks_solve"></a></li>
@@ -19,14 +12,10 @@
 				</ul>
 				</noindex>
 			</nav>
-			<div class="flex items-center flex-shrink-0 h-14 gap-x-2">
-				<img src="img/logo.svg" class="max-h-full h-full w-auto object-cover" alt="Serm Karma">
-				<span class="text-2xl">
-					<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span>
-					<span x-text="findWords(lang.serm_karma, 1)"></span>
-				</span>
-			</div>
-			<nav class="min-w-[357px]">
+
+			<Logo />
+			
+			<nav class="min-w-[357px] hidden lg:block">
 				<noindex>
 				<ul class="flex justify-end gap-6">
 					<li><a href="#price-package" x-text="lang.price"></a></li>
