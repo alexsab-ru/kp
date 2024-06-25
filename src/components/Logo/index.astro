@@ -1,0 +1,17 @@
+---
+import LogoImage from './Image.astro'
+import LogoText from './Text.astro'
+
+const pathname = Astro.url.pathname;
+---
+{pathname === '/' ? (
+	<div class="flex items-center flex-shrink-0 h-[45px] lg:h-14 gap-x-2">
+		<LogoImage />
+		<LogoText />
+	</div>
+) : (
+	<a href="/" class="flex items-center flex-shrink-0 h-[45px] lg:h-14 gap-x-2">
+		<LogoImage />
+		<LogoText />
+	</a>
+)}
