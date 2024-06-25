@@ -39,6 +39,88 @@ document.addEventListener('alpine:init', (data) => {
 			}
 		}
 	}))
+	Alpine.data('dealerForm', () => ({
+		dealers: [],
+		showAlert: false,
+		alertMessage: '',
+		toggleAlert(show) {
+			this.showAlert = show;
+		},
+		addDealer() {
+			this.toggleAlert(false);
+			this.dealers.push({
+				name: "",
+				website: "",
+				legal_name: "",
+				legal_inn: "",
+				legal_city: "",
+				legal_city_where: "",
+				brand: "",
+				address_short: "",
+				address_full: "",
+				phone: "",
+				email: "",
+				shedule: "",
+				map: {
+						zoom: "",
+						balloon: "",
+						position: []
+				},
+				avn_feed: "",
+				emails: {
+						dealer: [],
+						marketing: [],
+				},
+				links: {
+						maps: [],
+						social: [],
+						messanger: [],
+						other: [],
+				}
+			});
+		},
+		removeDealer(index) {
+			this.dealers.splice(index, 1);
+		},
+		addEmail(category) {
+			this.dealer.emails[category].push('');
+		},
+		removeEmail(category, index) {
+			this.dealer.emails[category].splice(index, 1);
+		},
+		addLink(category) {
+			this.dealer.links[category].push('');
+		},
+		removeLink(category, index) {
+			this.dealer.links[category].splice(index, 1);
+		},
+		async submitForm() {
+			try {
+				const response = await fetch('https://alexsab.ru/sites/save/qr/', {
+						method: 'POST',
+						mode: 'cors',
+						cache: 'no-cache',
+						credentials: 'same-origin',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(this.dealers)
+				});
+
+				if (!response.ok) {
+						throw new Error('Ошибка при отправке формы');
+				}
+
+				alert('Данные успешно отправлены');
+				this.toggleAlert(true);
+				this.alertMessage = 'Данные успешно отправлены';
+			} catch (error) {
+				alert(error);
+				this.toggleAlert(true);
+				this.alertMessage = 'Данные успешно отправлены';
+			}
+		}
+	}))
 	Alpine.store('state', {
 		param,
 		// isModalOpen: false,
