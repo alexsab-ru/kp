@@ -16,7 +16,11 @@ const { title, description, image = '/img/header-background.jpg', keywords } = A
 
 	<link rel="canonical" href={canonicalURL} />
 
+	{title ? (
+	<title>{title}</title>
+	) : (
 	<title x-html="lang.online_reputation"></title>
+	)}
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png" />
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png" />
