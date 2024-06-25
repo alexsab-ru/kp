@@ -106,7 +106,7 @@ $$("input[name=agree]").forEach(function (element) {
 
 // FORMS
 // Отправка всех форм
-$$('form').forEach(form => {
+$$('form:not(#dealer_form)').forEach(form => {
 	const btn = form.querySelector('input[type="submit"]');
 	form.onsubmit = async event => {
 		event.preventDefault();
