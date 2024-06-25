@@ -102,7 +102,7 @@ document.addEventListener('alpine:init', (data) => {
 						cache: 'no-cache',
 						credentials: 'same-origin',
 						headers: {
-							'Content-Type': 'application/json',
+							'Content-Type': 'application/x-www-form-urlencoded',
 						},
 						body: JSON.stringify(this.dealers)
 				});
@@ -111,11 +111,11 @@ document.addEventListener('alpine:init', (data) => {
 						throw new Error('Ошибка при отправке формы');
 				}
 
-				alert('Данные успешно отправлены');
+				// alert('Данные успешно отправлены');
 				this.toggleAlert(true);
 				this.alertMessage = 'Данные успешно отправлены';
 			} catch (error) {
-				alert(error);
+				// alert(error);
 				this.toggleAlert(true);
 				this.alertMessage = 'Данные успешно отправлены';
 			}
