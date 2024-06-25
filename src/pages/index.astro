@@ -2,751 +2,472 @@
 import Layout from '@/layouts/Layout.astro';
 ---
 <Layout>
-	<header class="fixed w-full border-b border-gray-50 border-opacity-20 z-10 transition-all duration-[400ms]">
-		<div class="container flex justify-between lg:block">
-			<div class="flex lg:hidden items-center gap-x-2">
-				<img src="img/logo.svg" class="max-h-[45px] h-full w-auto object-cover" alt="Serm Karma">
-				<span class="text-lg">
-					<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span>
-					<span x-text="findWords(lang.serm_karma, 1)"></span>
-				</span>
-			</div>
-			<div class="hidden lg:flex justify-between items-center">
-				<nav class="">
-					<noindex>
-					<ul class="flex gap-6">
-						<li><a href="#what-tasks-does-it-solve" x-text="lang.tasks_solve"></a></li>
-						<li><a href="#how-id-works" x-text="lang.how_it_works"></a></li>
-					</ul>
-					</noindex>
-				</nav>
-				<div class="flex items-center flex-shrink-0 h-14 gap-x-2">
-					<img src="img/logo.svg" class="max-h-full h-full w-auto object-cover" alt="Serm Karma">
-					<span class="text-2xl">
-						<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span>
-						<span x-text="findWords(lang.serm_karma, 1)"></span>
-					</span>
+	<section class="highlight relative min-h-screen flex items-center">
+		<div class="container py-16 sm:py-20 xl:mt-[4%]">
+			<div class="h-full flex items-center">
+				<div class="h-full flex flex-col justify-center xl:w-2/3">
+					<h1 class="pb-10 leading-tight">
+						<span class="font-semibold" x-text="findWords(lang.online_reputation, 0)+' '+findWords(lang.online_reputation, 1)"></span>
+						<span x-html="findWords(lang.online_reputation, 0, 2)"></span>
+					</h1>
 				</div>
-				<nav class="min-w-[357px]">
-					<noindex>
-					<ul class="flex justify-end gap-6">
-						<li><a href="#price-package" x-text="lang.price"></a></li>
-						<li><a href="#contacts" x-text="lang.contacts"></a></li>
-					</ul>
-					</noindex>
-				</nav>
-			</div>
-			<label class="inline-block lg:hidden py-3">
-				<input type="checkbox" class="absolute opacity-0 invisible w-0 h-0" id="mobile-toggle-menu-btn">
-				<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
-					class="burger fill-white transition-colors w-8 h-8">
-					<defs>
-						<style>
-							.cls-1 {
-								fill: none;
-							}
-						</style>
-					</defs>
-					<title />
-					<g data-name="Layer 2" id="Layer_2">
-						<path d="M28,10H4A1,1,0,0,1,4,8H28a1,1,0,0,1,0,2Z" />
-						<path d="M28,17H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
-						<path d="M28,24H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
-					</g>
-					<g id="frame">
-						<rect class="cls-1" height="32" width="32" />
-					</g>
-				</svg>
-				<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
-					class="burger-close stroke-blue transition-colors w-8 h-8 hidden relative z-10">
-					<defs>
-						<style>
-							.cls-2 {
-								fill: none;
-								stroke-linecap: round;
-								stroke-linejoin: round;
-								stroke-width: 2px;
-							}
-						</style>
-					</defs>
-					<title />
-					<g id="cross">
-						<line class="cls-2" x1="7" x2="25" y1="7" y2="25" />
-						<line class="cls-2" x1="7" x2="25" y1="25" y2="7" />
-					</g>
-				</svg>
-				<div class="absolute top-0 bg-dark w-full left-0 text-center py-16 invisible opacity-0 -translate-y-3 transition-all">
-					<noindex>
-					<a href="#what-tasks-does-it-solve" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.tasks_solve"></a>
-					<a href="#how-id-works" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.how_it_works"></a>
-					<a href="#price-package" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.price"></a>
-					<a href="#contacts" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.contacts"></a>
-					</noindex>
+				<div class="h-full w-[90%] sm:w-[60%] md:w-1/2 xl:w-auto flex items-center justify-center absolute top-5 xl:top-0 left-1/2 xl:left-0 -translate-x-1/2 xl:translate-x-0 xl:relative z-[-1] opacity-10 xl:opacity-100">
+					<img src="img/main-crop-1.png"
+						class="grayscale xl:grayscale-0 h-auto object-cover text-right block ml-auto" :alt="lang.online_reputation">
 				</div>
-			</label>
+			</div>
 		</div>
-	</header>
-	<main class="flex-grow">
-		<section class="highlight relative min-h-screen flex items-center">
-			<div class="container py-16 sm:py-20 xl:mt-[4%]">
-				<div class="h-full flex items-center">
-					<div class="h-full flex flex-col justify-center xl:w-2/3">
-						<h1 class="pb-10 leading-tight">
-							<span class="font-semibold" x-text="findWords(lang.online_reputation, 0)+' '+findWords(lang.online_reputation, 1)"></span>
-							<span x-html="findWords(lang.online_reputation, 0, 2)"></span>
-						</h1>
-					</div>
-					<div class="h-full w-[90%] sm:w-[60%] md:w-1/2 xl:w-auto flex items-center justify-center absolute top-5 xl:top-0 left-1/2 xl:left-0 -translate-x-1/2 xl:translate-x-0 xl:relative z-[-1] opacity-10 xl:opacity-100">
-						<img src="img/main-crop-1.png"
-							class="grayscale xl:grayscale-0 h-auto object-cover text-right block ml-auto" :alt="lang.online_reputation">
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="highlight" id="what-tasks-does-it-solve">
-			<div class="relative bg-cover bg-center z-[1] before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black before:bg-opacity-80 before:z-[-1]" style="background-image: url(img/map-1.jpg);">
-				<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -top-16 blur-md shadow-2xl shadow-dark"></span>
-				<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -bottom-10 blur-md shadow-2xl shadow-dark"></span>
-				<div class="container py-24 xl:py-40 relative">
-					<a id="what-tasks-does-it-solve" class="invisible relative block -top-36"></a>
-					<h2 class="text-blue leading-none mb-10" data-aos="fade-up">
-						<span x-text="findWords(lang.negative_reviews, 0)+' '+findWords(lang.negative_reviews, 1)"></span>
-						<br class="hidden xl:block">
-						<span x-text="findWords(lang.negative_reviews, 0, 2)"></span>
-					</h2>
-					<h3 class="xl:mb-20 px-4 py-1 rounded-lg bg-blue inline-block" data-aos="fade-up" x-text="lang.helps_to_solve"></h3>
-					<h3 class="my-10 xl:hidden" data-aos="fade-up">
-						<span class="text-blue text-3xl font-semibold">
-							<span class="font-['hyunday-st'] text-4xl">1.</span>
-							<span x-text="lang.implementation"></span>
-						</span>
-						<span x-text="lang.implementation_system"></span>
-					</h3>
-					<div class="flex flex-col-reverse sm:flex-row items-center sm:items-start gap-5 xl:max-w-[50%] w-full" data-aos="fade-up">
-						<div class="rounded-xl border-4 border-blue drop-shadow-blue overflow-hidden relative z-[1]">
-							<img src="img/screen-review.jpg" />
-						</div>
-						<div class="sm:translate-y-28 max-w-[160px] flex-shrink-0 relative before:content-[''] before:absolute before:left-1/2 sm:before:left-auto sm:before:right-full before:top-full sm:before:top-1/2 before:-mt-1 sm:before:-mt-0.5 before:-ml-0.5 sm:before:-mr-1 before:h-10 sm:before:h-1 before:w-1 sm:before:w-10 before:bg-blue">
-							<img src="img/baloon.png" class="drop-shadow-blue2" />
-						</div>
-					</div>
-					<div class="h-full w-1/2 absolute top-0 right-0 bg-no-repeat bg-center bg-[length:90%] hidden xl:flex flex-col justify-center items-center" style="background-image: url(img/icons/icons-05.svg);">
-						<span class="font-['hyunday-st'] text-[200px] text-blue -ml-4 mt-10">1</span>
-						<div class="text-center max-w-[280px] 2xl:mt-[7%]">
-							<span class="text-blue text-3xl" x-text="lang.implementation"></span>
-							<span x-text="lang.implementation_system"></span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container py-16">
-				<div class="flex items-center justify-center gap-16">
-					<div class="relative text-center hidden xl:block w-2/5" data-aos="fade-right">
-						<img src="img/icons/icons-06.svg" class="w-4/5 h-auto mx-auto rotate-[270deg]" alt="ALT">
-						<span
-							class="font-['hyunday-st'] text-[220px] text-blue leading-none absolute top-10 left-1/2 -translate-x-1/2">2</span>
-						<h3 class="w-full max-w-[200px] sm:max-w-[350px] absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2">
-							<span class="text-blue text-4xl" x-text="findWords(lang.analytics_and_monitoring, 0)"></span>
-							<span x-text="findWords(lang.analytics_and_monitoring, 0, 1)"></span>
-						</h3>
-					</div>
-					<div class="xl:w-3/5">
-						<h3 class="mb-10 xl:hidden" data-aos="fade-up">
-							<span class="text-blue text-3xl font-semibold">
-								<span class="font-['hyunday-st'] text-4xl">2.</span>
-								<span x-text="findWords(lang.analytics_and_monitoring, 0)"></span>
-							</span>
-							<span x-text="findWords(lang.analytics_and_monitoring, 0, 1)"></span>
-						</h3>
-						<div class="flex flex-col gap-10">
-							<a href="img/tg_image_2.jpeg" class="glightbox" data-gallery="g-1">
-								<img src="img/tg_image_2.jpeg" class="max-w-full w-full rounded-xl drop-shadow-blue object-cover object-left-top" alt="ALT" data-aos="fade-left">
-							</a>
-							<a href="img/tg_image_1.jpg" class="glightbox" data-gallery="g-2">
-								<img src="img/tg_image_1.jpg" class="max-w-full w-full rounded-xl drop-shadow-blue object-cover object-left-top" alt="ALT" data-aos="fade-left">
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="how-it-works" class="highlight pt-16 lg:pt-24 pb-16 bg-no-repeat bg-[length:80%] lg:bg-[length:37%] bg-right-bottom lg:bg-right-top relative z-[1] bg-dark bg-blend-multiply bg-opacity-90"
-			style="background-image: url(img/phone-1.png);">
-			<div class="container">
-				<a id="how-id-works" class="invisible relative block -top-36"></a>
-				<h2 class="text-blue leading-none mb-10" data-aos="fade-up" x-text="lang.how_it_works"></h2>
-				<h3 class="mb-10" data-aos="fade-up">
-					<template x-if="param === 'ru' && lang.employee_personal_page">
-						<span>
-							<span x-text="findWords(lang.employee_personal_page, 0, 0, 'персонализированная ссылка')"></span><br>
-							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">персонализированная ссылка</a>
-							<span x-html="findWords(lang.employee_personal_page, 0, 1, 'персонализированная ссылка').replace('которой он', '<br>которой он')"></span>
-						</span>
-					</template>
-					<template x-if="param === 'en' && lang.employee_personal_page">
-						<span>
-							<span x-text="findWords(lang.employee_personal_page, 0, 0, 'personal page')"></span>
-							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">personal page</a>
-							<span x-html="findWords(lang.employee_personal_page, 0, 1, 'personal page').replace('is created.', 'is created.<br>').replace('be downloaded', 'be<br> downloaded').replace('Link to', '<br>Link to')"></span>
-						</span>
-					</template>
-					<template x-if="param === 'hi' && lang.employee_personal_page">
-						<span>
-							<span x-text="findWords(lang.employee_personal_page, 0, 0, 'व्यक्तिगत लिंक')"></span><br>
-							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">व्यक्तिगत लिंक</a>
-							<span x-html="findWords(lang.employee_personal_page, 0, 1, 'व्यक्तिगत लिंक')"></span>
-						</span>
-					</template>
+	</section>
+	<section class="highlight" id="what-tasks-does-it-solve">
+		<div class="relative bg-cover bg-center z-[1] before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black before:bg-opacity-80 before:z-[-1]" style="background-image: url(img/map-1.jpg);">
+			<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -top-16 blur-md shadow-2xl shadow-dark"></span>
+			<span class="absolute w-[110%] h-24 xl:h-32 bg-dark bg-opacity-[.85] -left-[5%] -bottom-10 blur-md shadow-2xl shadow-dark"></span>
+			<div class="container py-24 xl:py-40 relative">
+				<a id="what-tasks-does-it-solve" class="invisible relative block -top-36"></a>
+				<h2 class="text-blue leading-none mb-10" data-aos="fade-up">
+					<span x-text="findWords(lang.negative_reviews, 0)+' '+findWords(lang.negative_reviews, 1)"></span>
+					<br class="hidden xl:block">
+					<span x-text="findWords(lang.negative_reviews, 0, 2)"></span>
+				</h2>
+				<h3 class="xl:mb-20 px-4 py-1 rounded-lg bg-blue inline-block" data-aos="fade-up" x-text="lang.helps_to_solve"></h3>
+				<h3 class="my-10 xl:hidden" data-aos="fade-up">
+					<span class="text-blue text-3xl font-semibold">
+						<span class="font-['hyunday-st'] text-4xl">1.</span>
+						<span x-text="lang.implementation"></span>
+					</span>
+					<span x-text="lang.implementation_system"></span>
 				</h3>
-				<div class="grid grid-cols-2 gap-y-8 gap-x-4 lg:grid-cols-4 text-center text-base sm:text-xl font-semibold text-blue  my-8 sm:my-24">
-					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up">
-						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
-							<img src="img/icons/icons-01.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
-						</div>
-						<template x-if="param === 'ru' && lang.qr_at_the_workplace">
-							<p x-html="lang.qr_at_the_workplace.replace('на рабочем месте', '<br>на рабочем месте')"></p>
-						</template>
-						<template x-if="param === 'en' && lang.qr_at_the_workplace">
-							<p x-html="lang.qr_at_the_workplace.replace('code', 'code<br>')"></p>
-						</template>
-						<template x-if="param === 'hi' && lang.qr_at_the_workplace">
-							<p x-html="lang.qr_at_the_workplace.replace('कोड का स्थान', '<br>कोड का स्थान')"></p>
-						</template>
+				<div class="flex flex-col-reverse sm:flex-row items-center sm:items-start gap-5 xl:max-w-[50%] w-full" data-aos="fade-up">
+					<div class="rounded-xl border-4 border-blue drop-shadow-blue overflow-hidden relative z-[1]">
+						<img src="img/screen-review.jpg" />
 					</div>
-					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="200">
-						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
-							<img src="img/icons/icons-02.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
-						</div>
-						<template x-if="param === 'ru' && lang.messaging_via_messenger_or_sms">
-							<p x-html="lang.messaging_via_messenger_or_sms.replace('Сообщение', 'Сообщение<br>')"></p>
-						</template>
-						<template x-if="param === 'en' && lang.messaging_via_messenger_or_sms">
-							<p x-html="lang.messaging_via_messenger_or_sms.replace('Messaging', 'Messaging<br>')"></p>
-						</template>
-						<template x-if="param === 'hi' && lang.messaging_via_messenger_or_sms">
-							<p x-html="lang.messaging_via_messenger_or_sms.replace('मैसेंजर', 'मैसेंजर<br>')"></p>
-						</template>
-					</div>
-					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="400">
-						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
-							<img src="img/icons/icons-03.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
-						</div>
-						<template x-if="param === 'ru' && lang.electronic_employee_id_card">
-							<p x-html="lang.electronic_employee_id_card.replace('Электронный', 'Электронный<br>')"></p>
-						</template>
-						<template x-if="param === 'en' && lang.electronic_employee_id_card">
-							<p x-html="lang.electronic_employee_id_card.replace('Electronic', 'Electronic<br>')"></p>
-						</template>
-						<template x-if="param === 'hi' && lang.electronic_employee_id_card">
-							<p x-html="lang.electronic_employee_id_card.replace('इलेक्ट्रॉनिक', 'इलेक्ट्रॉनिक<br>')"></p>
-						</template>
-					</div>
-					<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="600">
-						<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
-							<img src="img/icons/icons-04.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
-						</div>
-						<template x-if="param === 'ru' && lang.printed_documents">
-							<p x-html="lang.printed_documents.replace('форма', 'форма<br>').replace('(заказ наряд или договор купли продажи)', '<br><span class=font-light>(заказ наряд или договор <br>купли продажи)</span>')"></p>
-						</template>
-						<template x-if="param === 'en' && lang.printed_documents">
-							<p x-html="lang.printed_documents.replace('primary', 'primary<br>').replace('(purchse order or sales contract)', '<br><span class=font-light>(purchse order<br> or sales contract)</span>')"></p>
-						</template>
-						<template x-if="param === 'hi' && lang.printed_documents">
-							<p x-html="lang.printed_documents.replace('प्राथमिक प्रलेखन', 'प्राथमिक प्रलेखन<br>').replace('(बिक्री का एक संगठन या अनुबंध का आदेश)', '<br><span class=font-light>(बिक्री का एक संगठन<br> या अनुबंध का आदेश)</span>')"></p>
-						</template>
+					<div class="sm:translate-y-28 max-w-[160px] flex-shrink-0 relative before:content-[''] before:absolute before:left-1/2 sm:before:left-auto sm:before:right-full before:top-full sm:before:top-1/2 before:-mt-1 sm:before:-mt-0.5 before:-ml-0.5 sm:before:-mr-1 before:h-10 sm:before:h-1 before:w-1 sm:before:w-10 before:bg-blue">
+						<img src="img/baloon.png" class="drop-shadow-blue2" />
 					</div>
 				</div>
-				<h3 class="mt-10 inline-block px-5 py-1 border-[5px] border-blue border-dotted rounded-2xl" data-aos="fade-left">
-					<template x-if="param === 'ru'">
-						<span>
-							<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'ссылки')"></span>
-							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">ссылки</a>
-							<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'ссылки')"></span>
+				<div class="h-full w-1/2 absolute top-0 right-0 bg-no-repeat bg-center bg-[length:90%] hidden xl:flex flex-col justify-center items-center" style="background-image: url(img/icons/icons-05.svg);">
+					<span class="font-['hyunday-st'] text-[200px] text-blue -ml-4 mt-10">1</span>
+					<div class="text-center max-w-[280px] 2xl:mt-[7%]">
+						<span class="text-blue text-3xl" x-text="lang.implementation"></span>
+						<span x-text="lang.implementation_system"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container py-16">
+			<div class="flex items-center justify-center gap-16">
+				<div class="relative text-center hidden xl:block w-2/5" data-aos="fade-right">
+					<img src="img/icons/icons-06.svg" class="w-4/5 h-auto mx-auto rotate-[270deg]" alt="ALT">
+					<span
+						class="font-['hyunday-st'] text-[220px] text-blue leading-none absolute top-10 left-1/2 -translate-x-1/2">2</span>
+					<h3 class="w-full max-w-[200px] sm:max-w-[350px] absolute bottom-5 sm:bottom-10 left-1/2 -translate-x-1/2">
+						<span class="text-blue text-4xl" x-text="findWords(lang.analytics_and_monitoring, 0)"></span>
+						<span x-text="findWords(lang.analytics_and_monitoring, 0, 1)"></span>
+					</h3>
+				</div>
+				<div class="xl:w-3/5">
+					<h3 class="mb-10 xl:hidden" data-aos="fade-up">
+						<span class="text-blue text-3xl font-semibold">
+							<span class="font-['hyunday-st'] text-4xl">2.</span>
+							<span x-text="findWords(lang.analytics_and_monitoring, 0)"></span>
 						</span>
+						<span x-text="findWords(lang.analytics_and_monitoring, 0, 1)"></span>
+					</h3>
+					<div class="flex flex-col gap-10">
+						<a href="img/tg_image_2.jpeg" class="glightbox" data-gallery="g-1">
+							<img src="img/tg_image_2.jpeg" class="max-w-full w-full rounded-xl drop-shadow-blue object-cover object-left-top" alt="ALT" data-aos="fade-left">
+						</a>
+						<a href="img/tg_image_1.jpg" class="glightbox" data-gallery="g-2">
+							<img src="img/tg_image_1.jpg" class="max-w-full w-full rounded-xl drop-shadow-blue object-cover object-left-top" alt="ALT" data-aos="fade-left">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="how-it-works" class="highlight pt-16 lg:pt-24 pb-16 bg-no-repeat bg-[length:80%] lg:bg-[length:37%] bg-right-bottom lg:bg-right-top relative z-[1] bg-dark bg-blend-multiply bg-opacity-90"
+		style="background-image: url(img/phone-1.png);">
+		<div class="container">
+			<a id="how-id-works" class="invisible relative block -top-36"></a>
+			<h2 class="text-blue leading-none mb-10" data-aos="fade-up" x-text="lang.how_it_works"></h2>
+			<h3 class="mb-10" data-aos="fade-up">
+				<template x-if="param === 'ru' && lang.employee_personal_page">
+					<span>
+						<span x-text="findWords(lang.employee_personal_page, 0, 0, 'персонализированная ссылка')"></span><br>
+						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">персонализированная ссылка</a>
+						<span x-html="findWords(lang.employee_personal_page, 0, 1, 'персонализированная ссылка').replace('которой он', '<br>которой он')"></span>
+					</span>
+				</template>
+				<template x-if="param === 'en' && lang.employee_personal_page">
+					<span>
+						<span x-text="findWords(lang.employee_personal_page, 0, 0, 'personal page')"></span>
+						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">personal page</a>
+						<span x-html="findWords(lang.employee_personal_page, 0, 1, 'personal page').replace('is created.', 'is created.<br>').replace('be downloaded', 'be<br> downloaded').replace('Link to', '<br>Link to')"></span>
+					</span>
+				</template>
+				<template x-if="param === 'hi' && lang.employee_personal_page">
+					<span>
+						<span x-text="findWords(lang.employee_personal_page, 0, 0, 'व्यक्तिगत लिंक')"></span><br>
+						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">व्यक्तिगत लिंक</a>
+						<span x-html="findWords(lang.employee_personal_page, 0, 1, 'व्यक्तिगत लिंक')"></span>
+					</span>
+				</template>
+			</h3>
+			<div class="grid grid-cols-2 gap-y-8 gap-x-4 lg:grid-cols-4 text-center text-base sm:text-xl font-semibold text-blue  my-8 sm:my-24">
+				<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up">
+					<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
+						<img src="img/icons/icons-01.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
+					</div>
+					<template x-if="param === 'ru' && lang.qr_at_the_workplace">
+						<p x-html="lang.qr_at_the_workplace.replace('на рабочем месте', '<br>на рабочем месте')"></p>
+					</template>
+					<template x-if="param === 'en' && lang.qr_at_the_workplace">
+						<p x-html="lang.qr_at_the_workplace.replace('code', 'code<br>')"></p>
+					</template>
+					<template x-if="param === 'hi' && lang.qr_at_the_workplace">
+						<p x-html="lang.qr_at_the_workplace.replace('कोड का स्थान', '<br>कोड का स्थान')"></p>
+					</template>
+				</div>
+				<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="200">
+					<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
+						<img src="img/icons/icons-02.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
+					</div>
+					<template x-if="param === 'ru' && lang.messaging_via_messenger_or_sms">
+						<p x-html="lang.messaging_via_messenger_or_sms.replace('Сообщение', 'Сообщение<br>')"></p>
+					</template>
+					<template x-if="param === 'en' && lang.messaging_via_messenger_or_sms">
+						<p x-html="lang.messaging_via_messenger_or_sms.replace('Messaging', 'Messaging<br>')"></p>
+					</template>
+					<template x-if="param === 'hi' && lang.messaging_via_messenger_or_sms">
+						<p x-html="lang.messaging_via_messenger_or_sms.replace('मैसेंजर', 'मैसेंजर<br>')"></p>
+					</template>
+				</div>
+				<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="400">
+					<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
+						<img src="img/icons/icons-03.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
+					</div>
+					<template x-if="param === 'ru' && lang.electronic_employee_id_card">
+						<p x-html="lang.electronic_employee_id_card.replace('Электронный', 'Электронный<br>')"></p>
+					</template>
+					<template x-if="param === 'en' && lang.electronic_employee_id_card">
+						<p x-html="lang.electronic_employee_id_card.replace('Electronic', 'Electronic<br>')"></p>
+					</template>
+					<template x-if="param === 'hi' && lang.electronic_employee_id_card">
+						<p x-html="lang.electronic_employee_id_card.replace('इलेक्ट्रॉनिक', 'इलेक्ट्रॉनिक<br>')"></p>
+					</template>
+				</div>
+				<div class="flex flex-col items-center gap-y-8 sm:gap-y-16" data-aos="fade-up" data-aos-delay="600">
+					<div class="w-32 h-16 sm:h-32 flex items-center justify-center">
+						<img src="img/icons/icons-04.svg" class="w-auto max-h-16 sm:max-h-28 h-full drop-shadow-blue" alt="ALT">
+					</div>
+					<template x-if="param === 'ru' && lang.printed_documents">
+						<p x-html="lang.printed_documents.replace('форма', 'форма<br>').replace('(заказ наряд или договор купли продажи)', '<br><span class=font-light>(заказ наряд или договор <br>купли продажи)</span>')"></p>
+					</template>
+					<template x-if="param === 'en' && lang.printed_documents">
+						<p x-html="lang.printed_documents.replace('primary', 'primary<br>').replace('(purchse order or sales contract)', '<br><span class=font-light>(purchse order<br> or sales contract)</span>')"></p>
+					</template>
+					<template x-if="param === 'hi' && lang.printed_documents">
+						<p x-html="lang.printed_documents.replace('प्राथमिक प्रलेखन', 'प्राथमिक प्रलेखन<br>').replace('(बिक्री का एक संगठन या अनुबंध का आदेश)', '<br><span class=font-light>(बिक्री का एक संगठन<br> या अनुबंध का आदेश)</span>')"></p>
+					</template>
+				</div>
+			</div>
+			<h3 class="mt-10 inline-block px-5 py-1 border-[5px] border-blue border-dotted rounded-2xl" data-aos="fade-left">
+				<template x-if="param === 'ru'">
+					<span>
+						<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'ссылки')"></span>
+						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">ссылки</a>
+						<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'ссылки')"></span>
+					</span>
+				</template>
+				<template x-if="param === 'en'">
+					<span>
+						<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'page,')"></span>
+						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">page</a>,
+						<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'page,')"></span>
+					</span>
+				</template>
+				<template x-if="param === 'hi'">
+					<span>
+						<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'लिंक')"></span>
+						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">लिंक</a>,
+						<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'लिंक')"></span>
+					</span>
+				</template>
+			</h3>
+		</div>
+	</section>
+	<section class="highlight">
+		<div class="container">
+			<div class="flex flex-col lg:flex-row gap-10 pt-16 pb-12">
+				<div class="lg:w-1/2 xl:w-[45%]">
+					<template x-if="param === 'ru'">
+						<h3 data-aos="fade-up">
+							<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, 'с 1 до 3')"></span>
+							<span class="text-blue">с 1 до 3</span>
+							<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, 'с 1 до 3')"></span>
+						</h3>
 					</template>
 					<template x-if="param === 'en'">
-						<span>
-							<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'page,')"></span>
-							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">page</a>,
-							<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'page,')"></span>
-						</span>
-					</template>
-					<template x-if="param === 'hi'">
-						<span>
-							<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'लिंक')"></span>
-							<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">लिंक</a>,
-							<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'लिंक')"></span>
-						</span>
-					</template>
-				</h3>
-			</div>
-		</section>
-		<section class="highlight">
-			<div class="container">
-				<div class="flex flex-col lg:flex-row gap-10 pt-16 pb-12">
-					<div class="lg:w-1/2 xl:w-[45%]">
-						<template x-if="param === 'ru'">
-							<h3 data-aos="fade-up">
-								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, 'с 1 до 3')"></span>
-								<span class="text-blue">с 1 до 3</span>
-								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, 'с 1 до 3')"></span>
-							</h3>
-						</template>
-						<template x-if="param === 'en'">
-							<h3 data-aos="fade-up">
-								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, '1 to 3,')"></span>
-								<span class="text-blue">1 to 3</span>,
-								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, '1 to 3,')"></span>
-							</h3>
-						</template>
-						<template x-if="param === 'hi'">
-							<h3 data-aos="fade-up">
-								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, '1 से 3')"></span>
-								<span class="text-blue">1 से 3</span>
-								<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, '1 से 3')"></span>
-							</h3>
-						</template>
-						<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-12 sm:my-10">
-							<img src="img/icons/smile-1.svg" class="w-20 h-20" data-aos="fade-right" data-aos-delay="400"/>
-							<img src="img/icons/smile-2.svg" class="w-20 h-20" data-aos="fade-right" data-aos-delay="200"/>
-							<img src="img/icons/smile-3.svg" class="w-20 h-20" data-aos="fade-right" />
-						</div>
-					</div>
-					<div data-aos="zoom-in">
-						<div class="mx-auto relative z-[1] rotate-[-18deg]">
-							<img src="img/phone-2.png" class="scale-125 sm:scale-100 max-w-full w-full h-auto object-cover mx-auto drop-shadow-red lg:scale-[.85]"
-								alt="ALT">
-							<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-full h-full left-0 top-0 z-[-1]" />
-							<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-[74%] h-[74%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
-							<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-[56%] h-[56%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
-							<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-[44%] h-[44%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
-						</div>
-					</div>
-				</div>
-				<div class="flex flex-col-reverse lg:flex-row gap-10 py-12">
-					<div data-aos="zoom-in">
-						<div class="mx-auto relative z-[1] rotate-[-18deg]">
-							<img src="img/phone-3.png" class="scale-125 sm:scale-100 max-w-full w-full h-auto object-cover mx-auto drop-shadow-green lg:scale-[.85]" />
-							<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-full h-full left-0 top-0 z-[-1]" />
-							<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-[74%] h-[74%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
-							<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-[56%] h-[56%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
-							<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-[44%] h-[44%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
-						</div>
-					</div>
-					<div class="lg:w-1/2 xl:w-[45%]">
-						<template x-if="param === 'ru'">
-							<h3 data-aos="fade-left">
-								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'от 4 до 5')"></span>
-								<br><span class="text-blue">от 4 до 5</span>
-								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'от 4 до 5')"></span>
-							</h3>
-						</template>
-						<template x-if="param === 'en'">
-							<h3 data-aos="fade-left">
-								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'from 4 to 5')"></span>
-								<span class="text-blue">from 4 to 5</span>
-								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'from 4 to 5')"></span>
-							</h3>
-						</template>
-						<template x-if="param === 'hi'">
-							<h3 data-aos="fade-left">
-								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'ने 4 से 5')"></span>
-								<span class="text-blue">ने 4 से 5</span>
-								<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'ने 4 से 5')"></span>
-							</h3>
-						</template>
-						<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-12 sm:my-10">
-							<img src="img/icons/smile-4.svg" class="w-20 h-20" data-aos="fade-left" />
-							<img src="img/icons/smile-5.svg" class="w-20 h-20" data-aos="fade-left" data-aos-delay="200"/>
-						</div>
-					</div>
-				</div>
-				<div class="flex flex-col lg:flex-row gap-10 py-10 sm:py-16">
-					<div class="lg:w-2/5">
-					<template x-if="lang.after_the_client_leaves_a_rating">
-						<h3 data-aos="fade-up" x-html="lang.after_the_client_leaves_a_rating.replace('Telegram', '<span class=text-blue>Telegram</span>').replace('E-mail', '<span class=text-blue>E-mail</span>').replace('email', '<span class=text-blue>email</span>').replace('ई-मेल', '<span class=text-blue>ई-मेल</span>').replace('टेलीग्राम समूह', '<span class=text-blue>टेलीग्राम समूह</span>')">
+						<h3 data-aos="fade-up">
+							<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, '1 to 3,')"></span>
+							<span class="text-blue">1 to 3</span>,
+							<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, '1 to 3,')"></span>
 						</h3>
 					</template>
-					</div>
-					<div class="lg:w-3/5 grid sm:grid-cols-2 gap-10">
-						<div class="rounded-2xl overflow-hidden drop-shadow-blue relative" data-aos="fade-left">
-							<img src="img/screen-tg-1.jpg" class="max-w-full" alt="ALT">
-						</div>
-						<div class="rounded-2xl overflow-hidden drop-shadow-blue relative" data-aos="fade-left" data-aos-delay="200">
-							<img src="img/screen-tg-2.jpg" class="max-w-full" alt="ALT">
-						</div>
+					<template x-if="param === 'hi'">
+						<h3 data-aos="fade-up">
+							<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 0, '1 से 3')"></span>
+							<span class="text-blue">1 से 3</span>
+							<span x-text="findWords(lang.suggested_to_write_their_feedback, 0, 1, '1 से 3')"></span>
+						</h3>
+					</template>
+					<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-12 sm:my-10">
+						<img src="img/icons/smile-1.svg" class="w-20 h-20" data-aos="fade-right" data-aos-delay="400"/>
+						<img src="img/icons/smile-2.svg" class="w-20 h-20" data-aos="fade-right" data-aos-delay="200"/>
+						<img src="img/icons/smile-3.svg" class="w-20 h-20" data-aos="fade-right" />
 					</div>
 				</div>
-				<div class="flex flex-col lg:flex-row gap-10 py-10 sm:py-16">
-					<div class="lg:w-1/3">
-						<template x-if="lang.all_the_statistics_for_each_employee">
-							<h3 data-aos="fade-right" x-html="lang.all_the_statistics_for_each_employee.replace('Google Docs', '<span class=text-blue>Google&nbsp;Docs</span>').replace('Google Spreadsheet', '<span class=text-blue>Google&nbsp;Spreadsheet</span>').replace('Google डॉक्स', '<span class=text-blue>Google&nbsp;डॉक्स</span>')">
-							</h3>
-						</template>
-					</div>
-					<div class="lg:w-2/3">
-						<a href="img/screen-google-table-1.jpg" class="glightbox" data-gallery="g-3">
-							<img src="img/screen-google-table-1.jpg" class="rounded-2xl overflow-hidden drop-shadow-blue max-w-full mb-10" alt="ALT" data-aos="fade-up">
-						</a>
-						<a href="img/screen-google-table-2.jpg" class="glightbox" data-gallery="g-4">
-							<img src="img/screen-google-table-2.jpg" class="rounded-2xl overflow-hidden drop-shadow-blue max-w-full" alt="ALT" data-aos="fade-up">
-						</a>
+				<div data-aos="zoom-in">
+					<div class="mx-auto relative z-[1] rotate-[-18deg]">
+						<img src="img/phone-2.png" class="scale-125 sm:scale-100 max-w-full w-full h-auto object-cover mx-auto drop-shadow-red lg:scale-[.85]"
+							alt="ALT">
+						<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-full h-full left-0 top-0 z-[-1]" />
+						<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-[74%] h-[74%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
+						<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-[56%] h-[56%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
+						<img src="img/icons/circle-red.svg" class="absolute scale-125 sm:scale-100 w-[44%] h-[44%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="mt-10 pt-16 lg:pt-24 lg:pb-16 bg-cover bg-right-top shadow-dark shadow-inner" style="background-image: url(img/badge-bg.png);" id="price-package">
-			<div class="container">
-				<h2
-					class="text-blue leading-none mb-10"
-					data-aos="fade-up"
-					:class="{'flex flex-nowrap gap-2': param === 'en'}"
-				>
-					<span
-						x-text="lang.price"
-						:class="{'order-2': param === 'en'}"
-					></span>
-					<span
-						class="inline-block md:hidden"
-						:class="{'order-1': param === 'en'}"
-						x-text="param === 'ru' ? 'пакета' : param === 'en' ? 'Package' : 'पैकेज'"
-					></span>
-				</h2>
+			<div class="flex flex-col-reverse lg:flex-row gap-10 py-12">
+				<div data-aos="zoom-in">
+					<div class="mx-auto relative z-[1] rotate-[-18deg]">
+						<img src="img/phone-3.png" class="scale-125 sm:scale-100 max-w-full w-full h-auto object-cover mx-auto drop-shadow-green lg:scale-[.85]" />
+						<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-full h-full left-0 top-0 z-[-1]" />
+						<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-[74%] h-[74%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
+						<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-[56%] h-[56%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
+						<img src="img/icons/circle-green.svg" class="absolute scale-125 sm:scale-100 w-[44%] h-[44%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1]" />
+					</div>
+				</div>
+				<div class="lg:w-1/2 xl:w-[45%]">
+					<template x-if="param === 'ru'">
+						<h3 data-aos="fade-left">
+							<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'от 4 до 5')"></span>
+							<br><span class="text-blue">от 4 до 5</span>
+							<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'от 4 до 5')"></span>
+						</h3>
+					</template>
+					<template x-if="param === 'en'">
+						<h3 data-aos="fade-left">
+							<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'from 4 to 5')"></span>
+							<span class="text-blue">from 4 to 5</span>
+							<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'from 4 to 5')"></span>
+						</h3>
+					</template>
+					<template x-if="param === 'hi'">
+						<h3 data-aos="fade-left">
+							<span x-text="findWords(lang.can_leave_a_positive_review, 0, 0, 'ने 4 से 5')"></span>
+							<span class="text-blue">ने 4 से 5</span>
+							<span x-text="findWords(lang.can_leave_a_positive_review, 0, 1, 'ने 4 से 5')"></span>
+						</h3>
+					</template>
+					<div class="flex justify-center sm:justify-start gap-4 sm:gap-8 my-12 sm:my-10">
+						<img src="img/icons/smile-4.svg" class="w-20 h-20" data-aos="fade-left" />
+						<img src="img/icons/smile-5.svg" class="w-20 h-20" data-aos="fade-left" data-aos-delay="200"/>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col lg:flex-row gap-10 py-10 sm:py-16">
+				<div class="lg:w-2/5">
+				<template x-if="lang.after_the_client_leaves_a_rating">
+					<h3 data-aos="fade-up" x-html="lang.after_the_client_leaves_a_rating.replace('Telegram', '<span class=text-blue>Telegram</span>').replace('E-mail', '<span class=text-blue>E-mail</span>').replace('email', '<span class=text-blue>email</span>').replace('ई-मेल', '<span class=text-blue>ई-मेल</span>').replace('टेलीग्राम समूह', '<span class=text-blue>टेलीग्राम समूह</span>')">
+					</h3>
+				</template>
+				</div>
+				<div class="lg:w-3/5 grid sm:grid-cols-2 gap-10">
+					<div class="rounded-2xl overflow-hidden drop-shadow-blue relative" data-aos="fade-left">
+						<img src="img/screen-tg-1.jpg" class="max-w-full" alt="ALT">
+					</div>
+					<div class="rounded-2xl overflow-hidden drop-shadow-blue relative" data-aos="fade-left" data-aos-delay="200">
+						<img src="img/screen-tg-2.jpg" class="max-w-full" alt="ALT">
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col lg:flex-row gap-10 py-10 sm:py-16">
+				<div class="lg:w-1/3">
+					<template x-if="lang.all_the_statistics_for_each_employee">
+						<h3 data-aos="fade-right" x-html="lang.all_the_statistics_for_each_employee.replace('Google Docs', '<span class=text-blue>Google&nbsp;Docs</span>').replace('Google Spreadsheet', '<span class=text-blue>Google&nbsp;Spreadsheet</span>').replace('Google डॉक्स', '<span class=text-blue>Google&nbsp;डॉक्स</span>')">
+						</h3>
+					</template>
+				</div>
+				<div class="lg:w-2/3">
+					<a href="img/screen-google-table-1.jpg" class="glightbox" data-gallery="g-3">
+						<img src="img/screen-google-table-1.jpg" class="rounded-2xl overflow-hidden drop-shadow-blue max-w-full mb-10" alt="ALT" data-aos="fade-up">
+					</a>
+					<a href="img/screen-google-table-2.jpg" class="glightbox" data-gallery="g-4">
+						<img src="img/screen-google-table-2.jpg" class="rounded-2xl overflow-hidden drop-shadow-blue max-w-full" alt="ALT" data-aos="fade-up">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="mt-10 pt-16 lg:pt-24 lg:pb-16 bg-cover bg-right-top shadow-dark shadow-inner" style="background-image: url(img/badge-bg.png);" id="price-package">
+		<div class="container">
+			<h2
+				class="text-blue leading-none mb-10"
+				data-aos="fade-up"
+				:class="{'flex flex-nowrap gap-2': param === 'en'}"
+			>
+				<span
+					x-text="lang.price"
+					:class="{'order-2': param === 'en'}"
+				></span>
+				<span
+					class="inline-block md:hidden"
+					:class="{'order-1': param === 'en'}"
+					x-text="param === 'ru' ? 'пакета' : param === 'en' ? 'Package' : 'पैकेज'"
+				></span>
+			</h2>
 
-				<div class="flex lg:hidden flex-wrap justify-center gap-3 sm:gap-5 relative z-[1]">
-					<a href="javascript:void(0)" class="toggle-package-link" data-id="min-package" data-aos="fade-up" data-aos-delay="0">
-						<span x-text="findWords(lang.minimum_package, 0)"></span>
-						<span class="hidden md:inline-block" x-text="findWords(lang.minimum_package, 1)"></span>
-					</a>
-					<a href="javascript:void(0)" class="toggle-package-link active" data-id="opt-package" data-aos="fade-up" data-aos-delay="100">
-						<span x-text="findWords(lang.optimal_package, 0)"></span>
-						<span class="hidden md:inline-block" x-text="findWords(lang.optimal_package, 1)"></span>
-					</a>
-					<a href="javascript:void(0)" class="toggle-package-link" data-id="max-package" data-aos="fade-up" data-aos-delay="300">
-						<span x-text="findWords(lang.maximum_package, 0)"></span>
-						<span class="hidden md:inline-block" x-text="findWords(lang.maximum_package, 1)"></span>
-					</a>
+			<div class="flex lg:hidden flex-wrap justify-center gap-3 sm:gap-5 relative z-[1]">
+				<a href="javascript:void(0)" class="toggle-package-link" data-id="min-package" data-aos="fade-up" data-aos-delay="0">
+					<span x-text="findWords(lang.minimum_package, 0)"></span>
+					<span class="hidden md:inline-block" x-text="findWords(lang.minimum_package, 1)"></span>
+				</a>
+				<a href="javascript:void(0)" class="toggle-package-link active" data-id="opt-package" data-aos="fade-up" data-aos-delay="100">
+					<span x-text="findWords(lang.optimal_package, 0)"></span>
+					<span class="hidden md:inline-block" x-text="findWords(lang.optimal_package, 1)"></span>
+				</a>
+				<a href="javascript:void(0)" class="toggle-package-link" data-id="max-package" data-aos="fade-up" data-aos-delay="300">
+					<span x-text="findWords(lang.maximum_package, 0)"></span>
+					<span class="hidden md:inline-block" x-text="findWords(lang.maximum_package, 1)"></span>
+				</a>
+			</div>
+			<div class="price-table grid grid-cols-4 lg:grid-cols-6 pt-4 lg:pt-8" data-aos="fade-up">
+				<div class="col-span-3 grid-tr pr-4 lg:pr-2 pt-4 2xl:pt-0">
+					<div></div>
+					<div x-text="lang.creation_of_personal_pages_for_each_employee"></div>
+					<div x-text="lang.production_of_personal_id_cards"></div>
+					<div x-text="lang.negative_reviews_filtering"></div>
+					<div x-text="lang.development_of_materials_for_touchpoints"></div>
+					<div x-text="lang.integration_with_telegram_email"></div>
+					<div x-text="lang.report_generation_for_each_employee"></div>
+					<div x-text="lang.integration_with_map_services_eview_sites"></div>
+					<div x-text="lang.report_generation_for_each_location"></div>
+					<div x-text="lang.personal_review_manager"></div>
+					<div x-text="lang.price_for_one_id_card"></div>
+					<div x-text="lang.package_cost"></div>
 				</div>
-				<div class="price-table grid grid-cols-4 lg:grid-cols-6 pt-4 lg:pt-8" data-aos="fade-up">
-					<div class="col-span-3 grid-tr pr-4 lg:pr-2 pt-4 2xl:pt-0">
-						<div></div>
-						<div x-text="lang.creation_of_personal_pages_for_each_employee"></div>
-						<div x-text="lang.production_of_personal_id_cards"></div>
-						<div x-text="lang.negative_reviews_filtering"></div>
-						<div x-text="lang.development_of_materials_for_touchpoints"></div>
-						<div x-text="lang.integration_with_telegram_email"></div>
-						<div x-text="lang.report_generation_for_each_employee"></div>
-						<div x-text="lang.integration_with_map_services_eview_sites"></div>
-						<div x-text="lang.report_generation_for_each_location"></div>
-						<div x-text="lang.personal_review_manager"></div>
-						<div x-text="lang.price_for_one_id_card"></div>
-						<div x-text="lang.package_cost"></div>
+				<div class="col-span-1 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 overflow-hidden lg:overflow-visible relative">
+					<div class="package text-center grid-tr lg:px-2 pt-4 2xl:pt-0" id="min-package">
+						<div class="lg:!text-lg !justify-center"><span class="hidden lg:block" x-text="lang.minimum_package"></span></div>
+						<div class="yes" style="--i: 0"></div>
+						<div class="yes" style="--i: 1"></div>
+						<div class="no" style="--i: 2"></div>
+						<div class="no" style="--i: 3"></div>
+						<div class="no" style="--i: 4"></div>
+						<div class="no" style="--i: 5"></div>
+						<div class="no" style="--i: 6"></div>
+						<div class="no" style="--i: 7"></div>
+						<div class="no" style="--i: 8"></div>
+						<div class="!justify-center font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.min_price_for_one_card).toLocaleString()"></div>
+						<div class="!justify-center" style="--i: 10">-</div>
 					</div>
-					<div class="col-span-1 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 overflow-hidden lg:overflow-visible relative">
-						<div class="package text-center grid-tr lg:px-2 pt-4 2xl:pt-0" id="min-package">
-							<div class="lg:!text-lg !justify-center"><span class="hidden lg:block" x-text="lang.minimum_package"></span></div>
-							<div class="yes" style="--i: 0"></div>
-							<div class="yes" style="--i: 1"></div>
-							<div class="no" style="--i: 2"></div>
-							<div class="no" style="--i: 3"></div>
-							<div class="no" style="--i: 4"></div>
-							<div class="no" style="--i: 5"></div>
-							<div class="no" style="--i: 6"></div>
-							<div class="no" style="--i: 7"></div>
-							<div class="no" style="--i: 8"></div>
-							<div class="!justify-center font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.min_price_for_one_card).toLocaleString()"></div>
-							<div class="!justify-center" style="--i: 10">-</div>
-						</div>
-						<div class="package active text-center grid-tr lg:px-2 pb-4 pt-4 2xl:pt-0 relative before:rounded-md before:hidden lg:before:block before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:border-2 before:border-dotted before:border-blue before:shadow-3xl" id="opt-package">
-							<div class="lg:!text-lg font-semibold"><span class="hidden lg:block" x-text="lang.optimal_package"></span></div>
-							<div class="yes" style="--i: 0"></div>
-							<div class="yes" style="--i: 1"></div>
-							<div class="yes" style="--i: 2"></div>
-							<div class="yes" style="--i: 3"></div>
-							<div class="yes" style="--i: 4"></div>
-							<div class="yes" style="--i: 5"></div>
-							<div class="no" style="--i: 6"></div>
-							<div class="no" style="--i: 7"></div>
-							<div class="no" style="--i: 8"></div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="param === 'en' ? lang.opt_price_for_one_card : Number(lang.opt_price_for_one_card).toLocaleString()"></div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.opt_package_price).toLocaleString()"></div>
-						</div>
-						<div class="package text-center grid-tr lg:pl-2 pt-4 2xl:pt-0" id="max-package">
-							<div class="lg:!text-lg"><span class="hidden lg:block" x-text="lang.maximum_package"></span></div>
-							<div class="yes" style="--i: 0"></div>
-							<div class="yes" style="--i: 1"></div>
-							<div class="yes" style="--i: 2"></div>
-							<div class="yes" style="--i: 3"></div>
-							<div class="yes" style="--i: 4"></div>
-							<div class="yes" style="--i: 5"></div>
-							<div class="yes" style="--i: 6"></div>
-							<div class="yes" style="--i: 7"></div>
-							<div class="yes" style="--i: 8"></div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.max_price_for_one_card).toLocaleString()"></div>
-							<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.max_package_price).toLocaleString()"></div>
-						</div>
+					<div class="package active text-center grid-tr lg:px-2 pb-4 pt-4 2xl:pt-0 relative before:rounded-md before:hidden lg:before:block before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:border-2 before:border-dotted before:border-blue before:shadow-3xl" id="opt-package">
+						<div class="lg:!text-lg font-semibold"><span class="hidden lg:block" x-text="lang.optimal_package"></span></div>
+						<div class="yes" style="--i: 0"></div>
+						<div class="yes" style="--i: 1"></div>
+						<div class="yes" style="--i: 2"></div>
+						<div class="yes" style="--i: 3"></div>
+						<div class="yes" style="--i: 4"></div>
+						<div class="yes" style="--i: 5"></div>
+						<div class="no" style="--i: 6"></div>
+						<div class="no" style="--i: 7"></div>
+						<div class="no" style="--i: 8"></div>
+						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="param === 'en' ? lang.opt_price_for_one_card : Number(lang.opt_price_for_one_card).toLocaleString()"></div>
+						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.opt_package_price).toLocaleString()"></div>
+					</div>
+					<div class="package text-center grid-tr lg:pl-2 pt-4 2xl:pt-0" id="max-package">
+						<div class="lg:!text-lg"><span class="hidden lg:block" x-text="lang.maximum_package"></span></div>
+						<div class="yes" style="--i: 0"></div>
+						<div class="yes" style="--i: 1"></div>
+						<div class="yes" style="--i: 2"></div>
+						<div class="yes" style="--i: 3"></div>
+						<div class="yes" style="--i: 4"></div>
+						<div class="yes" style="--i: 5"></div>
+						<div class="yes" style="--i: 6"></div>
+						<div class="yes" style="--i: 7"></div>
+						<div class="yes" style="--i: 8"></div>
+						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.max_price_for_one_card).toLocaleString()"></div>
+						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.max_package_price).toLocaleString()"></div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="py-16 sm:py-24 min-h-screen flex items-center" id="contacts">
-			<div class="container">
-				<h2 class="leading-tight text-blue text-center mb-16" data-aos="fade-up" x-text="lang.our_contacts"></h2>
-				<div class="flex justify-center items-center gap-5 sm:gap-10">
-					<h4 class="text-lg sm:text-1vw 2xl:text-4xl flex flex-col items-center justify-center" data-aos="fade-up">
-						<span class="block mb-5" x-text="lang.call_us"></span>
-						<a href="tel:+79277462154" class="fill-white hover:fill-blue w-20 sm:w-40">
-							<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="500px" height="500px" class="max-w-[400px] w-full h-auto"><path d="M 14 3.9902344 C 8.4886661 3.9902344 4 8.4789008 4 13.990234 L 4 35.990234 C 4 41.501568 8.4886661 45.990234 14 45.990234 L 36 45.990234 C 41.511334 45.990234 46 41.501568 46 35.990234 L 46 13.990234 C 46 8.4789008 41.511334 3.9902344 36 3.9902344 L 14 3.9902344 z M 14 5.9902344 L 36 5.9902344 C 40.430666 5.9902344 44 9.5595687 44 13.990234 L 44 35.990234 C 44 40.4209 40.430666 43.990234 36 43.990234 L 14 43.990234 C 9.5693339 43.990234 6 40.4209 6 35.990234 L 6 13.990234 C 6 9.5595687 9.5693339 5.9902344 14 5.9902344 z M 18.048828 11.035156 C 16.003504 10.946776 14.45113 11.723922 13.474609 12.658203 C 12.986349 13.125343 12.633832 13.625179 12.392578 14.091797 C 12.151324 14.558415 11.998047 14.943108 11.998047 15.443359 C 11.998047 15.398799 11.987059 15.632684 11.980469 15.904297 C 11.973869 16.17591 11.97507 16.542045 12 16.984375 C 12.04996 17.869036 12.199897 19.065677 12.597656 20.484375 C 13.393174 23.321771 15.184446 27.043821 19.070312 30.929688 C 22.95618 34.815554 26.678014 36.606575 29.515625 37.402344 C 30.93443 37.800228 32.130881 37.949937 33.015625 38 C 33.457997 38.02503 33.822105 38.026091 34.09375 38.019531 C 34.365395 38.012931 34.601049 38.001953 34.556641 38.001953 C 35.056892 38.001953 35.441585 37.848676 35.908203 37.607422 C 36.374821 37.366168 36.874657 37.013651 37.341797 36.525391 C 38.276078 35.54887 39.053222 33.996496 38.964844 31.951172 C 38.922907 30.975693 38.381316 30.111858 37.582031 29.599609 C 36.96435 29.203814 36.005458 28.589415 34.753906 27.789062 C 33.301811 26.861299 31.44451 26.795029 29.929688 27.625 L 30.015625 27.582031 L 28.837891 28.087891 L 28.751953 28.148438 C 28.465693 28.349428 28.111154 28.386664 27.789062 28.251953 C 26.886813 27.874649 25.480985 27.133329 24.173828 25.826172 C 22.866671 24.519015 22.125351 23.113186 21.748047 22.210938 C 21.613336 21.888845 21.650568 21.534307 21.851562 21.248047 L 21.912109 21.162109 L 22.417969 19.984375 L 22.375 20.070312 C 23.204764 18.555868 23.140248 16.698619 22.210938 15.246094 C 21.410584 13.994542 20.796186 13.03565 20.400391 12.417969 C 19.888142 11.618684 19.02431 11.077096 18.048828 11.035156 z M 17.962891 13.033203 C 18.243409 13.045263 18.533045 13.209378 18.716797 13.496094 C 19.113001 14.114413 19.727696 15.07377 20.527344 16.324219 C 21.058033 17.153694 21.09533 18.243821 20.621094 19.109375 L 20.597656 19.152344 L 20.115234 20.279297 L 20.214844 20.097656 C 19.623835 20.939396 19.505055 22.032514 19.902344 22.982422 C 20.35304 24.060173 21.214923 25.695392 22.759766 27.240234 C 24.304608 28.785077 25.939827 29.64696 27.017578 30.097656 C 27.967486 30.494945 29.060604 30.376165 29.902344 29.785156 L 29.720703 29.884766 L 30.847656 29.402344 L 30.890625 29.378906 C 31.755801 28.904877 32.845877 28.944375 33.675781 29.474609 L 33.675781 29.472656 C 34.92623 30.272304 35.885587 30.886999 36.503906 31.283203 C 36.790622 31.466955 36.954736 31.756591 36.966797 32.037109 C 37.032417 33.555785 36.504954 34.506599 35.896484 35.142578 C 35.59225 35.460568 35.262335 35.691348 34.990234 35.832031 C 34.718133 35.972715 34.457889 36.001953 34.556641 36.001953 C 34.373232 36.001953 34.276633 36.013981 34.046875 36.019531 C 33.817117 36.025131 33.509144 36.025436 33.128906 36.003906 C 32.368431 35.960876 31.318757 35.831053 30.054688 35.476562 C 27.526547 34.767581 24.137509 33.168759 20.484375 29.515625 C 16.831241 25.862491 15.232169 22.473167 14.523438 19.945312 C 14.169071 18.681386 14.039037 17.631464 13.996094 16.871094 C 13.974624 16.490908 13.974899 16.18286 13.980469 15.953125 C 13.986069 15.72339 13.998047 15.626918 13.998047 15.443359 C 13.998047 15.542109 14.027287 15.281867 14.167969 15.009766 C 14.308652 14.737665 14.539432 14.40775 14.857422 14.103516 C 15.493401 13.495046 16.444215 12.967581 17.962891 13.033203 z"/></svg>
-						</a>
-					</h4>
-					<h4 class="text-lg sm:text-1vw 2xl:text-4xl flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
-						<span class="block mb-5" x-text="lang.we_are_in_telegram"></span>
-						<a href="https://t.me/djyalyaha" class="fill-white hover:fill-blue w-20 sm:w-40" target="_blank">
-							<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="500px" height="500px" class="max-w-[400px] w-full h-auto transition-colors"><path d="M 25 2 C 12.309288 2 2 12.309297 2 25 C 2 37.690703 12.309288 48 25 48 C 37.690712 48 48 37.690703 48 25 C 48 12.309297 37.690712 2 25 2 z M 25 4 C 36.609833 4 46 13.390175 46 25 C 46 36.609825 36.609833 46 25 46 C 13.390167 46 4 36.609825 4 25 C 4 13.390175 13.390167 4 25 4 z M 34.087891 14.035156 C 33.403891 14.035156 32.635328 14.193578 31.736328 14.517578 C 30.340328 15.020578 13.920734 21.992156 12.052734 22.785156 C 10.984734 23.239156 8.9960938 24.083656 8.9960938 26.097656 C 8.9960938 27.432656 9.7783594 28.3875 11.318359 28.9375 C 12.146359 29.2325 14.112906 29.828578 15.253906 30.142578 C 15.737906 30.275578 16.25225 30.34375 16.78125 30.34375 C 17.81625 30.34375 18.857828 30.085859 19.673828 29.630859 C 19.666828 29.798859 19.671406 29.968672 19.691406 30.138672 C 19.814406 31.188672 20.461875 32.17625 21.421875 32.78125 C 22.049875 33.17725 27.179312 36.614156 27.945312 37.160156 C 29.021313 37.929156 30.210813 38.335938 31.382812 38.335938 C 33.622813 38.335938 34.374328 36.023109 34.736328 34.912109 C 35.261328 33.299109 37.227219 20.182141 37.449219 17.869141 C 37.600219 16.284141 36.939641 14.978953 35.681641 14.376953 C 35.210641 14.149953 34.672891 14.035156 34.087891 14.035156 z M 34.087891 16.035156 C 34.362891 16.035156 34.608406 16.080641 34.816406 16.181641 C 35.289406 16.408641 35.530031 16.914688 35.457031 17.679688 C 35.215031 20.202687 33.253938 33.008969 32.835938 34.292969 C 32.477938 35.390969 32.100813 36.335938 31.382812 36.335938 C 30.664813 36.335938 29.880422 36.08425 29.107422 35.53125 C 28.334422 34.97925 23.201281 31.536891 22.488281 31.087891 C 21.863281 30.693891 21.201813 29.711719 22.132812 28.761719 C 22.899812 27.979719 28.717844 22.332938 29.214844 21.835938 C 29.584844 21.464938 29.411828 21.017578 29.048828 21.017578 C 28.923828 21.017578 28.774141 21.070266 28.619141 21.197266 C 28.011141 21.694266 19.534781 27.366266 18.800781 27.822266 C 18.314781 28.124266 17.56225 28.341797 16.78125 28.341797 C 16.44825 28.341797 16.111109 28.301891 15.787109 28.212891 C 14.659109 27.901891 12.750187 27.322734 11.992188 27.052734 C 11.263188 26.792734 10.998047 26.543656 10.998047 26.097656 C 10.998047 25.463656 11.892938 25.026 12.835938 24.625 C 13.831938 24.202 31.066062 16.883437 32.414062 16.398438 C 33.038062 16.172438 33.608891 16.035156 34.087891 16.035156 z"/></svg>
-						</a>
-					</h4>
-				</div>
-			</div>
-		</section>
-		<section class="py-16 lg:pt-24 lg:pb-32 relative min-h-screen flex items-center">
-			<div class="container">
-				<h2 class="leading-tight text-blue text-center" data-aos="fade-up" x-text="lang.evaluate_the_service"></h2>
-				<img src="img/thumb-up.png" alt="Like" class="mx-auto sm:max-w-[7rem] max-w-[10rem] w-full my-16 sm:my-24" data-aos="zoom-in">
-				<div class="rating-block flex justify-center gap-2 sm:gap-5">
-					<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="1" data-aos="fade-up">
-						<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#ed1c24" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#ed1c24" d="M39.2,40.8a1,1,0,0,1-.89-.55,13.81,13.81,0,0,0-24.62,0,1,1,0,1,1-1.78-.9,15.8,15.8,0,0,1,28.18,0,1,1,0,0,1-.44,1.34A.93.93,0,0,1,39.2,40.8Z"></path><path fill="#ed1c24" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#ed1c24" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path></svg>
-						</span>
-						<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#ed1c24" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2ZM39.65,40.69a.93.93,0,0,1-.45.11,1,1,0,0,1-.89-.55,13.81,13.81,0,0,0-24.62,0,1,1,0,1,1-1.78-.9,15.8,15.8,0,0,1,28.18,0A1,1,0,0,1,39.65,40.69Z"></path></svg>
-						</span>
-					</a>
-					<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="2" data-aos="fade-up" data-aos-delay="100">
-						<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f26522" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#f26522" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#f26522" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#f26522" d="M39.5,40.5a1,1,0,0,1-.86-.5C36.55,36.42,32.3,34.6,26,34.6S15.45,36.42,13.36,40a1,1,0,0,1-1.72-1C14.07,34.81,19,32.6,26,32.6S37.93,34.81,40.36,39A1,1,0,0,1,40,40.36.93.93,0,0,1,39.5,40.5Z"></path></svg>
-						</span>
-						<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f26522" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2ZM40,40.36a.93.93,0,0,1-.5.14,1,1,0,0,1-.86-.5C36.55,36.42,32.3,34.6,26,34.6S15.45,36.42,13.36,40a1,1,0,0,1-1.72-1C14.07,34.81,19,32.6,26,32.6S37.93,34.81,40.36,39A1,1,0,0,1,40,40.36Z"></path></svg>
-						</span>
-					</a>
-					<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="3" data-aos="fade-up" data-aos-delay="200">
-						<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f1c331" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#f1c331" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#f1c331" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#f1c331" d="M35,36.8H17a1,1,0,0,1,0-2H35a1,1,0,0,1,0,2Z"></path></svg>			</span>
-						<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f1c331" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0ZM14.4,19.5a2,2,0,0,1,2-2,1.94,1.94,0,0,1,2,2,2,2,0,0,1-4,0ZM35,36.8H17a1,1,0,0,1,0-2H35a1,1,0,0,1,0,2Zm.6-15.3a2,2,0,0,1,0-4,1.94,1.94,0,0,1,2,2A2,2,0,0,1,35.6,21.5Z"></path></svg>
-						</span>
-					</a>
-					<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="4" data-aos="fade-up" data-aos-delay="300">
-						<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#7ba343" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#7ba343" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#7ba343" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#7ba343" d="M26,40.5c-7,0-11.93-2.21-14.36-6.4a1,1,0,1,1,1.72-1c2.09,3.58,6.34,5.4,12.64,5.4s10.55-1.82,12.64-5.4a1,1,0,1,1,1.72,1C37.93,38.29,33,40.5,26,40.5Z"></path></svg>
-						</span>
-						<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#7ba343" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm24,16.6C37.93,38.29,33,40.5,26,40.5s-11.93-2.21-14.36-6.4a1,1,0,1,1,1.72-1c2.09,3.58,6.34,5.4,12.64,5.4s10.55-1.82,12.64-5.4a1,1,0,1,1,1.72,1Z"></path></svg>
-						</span>
-					</a>
-					<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="5" data-aos="fade-up" data-aos-delay="400">
-						<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#279548" d="M16.4,17.5a2,2,0,1,0,2,2A2,2,0,0,0,16.4,17.5Z"></path><path fill="#279548" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#279548" d="M26,40.8a15.63,15.63,0,0,1-14.09-8.65,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9A15.63,15.63,0,0,1,26,40.8Z"></path></svg>
-						</span>
-						<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a2,2,0,1,1-2,2A2,2,0,0,1,16.4,17.5ZM40.09,32.15a15.8,15.8,0,0,1-28.18,0,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9Z"></path></svg>
-						</span>
-					</a>
-				</div>
-			</div>
-		</section>
-	</main>
-	<!-- MODALS -->
-	<div class="fixed w-screen h-screen left-0 top-0 bg-dark bg-opacity-90 z-20 overflow-x-hidden overflow-y-auto hidden modal-overlay" id="rating-modal" data-close>
-		<div class="modal-content relative top-20 mb-10 left-1/2 translate-x-[-50%] -translate-y-10 transition-all duration-1000 max-w-xl w-full bg-white font-medium text-dark py-8 px-4 sm:p-8">
-			<div class="w-10 h-10 flex items-center justify-center absolute right-0 top-0 opacity-50 transition-opacity hover:opacity-100 cursor-pointer rotate-45" data-close><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-close>
-				<line y1="9.5" x2="20" y2="9.5" stroke="black"/>
-				<line x1="9.5" y1="20" x2="9.5" stroke="black"/>
-				</svg>
-			</div>
-			<div class="w-20 h-20 mx-auto mb-10" id="icon"></div>
-			<p class="text-center text-lg mb-10"></p>
-			<form class="flex flex-col gap-4 sm:gap-5 font-['hyunday-st']" id="rating-form">
-				<!-- <input type="text" name="name" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 px-4 py-2 text-lg outline-none" placeholder="Ваше имя"> -->
-				<input type="hidden" name="rating" value="1">
-				<div class="hidden">
-					<textarea name="comment" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 sm:text-lg outline-none h-28 resize-none overflow-y-auto w-full" :placeholder="lang.comment"></textarea>
-					<div class="error-message text-xs text-red hidden" id="comment"></div>
-				</div>
-				<div>
-					<input type="tel" name="phone" class="font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 mb-1.5 sm:text-lg outline-none w-full" :placeholder="lang.your_phone">
-					<div class="error-message text-xs text-red hidden" id="phone">Веден некорректный номер телефона</div>
-				</div>
-				<label class="hidden">
-					<p class="mb-2" x-text="lang.best_time"></p>
-					<input type="time" name="time" class="w-full font-['hyunday-st'] border-2 border-dark border-opacity-20 transition-all focus:border-opacity-90 focus:border-blue px-4 py-2 sm:text-lg outline-none" value="09:00">
-				</label>
-				<label class="cursor-pointer flex items-center flex-wrap">
-					<input type="checkbox" name="agree" class="absolute w-0 h-0 opacity-0 invisible">
-					<div class="flex flex-wrap gap-x-2">
-						<span class="fake-checkbox mt-0.5 w-4 h-4 border border-dark inline-block flex-shrink-0 transition-all relative"></span>
-						<template x-if="param === 'ru'">
-						<span>
-							<span x-text="findWords(lang.personal_data, 0, 0, 'обработку')"></span>
-							<a href="javascript:void(0)" class="policy-popup-link text-blue underline transition-all hover:no-underline">обработку персональных данных</a>
-						</span>
-						</template>
-						<span>
-						<template x-if="param === 'en'">
-						<span>
-							<span x-text="findWords(lang.personal_data, 0, 0, 'the')"></span>
-							<a href="javascript:void(0)" class="policy-popup-link text-blue underline transition-all hover:no-underline">the processing of personal data</a>
-						</span>
-						</template>
-						</span>
-						<template x-if="param === 'hi'">
-						<span>
-							<span x-text="findWords(lang.personal_data, 0, 0, 'व्यक्तिगत')"></span>
-							<a href="javascript:void(0)" class="policy-popup-link text-blue underline transition-all hover:no-underline">व्यक्तिगत डेटा के प्रसंस्करण</a>
-							<span x-text="findWords(lang.personal_data, 1, 0, 'प्रसंस्करण')"></span>
-						</span>
-						</template>
-					</div>
-					<div class="error-message text-xs text-red mt-1 w-full hidden" id="agree">Чтобы продолжить, установите флажок</div>
-				</label>
-				<input type="checkbox" name="subscribe" class="absolute w-0 h-0 opacity-0 invisible">
-				<input type="submit" class="bg-blue px-4 py-3 transition-colors hover:bg-opacity-90 text-white font-medium cursor-pointer" :value="lang.send">
-			</form>
 		</div>
-	</div>
-	<div class="fixed w-screen h-screen left-0 top-0 bg-dark bg-opacity-90 z-30 overflow-x-hidden overflow-y-auto hidden modal-overlay" id="policy-modal" data-close>
-		<div class="modal-content relative top-20 mb-10 left-1/2 translate-x-[-50%] -translate-y-10 transition-all duration-1000 max-w-5xl w-full bg-white font-medium text-dark py-8 px-4 sm:p-8">
-			<div class="w-10 h-10 flex items-center justify-center absolute right-0 top-0 opacity-50 transition-opacity hover:opacity-100 cursor-pointer rotate-45" data-close><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-close>
-				<line y1="9.5" x2="20" y2="9.5" stroke="black"/>
-				<line x1="9.5" y1="20" x2="9.5" stroke="black"/>
-				</svg>
+	</section>
+	<section class="py-16 sm:py-24 min-h-screen flex items-center" id="contacts">
+		<div class="container">
+			<h2 class="leading-tight text-blue text-center mb-16" data-aos="fade-up" x-text="lang.our_contacts"></h2>
+			<div class="flex justify-center items-center gap-5 sm:gap-10">
+				<h4 class="text-lg sm:text-1vw 2xl:text-4xl flex flex-col items-center justify-center" data-aos="fade-up">
+					<span class="block mb-5" x-text="lang.call_us"></span>
+					<a href="tel:+79277462154" class="fill-white hover:fill-blue w-20 sm:w-40">
+						<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="500px" height="500px" class="max-w-[400px] w-full h-auto"><path d="M 14 3.9902344 C 8.4886661 3.9902344 4 8.4789008 4 13.990234 L 4 35.990234 C 4 41.501568 8.4886661 45.990234 14 45.990234 L 36 45.990234 C 41.511334 45.990234 46 41.501568 46 35.990234 L 46 13.990234 C 46 8.4789008 41.511334 3.9902344 36 3.9902344 L 14 3.9902344 z M 14 5.9902344 L 36 5.9902344 C 40.430666 5.9902344 44 9.5595687 44 13.990234 L 44 35.990234 C 44 40.4209 40.430666 43.990234 36 43.990234 L 14 43.990234 C 9.5693339 43.990234 6 40.4209 6 35.990234 L 6 13.990234 C 6 9.5595687 9.5693339 5.9902344 14 5.9902344 z M 18.048828 11.035156 C 16.003504 10.946776 14.45113 11.723922 13.474609 12.658203 C 12.986349 13.125343 12.633832 13.625179 12.392578 14.091797 C 12.151324 14.558415 11.998047 14.943108 11.998047 15.443359 C 11.998047 15.398799 11.987059 15.632684 11.980469 15.904297 C 11.973869 16.17591 11.97507 16.542045 12 16.984375 C 12.04996 17.869036 12.199897 19.065677 12.597656 20.484375 C 13.393174 23.321771 15.184446 27.043821 19.070312 30.929688 C 22.95618 34.815554 26.678014 36.606575 29.515625 37.402344 C 30.93443 37.800228 32.130881 37.949937 33.015625 38 C 33.457997 38.02503 33.822105 38.026091 34.09375 38.019531 C 34.365395 38.012931 34.601049 38.001953 34.556641 38.001953 C 35.056892 38.001953 35.441585 37.848676 35.908203 37.607422 C 36.374821 37.366168 36.874657 37.013651 37.341797 36.525391 C 38.276078 35.54887 39.053222 33.996496 38.964844 31.951172 C 38.922907 30.975693 38.381316 30.111858 37.582031 29.599609 C 36.96435 29.203814 36.005458 28.589415 34.753906 27.789062 C 33.301811 26.861299 31.44451 26.795029 29.929688 27.625 L 30.015625 27.582031 L 28.837891 28.087891 L 28.751953 28.148438 C 28.465693 28.349428 28.111154 28.386664 27.789062 28.251953 C 26.886813 27.874649 25.480985 27.133329 24.173828 25.826172 C 22.866671 24.519015 22.125351 23.113186 21.748047 22.210938 C 21.613336 21.888845 21.650568 21.534307 21.851562 21.248047 L 21.912109 21.162109 L 22.417969 19.984375 L 22.375 20.070312 C 23.204764 18.555868 23.140248 16.698619 22.210938 15.246094 C 21.410584 13.994542 20.796186 13.03565 20.400391 12.417969 C 19.888142 11.618684 19.02431 11.077096 18.048828 11.035156 z M 17.962891 13.033203 C 18.243409 13.045263 18.533045 13.209378 18.716797 13.496094 C 19.113001 14.114413 19.727696 15.07377 20.527344 16.324219 C 21.058033 17.153694 21.09533 18.243821 20.621094 19.109375 L 20.597656 19.152344 L 20.115234 20.279297 L 20.214844 20.097656 C 19.623835 20.939396 19.505055 22.032514 19.902344 22.982422 C 20.35304 24.060173 21.214923 25.695392 22.759766 27.240234 C 24.304608 28.785077 25.939827 29.64696 27.017578 30.097656 C 27.967486 30.494945 29.060604 30.376165 29.902344 29.785156 L 29.720703 29.884766 L 30.847656 29.402344 L 30.890625 29.378906 C 31.755801 28.904877 32.845877 28.944375 33.675781 29.474609 L 33.675781 29.472656 C 34.92623 30.272304 35.885587 30.886999 36.503906 31.283203 C 36.790622 31.466955 36.954736 31.756591 36.966797 32.037109 C 37.032417 33.555785 36.504954 34.506599 35.896484 35.142578 C 35.59225 35.460568 35.262335 35.691348 34.990234 35.832031 C 34.718133 35.972715 34.457889 36.001953 34.556641 36.001953 C 34.373232 36.001953 34.276633 36.013981 34.046875 36.019531 C 33.817117 36.025131 33.509144 36.025436 33.128906 36.003906 C 32.368431 35.960876 31.318757 35.831053 30.054688 35.476562 C 27.526547 34.767581 24.137509 33.168759 20.484375 29.515625 C 16.831241 25.862491 15.232169 22.473167 14.523438 19.945312 C 14.169071 18.681386 14.039037 17.631464 13.996094 16.871094 C 13.974624 16.490908 13.974899 16.18286 13.980469 15.953125 C 13.986069 15.72339 13.998047 15.626918 13.998047 15.443359 C 13.998047 15.542109 14.027287 15.281867 14.167969 15.009766 C 14.308652 14.737665 14.539432 14.40775 14.857422 14.103516 C 15.493401 13.495046 16.444215 12.967581 17.962891 13.033203 z"/></svg>
+					</a>
+				</h4>
+				<h4 class="text-lg sm:text-1vw 2xl:text-4xl flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+					<span class="block mb-5" x-text="lang.we_are_in_telegram"></span>
+					<a href="https://t.me/djyalyaha" class="fill-white hover:fill-blue w-20 sm:w-40" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="500px" height="500px" class="max-w-[400px] w-full h-auto transition-colors"><path d="M 25 2 C 12.309288 2 2 12.309297 2 25 C 2 37.690703 12.309288 48 25 48 C 37.690712 48 48 37.690703 48 25 C 48 12.309297 37.690712 2 25 2 z M 25 4 C 36.609833 4 46 13.390175 46 25 C 46 36.609825 36.609833 46 25 46 C 13.390167 46 4 36.609825 4 25 C 4 13.390175 13.390167 4 25 4 z M 34.087891 14.035156 C 33.403891 14.035156 32.635328 14.193578 31.736328 14.517578 C 30.340328 15.020578 13.920734 21.992156 12.052734 22.785156 C 10.984734 23.239156 8.9960938 24.083656 8.9960938 26.097656 C 8.9960938 27.432656 9.7783594 28.3875 11.318359 28.9375 C 12.146359 29.2325 14.112906 29.828578 15.253906 30.142578 C 15.737906 30.275578 16.25225 30.34375 16.78125 30.34375 C 17.81625 30.34375 18.857828 30.085859 19.673828 29.630859 C 19.666828 29.798859 19.671406 29.968672 19.691406 30.138672 C 19.814406 31.188672 20.461875 32.17625 21.421875 32.78125 C 22.049875 33.17725 27.179312 36.614156 27.945312 37.160156 C 29.021313 37.929156 30.210813 38.335938 31.382812 38.335938 C 33.622813 38.335938 34.374328 36.023109 34.736328 34.912109 C 35.261328 33.299109 37.227219 20.182141 37.449219 17.869141 C 37.600219 16.284141 36.939641 14.978953 35.681641 14.376953 C 35.210641 14.149953 34.672891 14.035156 34.087891 14.035156 z M 34.087891 16.035156 C 34.362891 16.035156 34.608406 16.080641 34.816406 16.181641 C 35.289406 16.408641 35.530031 16.914688 35.457031 17.679688 C 35.215031 20.202687 33.253938 33.008969 32.835938 34.292969 C 32.477938 35.390969 32.100813 36.335938 31.382812 36.335938 C 30.664813 36.335938 29.880422 36.08425 29.107422 35.53125 C 28.334422 34.97925 23.201281 31.536891 22.488281 31.087891 C 21.863281 30.693891 21.201813 29.711719 22.132812 28.761719 C 22.899812 27.979719 28.717844 22.332938 29.214844 21.835938 C 29.584844 21.464938 29.411828 21.017578 29.048828 21.017578 C 28.923828 21.017578 28.774141 21.070266 28.619141 21.197266 C 28.011141 21.694266 19.534781 27.366266 18.800781 27.822266 C 18.314781 28.124266 17.56225 28.341797 16.78125 28.341797 C 16.44825 28.341797 16.111109 28.301891 15.787109 28.212891 C 14.659109 27.901891 12.750187 27.322734 11.992188 27.052734 C 11.263188 26.792734 10.998047 26.543656 10.998047 26.097656 C 10.998047 25.463656 11.892938 25.026 12.835938 24.625 C 13.831938 24.202 31.066062 16.883437 32.414062 16.398438 C 33.038062 16.172438 33.608891 16.035156 34.087891 16.035156 z"/></svg>
+					</a>
+				</h4>
 			</div>
-			<h2 class="text-base sm:text-xl uppercase pb-4 mb-4 border-b border-gray-100 font-medium">Согласие на обработку персональных данных посетителей сайта</h2>
-			<div class="policy-text font-['hyunday-st'] text-xs sm:text-base">
-				<ol>
-				<li>
-				<p>
-				Пользователь, проходя регистрацию на Сайте
-				<a href="#">__________</a> и его поддоменов, принимает настоящее Согласие на
-				обработку персональных данных (далее – Согласие).
-				</p>
-				<p>
-				Действуя свободно, своей волей и в своем интересе, а также подтверждая свою
-				дееспособность, Пользователь дает свое согласие Общество с ограниченной
-				ответственностью «__________» зарегистрированному по адресу __________ (далее — Оператор) на обработку своих персональных данных со
-				следующими условиями:
-				</p>
-				</li>
-				<li>
-				<p>Данное Согласие дается на автоматизированную обработку персональных данных.</p>
-				<p>Согласие дается на обработку следующих моих персональных данных:</p>
-				<ol class="ol_bracket">
-				<li>Специальные категории персональных данных – не обрабатываются.</li>
-				<li>Биометрические персональные данные – не обрабатываются.</li>
-				<li>
-				Персональные данные, не являющиеся специальными или биометрическими:<br>
-				фамилия, имя, отчество; номер телефона; адрес электронной почты; пол; семейное
-				положение; дата рождения; адрес места жительства, образ жизни и поведение субъекта
-				(в том числе, в сети Интернет), сфера деятельности, место работы и должность (род
-				занятий), иные данные и информация, предоставленные и предоставляемые субъектом или
-				ставшие известными ООО «Киа Россия и СНГ» в целях, указанных в настоящем согласии.
-				</li>
-				</ol>
-				</li>
-				<li>
-				<p>
-				Настоящее Согласие дается на выполнение следующих действий (операций), совершаемых с
-				использованием средств автоматизации или без использования таких средств с
-				персональными данными: сбор, запись, систематизация, накопление, хранение, уточнение
-				(обновление, изменение), извлечение, использование, передача, в том числе
-				трансграничная (распространение в случаях и в объеме, предусмотренных
-				законодательством РФ, в том числе предоставление в государственные органы и иные
-				организации), деперсонализация, блокирование, удаление, уничтожение персональных
-				данных в целях:
-				</p>
-				<ol class="ol_latin">
-				<li>продвижения и совершенствование товаров и услуг бренда ___;</li>
-				<li>
-				получения и исследования статистических данных об объемах продаж и качестве услуг
-				бренда ___;
-				</li>
-				<li>
-				изучения конъюнктуры рынка автомобилей, автомобильных запасных частей и аксессуаров;
-				</li>
-				<li>
-				сбора статистики по посетителям Сайта для улучшения качества работы Сайта и его
-				содержания;
-				</li>
-				<li>
-				осуществления других видов деятельности в рамках законодательства РФ с обязательным
-				выполнением требований законодательства РФ в области персональных данных.
-				</li>
-				<li>
-				сбора данных по поведению на сайте kia-samara.ru (сервисами веб-аналитики, метрическими
-				программами). Подробная информация приведена на официальном сайте ООО «___________» в разделе в разделе «Правовая информация» на странице «Файлы Cookie и анализ
-				посещения сайта»
-				<a href="#">_____________</a></li>
-				<p>
-				При обработке персональных данных и информации в целях, не связанных с направлением
-				информации рекламного характера, могут использоваться e-mail рассылка (направление
-				сообщений на электронную почту), СМС-рассылка (служба коротких сообщений), почтовая
-				рассылка, телефонные звонки, любые иные средства связи, сеть Интернет. Для целей
-				направления информации рекламного характера могут использоваться только варианты
-				связи, отмеченные выше, либо на которые отдельно дано согласие.
-				</p>
-				</ol>
-				</li>
-				<li>
-				Основанием для обработки персональных данных является: ст. 24 Конституции Российской
-				Федерации; настоящее Согласие на обработку персональных данных.
-				</li>
-				<li>
-				Оператор персональных данных ведет деятельность на территории Российской Федерации в
-				соответствии с законодательством Российской Федерации. Предлагаемые товары/работы/услуги
-				доступны к получению на территории Российской Федерации. Мониторинг потребительского
-				поведения субъектов, находящихся за пределами Российской Федерации, не ведется.
-				</li>
-				<li>
-				Обработка персональных данных может быть прекращена по запросу субъекта персональных
-				данных. Хранение персональных данных, зафиксированных на бумажных носителях,
-				осуществляется согласно Федеральному закону №125-ФЗ «Об архивном деле в Российской
-				Федерации» и иным нормативно правовым актам в области архивного дела и архивного
-				хранения.
-				</li>
-				<li>
-				Согласие может быть отозвано субъектом персональных данных или его представителем путем
-				направления письменного заявления заказным письмом с уведомлением Оператору по адресу,
-				указанному в начале данного Согласия.
-				</li>
-				<li>
-				В случае отзыва субъектом персональных данных или его представителем согласия на
-				обработку персональных данных Оператор вправе продолжить обработку персональных данных
-				без согласия субъекта персональных данных при наличии оснований, указанных в пунктах 2 –
-				11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального закона №152-ФЗ
-				«О персональных данных» от 27.07.2006 г.
-				</li>
-				<li>
-				Настоящее согласие действует с момента проставления отметки и до момента прекращения
-				обработки персональных данных, указанных в п.7 и п.8 данного Согласия.
-				</li>
-				<li>
-				Политика обработки данных ООО «_____________», а также описание прав субъекта
-				персональных данных и возможности их реализации приведены на официальном сайте ООО «__________» в разделе «Правовая информация»
-				<a href="#">_________________</a></li>
-				</ol>
-				</div>
 		</div>
-	</div>
-	<div class="fixed w-screen h-screen left-0 top-0 bg-dark bg-opacity-90 z-20 overflow-x-hidden overflow-y-auto hidden modal-overlay" id="message-modal" data-close>
-		<div class="modal-content relative top-20 mb-10 left-1/2 translate-x-[-50%] -translate-y-10 transition-all duration-1000 max-w-xl w-full bg-white font-medium text-dark py-8 px-4 sm:p-8">
-			<div class="w-10 h-10 flex items-center justify-center absolute right-0 top-0 opacity-50 transition-opacity hover:opacity-100 cursor-pointer rotate-45" data-close><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" data-close>
-				<line y1="9.5" x2="20" y2="9.5" stroke="black"/>
-				<line x1="9.5" y1="20" x2="9.5" stroke="black"/>
-				</svg>
+	</section>
+	<section class="py-16 lg:pt-24 lg:pb-32 relative min-h-screen flex items-center">
+		<div class="container">
+			<h2 class="leading-tight text-blue text-center" data-aos="fade-up" x-text="lang.evaluate_the_service"></h2>
+			<img src="img/thumb-up.png" alt="Like" class="mx-auto sm:max-w-[7rem] max-w-[10rem] w-full my-16 sm:my-24" data-aos="zoom-in">
+			<div class="rating-block flex justify-center gap-2 sm:gap-5">
+				<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="1" data-aos="fade-up">
+					<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#ed1c24" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#ed1c24" d="M39.2,40.8a1,1,0,0,1-.89-.55,13.81,13.81,0,0,0-24.62,0,1,1,0,1,1-1.78-.9,15.8,15.8,0,0,1,28.18,0,1,1,0,0,1-.44,1.34A.93.93,0,0,1,39.2,40.8Z"></path><path fill="#ed1c24" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#ed1c24" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path></svg>
+					</span>
+					<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#ed1c24" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2ZM39.65,40.69a.93.93,0,0,1-.45.11,1,1,0,0,1-.89-.55,13.81,13.81,0,0,0-24.62,0,1,1,0,1,1-1.78-.9,15.8,15.8,0,0,1,28.18,0A1,1,0,0,1,39.65,40.69Z"></path></svg>
+					</span>
+				</a>
+				<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="2" data-aos="fade-up" data-aos-delay="100">
+					<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f26522" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#f26522" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#f26522" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#f26522" d="M39.5,40.5a1,1,0,0,1-.86-.5C36.55,36.42,32.3,34.6,26,34.6S15.45,36.42,13.36,40a1,1,0,0,1-1.72-1C14.07,34.81,19,32.6,26,32.6S37.93,34.81,40.36,39A1,1,0,0,1,40,40.36.93.93,0,0,1,39.5,40.5Z"></path></svg>
+					</span>
+					<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f26522" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2ZM40,40.36a.93.93,0,0,1-.5.14,1,1,0,0,1-.86-.5C36.55,36.42,32.3,34.6,26,34.6S15.45,36.42,13.36,40a1,1,0,0,1-1.72-1C14.07,34.81,19,32.6,26,32.6S37.93,34.81,40.36,39A1,1,0,0,1,40,40.36Z"></path></svg>
+					</span>
+				</a>
+				<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="3" data-aos="fade-up" data-aos-delay="200">
+					<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f1c331" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#f1c331" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#f1c331" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#f1c331" d="M35,36.8H17a1,1,0,0,1,0-2H35a1,1,0,0,1,0,2Z"></path></svg>			</span>
+					<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#f1c331" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0ZM14.4,19.5a2,2,0,0,1,2-2,1.94,1.94,0,0,1,2,2,2,2,0,0,1-4,0ZM35,36.8H17a1,1,0,0,1,0-2H35a1,1,0,0,1,0,2Zm.6-15.3a2,2,0,0,1,0-4,1.94,1.94,0,0,1,2,2A2,2,0,0,1,35.6,21.5Z"></path></svg>
+					</span>
+				</a>
+				<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="4" data-aos="fade-up" data-aos-delay="300">
+					<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#7ba343" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#7ba343" d="M16.4,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,16.4,17.5Z"></path><path fill="#7ba343" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#7ba343" d="M26,40.5c-7,0-11.93-2.21-14.36-6.4a1,1,0,1,1,1.72-1c2.09,3.58,6.34,5.4,12.64,5.4s10.55-1.82,12.64-5.4a1,1,0,1,1,1.72,1C37.93,38.29,33,40.5,26,40.5Z"></path></svg>
+					</span>
+					<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#7ba343" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm24,16.6C37.93,38.29,33,40.5,26,40.5s-11.93-2.21-14.36-6.4a1,1,0,1,1,1.72-1c2.09,3.58,6.34,5.4,12.64,5.4s10.55-1.82,12.64-5.4a1,1,0,1,1,1.72,1Z"></path></svg>
+					</span>
+				</a>
+				<a href="javascript:void(0)" class="rating-item relative w-20 h-20 group" data-rating="5" data-aos="fade-up" data-aos-delay="400">
+					<span class="w-full h-full absolute transition-opacity group-hover:opacity-0">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,2A24,24,0,1,1,2,26,24,24,0,0,1,26,2m0-2A26,26,0,1,0,52,26,26,26,0,0,0,26,0Z"></path><path fill="#279548" d="M16.4,17.5a2,2,0,1,0,2,2A2,2,0,0,0,16.4,17.5Z"></path><path fill="#279548" d="M35.6,17.5a2,2,0,1,0,2,2A1.94,1.94,0,0,0,35.6,17.5Z"></path><path fill="#279548" d="M26,40.8a15.63,15.63,0,0,1-14.09-8.65,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9A15.63,15.63,0,0,1,26,40.8Z"></path></svg>
+					</span>
+					<span class="w-full h-full absolute transition-opacity opacity-0 group-hover:opacity-100">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><path fill="#279548" d="M26,0A26,26,0,1,0,52,26,26,26,0,0,0,26,0Zm9.6,17.5a1.94,1.94,0,0,1,2,2,2,2,0,1,1-2-2Zm-19.2,0a2,2,0,1,1-2,2A2,2,0,0,1,16.4,17.5ZM40.09,32.15a15.8,15.8,0,0,1-28.18,0,1,1,0,0,1,1.78-.9,13.81,13.81,0,0,0,24.62,0,1,1,0,1,1,1.78.9Z"></path></svg>
+					</span>
+				</a>
 			</div>
-			<div class="w-20 h-20 mx-auto mb-10" id="icon"></div>
-			<p class="text-center text-lg mb-10"></p>
 		</div>
-	</div>
-	<!-- MODALS END -->
+	</section>
 </Layout>
