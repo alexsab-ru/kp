@@ -9,20 +9,26 @@ interface Props {
 const {title, h1, description, image, keywords} = Astro.props;
 
 import Head from '@/components/Head.astro';
+import Header from '@/components/Header/index.astro'
 import ScriptHead from '@/components/Scripts/Head.astro';
 import ScriptBodyBegin from '@/components/Scripts/BodyBegin.astro';
 import ScriptBodyEnd from '@/components/Scripts/BodyEnd.astro';
+import Modals from '@/components/Modals/index.astro'
 ---
 
 <!doctype html>
 <html lang="ru" class="dark" x-data="data">
 	<head>
-		<Head title={title || h1 } description={description } image={image} keywords={keywords} />
+		<Head title={title || h1 } description={description} image={image} keywords={keywords} />
 		<ScriptHead />
 	</head>
 	<body class="min-h-screen flex flex-col">
 		<ScriptBodyBegin />
-		<slot />
+		<Header />
+		<main class="flex-grow">
+			<slot />
+		</main>
+		<Modals />
 		<ScriptBodyEnd />
 	</body>
 </html>
