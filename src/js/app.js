@@ -1,7 +1,7 @@
 import './modules/alpine'
-import Alpine from 'alpinejs';
-window.Alpine = Alpine;
-window.Alpine.start()
+// import Alpine from 'alpinejs';
+// window.Alpine = Alpine;
+// window.Alpine.start()
 import langs from './modules/translate'
 
 import './modules/helpers';
