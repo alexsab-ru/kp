@@ -158,11 +158,15 @@ const setHeightPraceTableTd = () => {
 		priceTable.style.marginTop = '-'+h+'px';
 	}
 }
-setHeightPraceTableTd()
+if(priceTds && priceTable){
+	setHeightPraceTableTd()
+}
 
 window.onresize = () => {
 	if (window.innerWidth > 1023) {
 		inputMenuBtn.checked = false;
 	}
-	setHeightPraceTableTd()
+	if(priceTds && priceTable){
+		setHeightPraceTableTd()
+	}
 }
