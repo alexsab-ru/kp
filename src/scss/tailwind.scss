@@ -19,6 +19,9 @@
 			@apply max-w-[1530px] p-0 h-full;
 		}
 	}
+	.btn{
+		@apply bg-blue text-white py-3 sm:py-4 px-10 rounded transition-all duration-300 hover:opacity-90 hover:shadow-sm;
+	}
 }
 .highlight{
 	z-index: 1;
