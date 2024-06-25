@@ -1,0 +1,149 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+<Layout title="Оставь заявку на подключение к системе управления репутацией в интернете">
+	<div class="container pt-24 pb-10">
+		<h1 class="text-2xl sm:text-4xl mb-8 sm:mb-10">Оставь заявку на подключение QR сервиса для работы с отзывами</h1>
+
+		<div x-data="dealerForm" class="">
+			<form @submit.prevent="submitForm" class="space-y-4" id="dealer_form">
+				 <template x-for="(dealer, index) in dealers" :key="index">
+					  <div class="p-4 border border-gray-600 rounded-lg">
+							<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Бренд (на латинском)</label>
+									  <input x-model="dealer.brand" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Название дилерского центра</label>
+									  <input x-model="dealer.name" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Сайт</label>
+									  <input x-model="dealer.website" type="text" placeholder="Введите URL" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+							</div>
+							<div class="grid grid-cols-1 gap-6 md:grid-cols-2 mt-4">
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Юридическое название</label>
+									  <input x-model="dealer.legal_name" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">ИНН</label>
+									  <input x-model="dealer.legal_inn" type="text" placeholder="Введите ИНН" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Город</label>
+									  <input x-model="dealer.legal_city" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Город на ответ "где? в Москве"</label>
+									  <input x-model="dealer.legal_city_where" type="text" placeholder="Введите название в предложный падеже" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Адрес</label>
+									  <input x-model="dealer.address_full" type="text" placeholder="Введите адрес" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Адрес короткий (если какой-то особенный)</label>
+									  <input x-model="dealer.address_short" type="text" placeholder="Введите адрес" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Телефон</label>
+									  <input x-model="dealer.phone" type="tel" name="photne" placeholder="Введите телефон" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Email (который можно на сайте написать, если нужно)</label>
+									  <input x-model="dealer.email" type="email" name="email" placeholder="Введите email" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <div class="md:col-span-2">
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Часы работы</label>
+									  <input x-model="dealer.shedule" type="text" placeholder="Например: Ежедневно с&nbsp;08:00 до&nbsp;20:00 без перерывов и&nbsp;выходных" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+								 </div>
+								 <!-- Email'ы -->
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Почты дилера для отзывов</label>
+									  <template x-for="(email, index) in dealer.emails.dealer" :key="index">
+											<div class="flex items-center space-x-2">
+												 <input x-model="dealer.emails.dealer[index]" type="email" placeholder="Введите email" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+												 <button @click.prevent="removeEmail('dealer', index)" class="mt-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Удалить</button>
+											</div>
+									  </template>
+									  <button @click.prevent="addEmail('dealer')" class="mt-2 btn btn-sm">Добавить email</button>
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Почты маретологов</label>
+									  <template x-for="(email, index) in dealer.emails.marketing" :key="index">
+											<div class="flex items-center space-x-2">
+												 <input x-model="dealer.emails.marketing[index]" type="email" placeholder="Введите email" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+												 <button @click.prevent="removeEmail('marketing', index)" class="mt-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Удалить</button>
+											</div>
+									  </template>
+									  <button @click.prevent="addEmail('marketing')" class="mt-2 btn btn-sm">Добавить email</button>
+								 </div>
+								 <!-- Links -->
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Сайты отзовики и картаграфические сервисы</label>
+									  <template x-for="(link, index) in dealer.links.maps" :key="index">
+											<div class="flex items-center space-x-2">
+												 <input x-model="dealer.links.maps[index]" type="text" placeholder="Ссылка https://..." class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+												 <button @click.prevent="removeLink('maps', index)" class="mt-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Удалить</button>
+											</div>
+									  </template>
+									  <button @click.prevent="addLink('maps')" class="mt-2 btn btn-sm">Добавить место</button>
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Соц.сети дилера</label>
+									  <template x-for="(link, index) in dealer.links.social" :key="index">
+											<div class="flex items-center space-x-2">
+												 <input x-model="dealer.links.social[index]" type="text" placeholder="Ссылка https://..." class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+												 <button @click.prevent="removeLink('social', index)" class="mt-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Удалить</button>
+											</div>
+									  </template>
+									  <button @click.prevent="addLink('social')" class="mt-2 btn btn-sm">Добавить соц.сети</button>
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Мессенджеры дилера</label>
+									  <template x-for="(link, index) in dealer.links.messanger" :key="index">
+											<div class="flex items-center space-x-2">
+												 <input x-model="dealer.links.messanger[index]" type="text" placeholder="Ссылка, телефон или Имя пользователя" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+												 <button @click.prevent="removeLink('messanger', index)" class="mt-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Удалить</button>
+											</div>
+									  </template>
+									  <button @click.prevent="addLink('messanger')" class="mt-2 btn btn-sm">Добавить мессенджер</button>
+								 </div>
+								 <div>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Другие ссылки</label>
+									  <template x-for="(link, index) in dealer.links.other" :key="index">
+											<div class="flex items-center space-x-2">
+												 <input x-model="dealer.links.other[index]" type="text" placeholder="Ссылка https://..." class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+												 <button @click.prevent="removeLink('other', index)" class="mt-1 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Удалить</button>
+											</div>
+									  </template>
+									  <button @click.prevent="addLink('other')" class="mt-2 btn btn-sm">Добавить ссылку</button>
+								 </div>
+							</div>
+							<button @click.prevent="removeDealer(index)" class="mt-8 btn btn-danger btn-sm">Удалить дилерский центр</button>
+					  </div>
+				 </template>
+				 <div x-show="showAlert" id="alert-3" class="flex items-center p-4 my-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+					  <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+							<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+					  </svg>
+					  <span class="sr-only">Info</span>
+					  <div class="ms-3 text-sm font-medium" x-text="alertMessage">
+					  </div>
+					  <button @click="showAlert = false" type="button" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700" aria-label="Close">
+							<span class="sr-only">Close</span>
+							<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+								 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+							</svg>
+					  </button>
+				 </div>
+				 <button @click.prevent="addDealer" class="btn btn-sm">Добавить дилерский центр</button>
+				 <button type="submit" class="btn btn-success btn-sm">Отправить</button>
+			</form>
+	  </div>
+
+	</div>
+</Layout>
