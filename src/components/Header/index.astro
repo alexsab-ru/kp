@@ -1,0 +1,87 @@
+---
+
+---
+<header class="fixed w-full border-b border-gray-50 border-opacity-20 z-10 transition-all duration-[400ms]">
+	<div class="container flex justify-between lg:block">
+		<div class="flex lg:hidden items-center gap-x-2">
+			<img src="img/logo.svg" class="max-h-[45px] h-full w-auto object-cover" alt="Serm Karma">
+			<span class="text-lg">
+				<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span>
+				<span x-text="findWords(lang.serm_karma, 1)"></span>
+			</span>
+		</div>
+		<div class="hidden lg:flex justify-between items-center">
+			<nav class="">
+				<noindex>
+				<ul class="flex gap-6">
+					<li><a href="#what-tasks-does-it-solve" x-text="lang.tasks_solve"></a></li>
+					<li><a href="#how-id-works" x-text="lang.how_it_works"></a></li>
+				</ul>
+				</noindex>
+			</nav>
+			<div class="flex items-center flex-shrink-0 h-14 gap-x-2">
+				<img src="img/logo.svg" class="max-h-full h-full w-auto object-cover" alt="Serm Karma">
+				<span class="text-2xl">
+					<span class="font-semibold uppercase" x-text="findWords(lang.serm_karma, 0)"></span>
+					<span x-text="findWords(lang.serm_karma, 1)"></span>
+				</span>
+			</div>
+			<nav class="min-w-[357px]">
+				<noindex>
+				<ul class="flex justify-end gap-6">
+					<li><a href="#price-package" x-text="lang.price"></a></li>
+					<li><a href="#contacts" x-text="lang.contacts"></a></li>
+				</ul>
+				</noindex>
+			</nav>
+		</div>
+		<label class="inline-block lg:hidden py-3">
+			<input type="checkbox" class="absolute opacity-0 invisible w-0 h-0" id="mobile-toggle-menu-btn">
+			<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+				class="burger fill-white transition-colors w-8 h-8">
+				<defs>
+					<style>
+						.cls-1 {
+							fill: none;
+						}
+					</style>
+				</defs>
+				<title />
+				<g data-name="Layer 2" id="Layer_2">
+					<path d="M28,10H4A1,1,0,0,1,4,8H28a1,1,0,0,1,0,2Z" />
+					<path d="M28,17H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
+					<path d="M28,24H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
+				</g>
+				<g id="frame">
+					<rect class="cls-1" height="32" width="32" />
+				</g>
+			</svg>
+			<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
+				class="burger-close stroke-blue transition-colors w-8 h-8 hidden relative z-10">
+				<defs>
+					<style>
+						.cls-2 {
+							fill: none;
+							stroke-linecap: round;
+							stroke-linejoin: round;
+							stroke-width: 2px;
+						}
+					</style>
+				</defs>
+				<title />
+				<g id="cross">
+					<line class="cls-2" x1="7" x2="25" y1="7" y2="25" />
+					<line class="cls-2" x1="7" x2="25" y1="25" y2="7" />
+				</g>
+			</svg>
+			<div class="absolute top-0 bg-dark w-full left-0 text-center py-16 invisible opacity-0 -translate-y-3 transition-all">
+				<noindex>
+				<a href="#what-tasks-does-it-solve" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.tasks_solve"></a>
+				<a href="#how-id-works" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.how_it_works"></a>
+				<a href="#price-package" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.price"></a>
+				<a href="#contacts" class="mobile-menu-link p-4 block uppercase font-semibold hover:text-blue" x-text="lang.contacts"></a>
+				</noindex>
+			</div>
+		</label>
+	</div>
+</header>
