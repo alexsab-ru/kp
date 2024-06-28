@@ -341,6 +341,10 @@ import Layout from '@/layouts/Layout.astro';
 					<span x-text="findWords(lang.maximum_package, 0)"></span>
 					<span class="hidden md:inline-block" x-text="findWords(lang.maximum_package, 1)"></span>
 				</a>
+				<a href="javascript:void(0)" class="toggle-package-link" data-id="enterprise-package" data-aos="fade-up" data-aos-delay="300">
+					<span x-text="findWords(lang.enterprise_package, 0)"></span>
+					<span class="hidden md:inline-block" x-text="findWords(lang.enterprise_package, 1)"></span>
+				</a>
 			</div>
 			<div class="price-table grid grid-cols-4 lg:grid-cols-6 pt-4 lg:pt-8" data-aos="fade-up">
 				<div class="col-span-3 grid-tr pr-4 lg:pr-2 pt-4 2xl:pt-0">
@@ -357,9 +361,9 @@ import Layout from '@/layouts/Layout.astro';
 					<div x-text="lang.price_for_one_id_card"></div>
 					<div x-text="lang.package_cost"></div>
 				</div>
-				<div class="col-span-1 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 overflow-hidden lg:overflow-visible relative">
+				<div class="col-span-1 lg:col-span-3 grid grid-cols-1 lg:grid-cols-4 overflow-hidden lg:overflow-visible relative">
 					<div class="package text-center grid-tr lg:px-2 pt-4 2xl:pt-0" id="min-package">
-						<div class="lg:!text-lg !justify-center"><span class="hidden lg:block" x-text="lang.minimum_package"></span></div>
+						<div class="xl:!text-lg !justify-center"><span class="hidden lg:block" x-text="lang.minimum_package"></span></div>
 						<div class="yes" style="--i: 0"></div>
 						<div class="yes" style="--i: 1"></div>
 						<div class="no" style="--i: 2"></div>
@@ -369,11 +373,11 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="no" style="--i: 6"></div>
 						<div class="no" style="--i: 7"></div>
 						<div class="no" style="--i: 8"></div>
-						<div class="!justify-center font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.min_price_for_one_card).toLocaleString()"></div>
+						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="Number(lang.min_price_for_one_card).toLocaleString()"></div>
 						<div class="!justify-center" style="--i: 10">-</div>
 					</div>
 					<div class="package active text-center grid-tr lg:px-2 pb-4 pt-4 2xl:pt-0 relative before:rounded-md before:hidden lg:before:block before:content-[''] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:border-2 before:border-dotted before:border-blue before:shadow-3xl" id="opt-package">
-						<div class="lg:!text-lg font-semibold"><span class="hidden lg:block" x-text="lang.optimal_package"></span></div>
+						<div class="xl:!text-lg font-semibold"><span class="hidden lg:block" x-text="lang.optimal_package"></span></div>
 						<div class="yes" style="--i: 0"></div>
 						<div class="yes" style="--i: 1"></div>
 						<div class="yes" style="--i: 2"></div>
@@ -383,11 +387,11 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="no" style="--i: 6"></div>
 						<div class="no" style="--i: 7"></div>
 						<div class="no" style="--i: 8"></div>
-						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="param === 'en' ? lang.opt_price_for_one_card : Number(lang.opt_price_for_one_card).toLocaleString()"></div>
-						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.opt_package_price).toLocaleString()"></div>
+						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="param === 'en' ? lang.opt_price_for_one_card : Number(lang.opt_price_for_one_card).toLocaleString()"></div>
+						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="Number(lang.opt_package_price).toLocaleString()"></div>
 					</div>
 					<div class="package text-center grid-tr lg:pl-2 pt-4 2xl:pt-0" id="max-package">
-						<div class="lg:!text-lg"><span class="hidden lg:block" x-text="lang.maximum_package"></span></div>
+						<div class="xl:!text-lg"><span class="hidden lg:block" x-text="lang.maximum_package"></span></div>
 						<div class="yes" style="--i: 0"></div>
 						<div class="yes" style="--i: 1"></div>
 						<div class="yes" style="--i: 2"></div>
@@ -397,8 +401,22 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="yes" style="--i: 6"></div>
 						<div class="yes" style="--i: 7"></div>
 						<div class="yes" style="--i: 8"></div>
-						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 9" x-text="Number(lang.max_price_for_one_card).toLocaleString()"></div>
-						<div class="font-['hyunday-st'] lg:!text-3xl" style="--i: 10" x-text="Number(lang.max_package_price).toLocaleString()"></div>
+						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="Number(lang.max_price_for_one_card).toLocaleString()"></div>
+						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="Number(lang.max_package_price).toLocaleString()"></div>
+					</div>
+					<div class="package text-center grid-tr lg:pl-2 pt-4 2xl:pt-0" id="enterprise-package">
+						<div class="xl:!text-lg"><span class="hidden lg:block" x-text="lang.enterprise_package"></span></div>
+						<div class="yes" style="--i: 0"></div>
+						<div class="yes" style="--i: 1"></div>
+						<div class="yes" style="--i: 2"></div>
+						<div class="yes" style="--i: 3"></div>
+						<div class="yes" style="--i: 4"></div>
+						<div class="yes" style="--i: 5"></div>
+						<div class="yes" style="--i: 6"></div>
+						<div class="yes" style="--i: 7"></div>
+						<div class="yes" style="--i: 8"></div>
+						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="lang.enterprise_price"></div>
+						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="lang.enterprise_price"></div>
 					</div>
 				</div>
 			</div>

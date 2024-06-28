@@ -72,7 +72,7 @@ header{
 
 .grid-tr{
 	div{
-		@apply text-xs sm:text-base lg:text-xl leading-none px-3 py-2 even:bg-white even:bg-opacity-10 flex items-center justify-center;
+		@apply text-xs sm:text-base xl:text-xl leading-none px-3 py-2 even:bg-white even:bg-opacity-10 flex items-center justify-center;
 	}
 	&:nth-child(1){
 		div{
@@ -113,7 +113,7 @@ header{
 }
 
 .toggle-package-link{
-	@apply text-[10px] sm:text-base px-2 sm:px-4 py-2 border-2 border-white border-opacity-10 rounded-sm whitespace-nowrap transition-all;
+	@apply text-[10px] md:text-xs lg:text-base px-2 sm:px-4 py-2 border-2 border-white border-opacity-10 rounded-sm whitespace-nowrap transition-all;
 	&.active{
 		@apply border-blue border-dotted shadow-3xl;
 	}
