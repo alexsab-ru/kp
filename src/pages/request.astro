@@ -12,11 +12,11 @@ import Layout from '@/layouts/Layout.astro';
 							<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Бренд (на латинском)</label>
-									  <input x-model="dealer.brand" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+									  <input x-model="dealer.brand" type="text" placeholder="например: GAC, GEELY, EXEED" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
 								 </div>
 								 <div>
-									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Название дилерского центра</label>
-									  <input x-model="dealer.name" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Название дилерского центра (короткое, не юридическое)</label>
+									  <input x-model="dealer.name" type="text" placeholder="например: GEELY Центр Оренбург" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
 								 </div>
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Сайт</label>
@@ -26,7 +26,7 @@ import Layout from '@/layouts/Layout.astro';
 							<div class="grid grid-cols-1 gap-6 md:grid-cols-2 mt-4">
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Юридическое название</label>
-									  <input x-model="dealer.legal_name" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+									  <input x-model="dealer.legal_name" type="text" placeholder="ООО ..." class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
 								 </div>
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">ИНН</label>
@@ -34,19 +34,19 @@ import Layout from '@/layouts/Layout.astro';
 								 </div>
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Город</label>
-									  <input x-model="dealer.legal_city" type="text" placeholder="Введите название" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+									  <input x-model="dealer.legal_city" type="text" placeholder="Введите название города" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
 								 </div>
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Город на ответ "где? в Москве"</label>
-									  <input x-model="dealer.legal_city_where" type="text" placeholder="Введите название в предложный падеже" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+									  <input x-model="dealer.legal_city_where" type="text" placeholder="Введите название города в предложный падеже" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
 								 </div>
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Адрес</label>
-									  <input x-model="dealer.address_full" type="text" placeholder="Введите адрес" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+									  <input x-model="dealer.address_full" type="text" placeholder="Введите полный адрес" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
 								 </div>
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Адрес короткий (если какой-то особенный)</label>
-									  <input x-model="dealer.address_short" type="text" placeholder="Введите адрес" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
+									  <input x-model="dealer.address_short" type="text" placeholder="Введите короткий адрес (улица, дом)" class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
 								 </div>
 								 <div>
 									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Телефон</label>
@@ -113,7 +113,7 @@ import Layout from '@/layouts/Layout.astro';
 									  <button @click.prevent="addLink('messanger')" class="mt-2 btn btn-sm">Добавить мессенджер</button>
 								 </div>
 								 <div>
-									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Другие ссылки</label>
+									  <label class="block text-xs lg:text-sm font-medium text-gray-300">Другие ссылки (например разные сайты для Отдела продаж и Сервиса или ссылки на АВН и Тест-драйв)</label>
 									  <template x-for="(link, index) in dealer.links.other" :key="index">
 											<div class="flex items-center space-x-2">
 												 <input x-model="dealer.links.other[index]" type="text" placeholder="Ссылка https://..." class="mt-1 border border-gray-600 bg-gray-300 text-gray-800 placeholder:text-gray-500 p-2 rounded w-full">
