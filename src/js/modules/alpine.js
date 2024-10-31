@@ -8,7 +8,7 @@ let param = localStorage.getItem('lang') || 'ru';
 document.addEventListener('alpine:init', (data) => {
 	Alpine.data('data', () => ({
 		param,
-		langs: JSON.parse(langs),
+		langs: langs,
 		init() {
 			if(!this.param){
 				this.lang = this.langs.ru;

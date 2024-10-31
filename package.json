@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "type": "module",
+  "name": "serm-karma",
   "version": "1.0.0",
   "scripts": {
+    "getTranslateData": "export SHEET_URL=$(cat .env | grep SHEET_URL= | cut -d '=' -f 2) && export QUERY_STRING=\"SELECT A, B, C\" && export KEY_COLUMN=\"var\" && node .github/scripts/getTranslateData.js",
     "dev": "astro dev --open --host",
     "build": "astro build",
     "preview": "astro preview --open --host"
@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.7",
+    "csv-parse": "^5.5.6",
+    "jsdom": "^25.0.0",
+    "puppeteer": "^23.1.0",
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/tailwind": "^5.1.0",
     "@types/alpinejs": "^3.13.6",
