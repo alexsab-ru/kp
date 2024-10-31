@@ -31,7 +31,7 @@ const policyModal = document.getElementById('policy-modal');
 const ratingForm = document.getElementById('rating-form');
 
 const param = Alpine.store('state').param
-const lang = JSON.parse(langs)[param] || JSON.parse(langs).ru;
+const lang = langs[param] || langs.ru;
 
 const badText = lang.feedback;
 const tanksForRating = `<b class="text-bold block text-2xl mb-4">${lang.thanks_for_rating}</b>`;

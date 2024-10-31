@@ -76,7 +76,7 @@ const showMessageModal = (messageModal, icon, message) => {
 }
 
 const param = Alpine.store('state').param;
-const lang = JSON.parse(langs)[param] || JSON.parse(langs).ru;
+const lang = langs[param] || langs.ru;
 
 let sendBtn = lang.send; 
 let	sendBtnAction = lang.send_btn_action;

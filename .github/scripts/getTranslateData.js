@@ -54,7 +54,7 @@ function convertCsvToJson(csvData, keyColumn) {
             const result = {};
             records.forEach(record => {
                 if (Object.values(record).some(value => value.trim() !== '')) {
-                    const key = cleanString(record[keyColumn]).toLowerCase();
+                    const key = record[keyColumn];
                     const transformedRecord = {};
 
                     // Проходим по всем полям записи и приводим значения к числу, если возможно
