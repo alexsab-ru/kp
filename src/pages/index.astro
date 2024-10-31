@@ -357,7 +357,7 @@ import Layout from '@/layouts/Layout.astro';
 					<div x-text="lang.report_generation_for_each_employee"></div>
 					<div x-text="lang.integration_with_map_services_eview_sites"></div>
 					<div x-text="lang.report_generation_for_each_location"></div>
-					<div x-text="lang.personal_review_manager"></div>
+					<div x-text="lang.count_badges"></div>
 					<div x-text="lang.price_for_one_id_card"></div>
 					<div x-text="lang.package_cost"></div>
 				</div>
@@ -372,7 +372,7 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="no" style="--i: 5"></div>
 						<div class="no" style="--i: 6"></div>
 						<div class="no" style="--i: 7"></div>
-						<div class="no" style="--i: 8"></div>
+						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.min_count_badges"></div>
 						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="Number(lang.min_price_for_one_card).toLocaleString()"></div>
 						<div class="!justify-center" style="--i: 10">-</div>
 					</div>
@@ -386,7 +386,7 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="yes" style="--i: 5"></div>
 						<div class="no" style="--i: 6"></div>
 						<div class="no" style="--i: 7"></div>
-						<div class="no" style="--i: 8"></div>
+						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.opt_count_badges"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="param === 'en' ? lang.opt_price_for_one_card : Number(lang.opt_price_for_one_card).toLocaleString()"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="Number(lang.opt_package_price).toLocaleString()"></div>
 					</div>
@@ -400,7 +400,7 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="yes" style="--i: 5"></div>
 						<div class="yes" style="--i: 6"></div>
 						<div class="yes" style="--i: 7"></div>
-						<div class="yes" style="--i: 8"></div>
+						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.max_count_badges"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="Number(lang.max_price_for_one_card).toLocaleString()"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="Number(lang.max_package_price).toLocaleString()"></div>
 					</div>
@@ -414,7 +414,7 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="yes" style="--i: 5"></div>
 						<div class="yes" style="--i: 6"></div>
 						<div class="yes" style="--i: 7"></div>
-						<div class="yes" style="--i: 8"></div>
+						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.enterprise_count_badges"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="lang.enterprise_price"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="lang.enterprise_price"></div>
 					</div>
