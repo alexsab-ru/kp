@@ -337,10 +337,6 @@ import Layout from '@/layouts/Layout.astro';
 					<span x-text="findWords(lang.optimal_package, 0)"></span>
 					<span class="hidden md:inline-block" x-text="findWords(lang.optimal_package, 1)"></span>
 				</a>
-				<a href="javascript:void(0)" class="toggle-package-link" data-id="max-package" data-aos="fade-up" data-aos-delay="300">
-					<span x-text="findWords(lang.maximum_package, 0)"></span>
-					<span class="hidden md:inline-block" x-text="findWords(lang.maximum_package, 1)"></span>
-				</a>
 				<a href="javascript:void(0)" class="toggle-package-link" data-id="enterprise-package" data-aos="fade-up" data-aos-delay="300">
 					<span x-text="findWords(lang.enterprise_package, 0)"></span>
 					<span class="hidden md:inline-block" x-text="findWords(lang.enterprise_package, 1)"></span>
@@ -355,13 +351,11 @@ import Layout from '@/layouts/Layout.astro';
 					<div x-text="lang.development_of_materials_for_touchpoints"></div>
 					<div x-text="lang.integration_with_telegram_email"></div>
 					<div x-text="lang.report_generation_for_each_employee"></div>
-					<div x-text="lang.integration_with_map_services_eview_sites"></div>
-					<div x-text="lang.report_generation_for_each_location"></div>
 					<div x-text="lang.count_badges"></div>
 					<div x-text="lang.price_for_one_id_card"></div>
 					<div x-text="lang.package_cost"></div>
 				</div>
-				<div class="col-span-1 lg:col-span-3 grid grid-cols-1 lg:grid-cols-4 overflow-hidden lg:overflow-visible relative">
+				<div class="col-span-1 lg:col-span-3 grid grid-cols-1 lg:grid-cols-3 overflow-hidden lg:overflow-visible relative">
 					<div class="package text-center grid-tr lg:px-2 pt-4 2xl:pt-0" id="min-package">
 						<div class="xl:!text-lg !justify-center"><span class="hidden lg:block" x-text="lang.minimum_package"></span></div>
 						<div class="yes" style="--i: 0"></div>
@@ -370,8 +364,6 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="no" style="--i: 3"></div>
 						<div class="no" style="--i: 4"></div>
 						<div class="no" style="--i: 5"></div>
-						<div class="no" style="--i: 6"></div>
-						<div class="no" style="--i: 7"></div>
 						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.min_count_badges"></div>
 						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="Number(lang.min_price_for_one_card).toLocaleString()"></div>
 						<div class="!justify-center" style="--i: 10">-</div>
@@ -384,25 +376,9 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="yes" style="--i: 3"></div>
 						<div class="yes" style="--i: 4"></div>
 						<div class="yes" style="--i: 5"></div>
-						<div class="no" style="--i: 6"></div>
-						<div class="no" style="--i: 7"></div>
 						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.opt_count_badges"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="lang.opt_price_for_one_card"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="Number(lang.opt_package_price).toLocaleString()"></div>
-					</div>
-					<div class="package text-center grid-tr lg:pl-2 pt-4 2xl:pt-0" id="max-package">
-						<div class="xl:!text-lg"><span class="hidden lg:block" x-text="lang.maximum_package"></span></div>
-						<div class="yes" style="--i: 0"></div>
-						<div class="yes" style="--i: 1"></div>
-						<div class="yes" style="--i: 2"></div>
-						<div class="yes" style="--i: 3"></div>
-						<div class="yes" style="--i: 4"></div>
-						<div class="yes" style="--i: 5"></div>
-						<div class="yes" style="--i: 6"></div>
-						<div class="yes" style="--i: 7"></div>
-						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.max_count_badges"></div>
-						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="lang.max_price_for_one_card"></div>
-						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="Number(lang.max_package_price).toLocaleString()"></div>
 					</div>
 					<div class="package text-center grid-tr lg:pl-2 pt-4 2xl:pt-0" id="enterprise-package">
 						<div class="xl:!text-lg"><span class="hidden lg:block" x-text="lang.enterprise_package"></span></div>
@@ -412,8 +388,6 @@ import Layout from '@/layouts/Layout.astro';
 						<div class="yes" style="--i: 3"></div>
 						<div class="yes" style="--i: 4"></div>
 						<div class="yes" style="--i: 5"></div>
-						<div class="yes" style="--i: 6"></div>
-						<div class="yes" style="--i: 7"></div>
 						<div class="!justify-center font-['hyunday-st'] xl:!text-xl" style="--i: 8" x-text="lang.enterprise_count_badges"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 9" x-text="lang.enterprise_price"></div>
 						<div class="font-['hyunday-st'] xl:!text-xl" style="--i: 10" x-text="lang.enterprise_price"></div>
