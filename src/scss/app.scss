@@ -1,11 +1,369 @@
 @use 'sass:math';
 @use 'sass:color';
 
+// @use вместо @import — устаревший sass @import удалят в Dart Sass 3.0.
+// См.: https://sass-lang.com/documentation/at-rules/use/
+@use 'fonts';
+@use 'vars';
+@use 'tailwind';
+
+// Внешние CSS: после всех @use (требование синтаксиса модулей Sass).
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;1,500&display=swap');
 
-@import "fonts";
-@import "vars";
-
-@import "tailwind";
-
 [x-cloak] { display: none !important; }
+
+.map-placemark,.map-placemark__wrapper {
+	width: 180px;
+	height: 70px
+}
+
+.map-placemark__wrapper._non-interactive {
+	pointer-events: none
+}
+
+.search-placemarks-bookmark-view {
+	margin-left: 1px;
+	position: relative;
+	-webkit-animation: show-placemark .15s;
+	animation: show-placemark .15s
+}
+
+.search-placemarks-bookmark-view__pin-icon {
+	position: absolute;
+	left: 50%;
+	top: 27px;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	color: var(--color-bw-white)
+}
+
+.search-placemark-view {
+	display: flex;
+	height: 100%;
+	margin-top: 0px;
+	margin-left: 50px;
+}
+
+@media (min-width: 640px) {
+	.search-placemark-view {
+		margin-top: -64px;
+		margin-left: 0px;
+	}
+}
+
+.search-placemark-view__icon {
+	z-index: 1;
+	flex-shrink: 0
+}
+
+.search-placemark-view._position_left,.search-placemark-view._position_right {
+	align-items: flex-start
+}
+
+.search-placemark-view._position_left .search-placemark-view__title,.search-placemark-view._position_right .search-placemark-view__title {
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%)
+}
+
+.search-placemark-view._position_left {
+	flex-direction: row-reverse
+}
+
+.search-placemark-view._position_bottom {
+	flex-direction: column;
+	align-items: center
+}
+
+.search-placemark-view__badge {
+	position: absolute;
+	right: 0;
+	top: -8px;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	padding: 0 4px;
+	border-radius: 4px;
+	background: var(--color-bg-primary);
+	color: var(--color-text-attention);
+	white-space: nowrap;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: 700;
+	box-shadow: 0 2px 6px rgba(0,0,0,.2)
+}
+
+.search-placemark-title {
+	background: hsla(0,0%,100%,.9);
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	padding: 3px 6px 4px;
+	border-radius: 6px;
+	line-height: inherit;
+	height: auto;
+	max-width: 180px;
+	color: var(--color-bw-grey20)
+}
+
+.search-placemark-title._background {
+	padding-left: 2px;
+	border-radius: 0 6px 6px 0
+}
+
+.search-placemark-title._background:before {
+	content: "";
+	height: 100%;
+	background: hsla(0,0%,100%,.9);
+	position: absolute;
+	margin-top: -3px;
+	width: 18px;
+	left: -18px;
+	border-radius: 6px 0 0 6px;
+	z-index: -1
+}
+
+.search-placemark-title._background._low-relevance .search-placemark-title__subtitle,.search-placemark-title._background._low-relevance .search-placemark-title__title {
+	max-width: 80px
+}
+
+.search-placemark-title._background._low-relevance .search-placemark-title__title {
+	font-size: 12px;
+	line-height: 14px;
+	line-height: 1;
+	color: var(--color-bw-grey20)
+}
+
+.search-placemark-title._background._low-relevance .search-placemark-title__subtitle {
+	color: var(--color-bw-grey60)
+}
+
+.search-placemark-title._background._low-relevance._no-truncate .search-placemark-title__title {
+	max-width: none
+}
+
+.search-placemark-title._position_bottom {
+	text-align: center
+}
+
+.search-placemark-title._position_bottom._background {
+	padding: 3px 6px;
+	border-radius: 6px
+}
+
+.search-placemark-title._position_bottom._background:before {
+	display: none
+}
+
+.search-placemark-title._position_left._background {
+	padding-right: 2px;
+	padding-left: 6px;
+	border-radius: 6px 0 0 6px
+}
+
+.search-placemark-title._position_left._background:before {
+	border-radius: 0 6px 6px 0;
+	left: 100%
+}
+
+.search-placemark-title__title {
+	display: flex;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+	color: var(--color-bw-black)
+}
+
+.search-placemark-title__title-text {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.search-placemark-title__title-rating {
+	white-space: nowrap;
+	margin-left: 4px
+}
+
+.search-placemark-title__subtitle {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 12px;
+	line-height: 14px;
+	color: var(--color-bw-grey40)
+}
+
+.search-placemark-title__subtitle:not(:empty) {
+	margin-top: 1px
+}
+
+.search-placemark-title__subtitle-item:not(:last-child) {
+	margin-right: 5px
+}
+
+.search-placemark-title__multiline-subtitle-width {
+	visibility: hidden;
+	height: 0;
+	margin: 0;
+	padding: 0
+}
+
+.search-placemark-title__multiline-subtitle .search-placemark-title__subtitle {
+	white-space: normal;
+	text-overflow: clip;
+	overflow: visible;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	max-height: 28px;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto
+}
+
+.search-placemark-title-modular-hint-view._social {
+	display: flex;
+	align-items: center;
+	gap: 4px
+}
+
+.search-placemark-title-modular-hint-view__text {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+
+.search-placemark-title-modular-hint-view__rating-image {
+	position: relative;
+	top: 1px;
+	margin-right: 2px
+}
+
+.search-placemark-title-modular-hint-view__rating,.search-placemark-title-modular-hint-view__rating-image,.search-placemark-title-modular-hint-view__rating-reward {
+	color: var(--color-bw-grey30);
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500
+}
+
+.search-placemark-title-modular-hint-view__rating-reward {
+	display: inline-block;
+	vertical-align: top
+}
+
+.search-placemark-title-modular-hint-view._red {
+	color: var(--color-ui-red)
+}
+
+.search-placemark-title-modular-hint-view__social-avatars {
+	display: inline-flex
+}
+
+.search-placemark-title-modular-hint-view__social-avatar {
+	width: 14px;
+	height: 14px;
+	border: 1px solid var(--color-bw-white);
+	border-radius: 50%;
+	position: relative
+}
+
+.search-placemark-title-modular-hint-view__social-avatar+.search-placemark-title-modular-hint-view__social-avatar {
+	margin-left: -6px
+}
+
+.search-placemark-icons__content {
+	background-color: var(--color-bg-primary);
+	box-sizing: border-box;
+	border-radius: 50%;
+	height: 8px;
+	width: 8px;
+	margin-left: -4px;
+	margin-top: -4px
+}
+
+.search-placemark-icons__active:not(._is-brand-advert) {
+	color: var(--color-rubrics-main)
+}
+
+.search-placemark-icon {
+	display: flex;
+	color: var(--color-rubrics-result);
+	pointer-events: none;
+	position: relative
+}
+
+.search-placemark-icon._has-advert {
+	color: var(--color-rubrics-geoproduct)
+}
+
+.search-placemark-icon._closed {
+	color: var(--color-rubrics-closed)
+}
+
+.search-placemark-icon._state_hover {
+	color: var(--color-rubrics-main)
+}
+
+.search-placemark-icon._mode_active._state_default,.search-placemark-icon._mode_active._state_hover {
+	-webkit-animation: show-placemark .15s;
+	animation: show-placemark .15s
+}
+
+.search-placemark-icon .tint {
+	opacity: 0
+}
+
+.search-placemark-icon._state_visited {
+	color: var(--color-rubrics-result-visited)
+}
+
+.search-placemark-icon._state_visited._has-advert {
+	color: var(--color-rubrics-geoproduct-visited)
+}
+
+.search-placemark-icon._state_visited._closed {
+	color: var(--color-rubrics-closed-visited)
+}
+
+.search-placemark-icon._with-overlay:not(._mode_active):after,.search-placemark-icon._with-overlay:not(._mode_active):before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 1
+}
+
+.search-placemark-icon._with-overlay:not(._mode_active):before {
+	top: 48%;
+	height: 27px
+}
+
+.search-placemark-icon._state_hover._with-overlay:after {
+	background-color: var(--color-bw-black);
+	opacity: .2
+}
+
+.search-placemark-icon._state_visited._with-overlay:after {
+	background-color: var(--color-bw-white);
+	opacity: .3
+}
+
+.search-placemark-icon._state_default._with-overlay:not(._mode_active):before,.search-placemark-icon._state_hover._with-overlay:before,.search-placemark-icon._state_visited._with-overlay:before {
+	background: linear-gradient(180deg,#d9d9d9,#737373);
+	mix-blend-mode: soft-light
+}
+
+.rubric-placemark-icons-provider__active-content {
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	margin-top: -12px;
+	color: var(--color-bw-white)
+}

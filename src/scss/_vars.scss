@@ -1,0 +1,27 @@
+// CSS-переменные проекта. Для Tailwind 3 здесь задаём токены для var(...) в SCSS/HTML.
+// @theme — это синтаксис Tailwind v4; при v3 + tailwind.config.js используем :root.
+:root {
+    --color-bg-primary: #fff;
+    --color-bw-black: #000;
+    --color-bw-grey10: #1a1a1a;
+    --color-bw-grey20: #333;
+    --color-bw-grey30: #4d4d4d;
+    --color-bw-grey40: #666;
+    --color-bw-grey50: grey;
+    --color-bw-grey60: #999;
+    --color-bw-grey70: #b3b3b3;
+    --color-bw-grey80: #ccc;
+    --color-bw-grey90: #e6e6e6;
+    --color-bw-grey93: #eee;
+    --color-bw-grey96: #f6f6f6;
+    --color-bw-white: #fff;
+    --color-rubrics-closed-visited: #ccc;
+    --color-rubrics-closed: #878787;
+    --color-rubrics-geoproduct-visited: #66c23d;
+    --color-rubrics-geoproduct: #3bb300;
+    --color-rubrics-main: #f43;
+    --color-rubrics-result-visited: #5c7a99;
+    --color-rubrics-result: #196dff;
+    --color-text-attention: #ff7732;
+    --color-ui-red: #f43;
+}

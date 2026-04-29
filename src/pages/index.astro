@@ -29,23 +29,62 @@ import Layout from '@/layouts/Layout.astro';
 					<br class="hidden xl:block">
 					<span x-text="findWords(lang.negative_reviews, 0, 2)"></span>
 				</h2>
-				<h3 class="xl:mb-20 px-4 py-1 rounded-lg bg-blue inline-block" data-aos="fade-up" x-text="lang.helps_to_solve"></h3>
-				<h3 class="my-10 xl:hidden" data-aos="fade-up">
+				<h3 class="xl:mb-20 px-4 py-1 rounded-lg bg-blue hidden" data-aos="fade-up" x-text="lang.helps_to_solve"></h3>
+				<h3 class="my-10" data-aos="fade-up">
 					<span class="text-blue text-3xl font-semibold">
-						<span class="font-['hyunday-st'] text-4xl">1.</span>
+						<span class="font-['hyunday-st'] text-4xl hidden">1.</span>
 						<span x-text="lang.implementation"></span>
 					</span>
 					<span x-text="lang.implementation_system"></span>
 				</h3>
 				<div class="flex flex-col-reverse sm:flex-row items-center sm:items-start gap-5 xl:max-w-[50%] w-full" data-aos="fade-up">
 					<div class="rounded-xl border-4 border-blue drop-shadow-blue overflow-hidden relative z-[1]">
-						<img src="img/screen-review.jpg" />
+						<img src="img/belgee-samara.jpg" />
 					</div>
-					<div class="sm:translate-y-28 max-w-[160px] flex-shrink-0 relative before:content-[''] before:absolute before:left-1/2 sm:before:left-auto sm:before:right-full before:top-full sm:before:top-1/2 before:-mt-1 sm:before:-mt-0.5 before:-ml-0.5 sm:before:-mr-1 before:h-10 sm:before:h-1 before:w-1 sm:before:w-10 before:bg-blue">
-						<img src="img/baloon.png" class="drop-shadow-blue2" />
+					<div class="sm:translate-y-28 max-w-[160px] flex-shrink-0 relative before:content-[''] before:absolute before:left-1/2 sm:before:left-auto sm:before:right-full before:top-full sm:before:top-1/2 before:-mt-1 sm:before:-mt-0.5 before:-ml-0.5 sm:before:-mr-7 before:h-10 sm:before:h-1 before:w-1 sm:before:w-20 before:bg-blue">
+						<!-- <img src="img/baloon.png" class="drop-shadow-blue2" /> -->
+						<div class="map-placemark" style="cursor: pointer;">
+							<div dir="ltr" aria-hidden="true" class="map-placemark__wrapper">
+							  <div class="search-placemark-view">
+								<div class="search-placemark-view__icon" style="width: 60px; height: 68px;">
+								  <div class="search-placemark-icon">
+									<div style="position: relative; width: 60px; height: 68px;">
+									  <div class="search-placemark-icons__active">
+										<svg width="60" height="68" viewBox="0 0 60 68" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <path d="M23.51 51.523a.5.5 0 0 1-.5.477c-.29 0-.51-.21-.52-.477-.145-3.168-1.756-5.217-4.832-6.147C7.53 42.968 0 33.863 0 23 0 10.297 10.297 0 23 0s23 10.297 23 23c0 10.863-7.53 19.968-17.658 22.376-3.076.93-4.687 2.98-4.83 6.147z" id="ae96eeecd750ec2a83543f00c9bc789d__b"></path> <filter x="-21.7%" y="-15.4%" width="143.5%" height="138.5%" filterUnits="objectBoundingBox" id="ae96eeecd750ec2a83543f00c9bc789d__a"> <feGaussianBlur in="SourceGraphic" stdDeviation="3"></feGaussianBlur> <feOffset dy="2"></feOffset> <feComponentTransfer> <feFuncA type="linear" slope=".3"></feFuncA> </feComponentTransfer> </filter> </defs> <g fill="none" fill-rule="evenodd"> <g fill-rule="nonzero" transform="translate(7 5)" fill="currentColor"> <use filter="url(#ae96eeecd750ec2a83543f00c9bc789d__a)" xlink:href="#ae96eeecd750ec2a83543f00c9bc789d__b"></use> <use xlink:href="#ae96eeecd750ec2a83543f00c9bc789d__b"></use> </g> <path d="M30 68c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="#fff" fill-rule="nonzero"></path> <path d="M30 66a2 2 0 1 0 .001-3.999A2 2 0 0 0 30 66z" fill="currentColor"></path> </g> </svg>
+									  </div>
+									  <div style="position: absolute; left: 30px; top: 28px;">
+										<div class="rubric-placemark-icons-provider__active-content">
+										  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M21 19.429v-5.73c0-.409-.066-.803-.19-1.172l-1.577-6.092a2.893 2.893 0 0 0-2.47-2.163C15.138 4.09 14.3 4 12 4s-3.138.09-4.763.272a2.893 2.893 0 0 0-2.47 2.163L3.19 12.526c-.123.37-.19.764-.189 1.172v5.73c0 .316.252.572.562.572h2.374a.564.564 0 0 0 .545-.433L7 18h10l.518 1.567a.564.564 0 0 0 .546.433h2.373c.311 0 .563-.256.563-.571zM16.63 5.274c.72.083 1.318.624 1.502 1.36L19.1 10.5a3.42 3.42 0 0 0-1.173-.4c-1.73-.253-3.705-.4-5.927-.4-2.222 0-4.197.147-5.927.4-.421.062-.816.2-1.173.4l.968-3.865c.184-.737.781-1.278 1.501-1.361C8.946 5.092 9.742 5 12 5s3.054.092 4.63.274zM18.5 15a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM7 13.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" fill="currentColor"></path> <path d="M22.702 9c.331 0 .6.272.6.607v.5a1.21 1.21 0 0 1-1.07 1.203l-.5.057a.605.605 0 0 1-.657-.456l-.287-1.16A.605.605 0 0 1 21.375 9h1.327z" fill="currentColor"></path> <path d="M1.3 9c-.331 0-.6.272-.6.607v.5c0 .615.46 1.132 1.071 1.203l.5.057a.605.605 0 0 0 .657-.456l.287-1.16A.605.605 0 0 0 2.627 9H1.3z" fill="currentColor"></path> </svg>
+										</div>
+									  </div>
+									</div>
+								  </div>
+								</div>
+								<div class="search-placemark-view__title" style="margin-top: 10px;">
+								  <div class="search-placemark-title">
+									<div class="search-placemark-title__title">
+									  <div class="search-placemark-title__title-text">Belgee центр</div>
+									  <div class="search-placemark-title__title-rating">
+										<span class="search-placemark-title-modular-hint-view">
+										  <span class="inline-image icon search-placemark-title-modular-hint-view__rating-image" aria-hidden="true" style="font-size: 0px; line-height: 0; display: inline-block;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12"> <path fill="currentColor" fill-rule="evenodd" d="m5.99 9.19-2.711 1.744c-.304.195-.687-.083-.603-.435l.792-3.323-2.32-1.9c-.279-.229-.14-.685.218-.716l3.018-.262L5.625 1.25a.398.398 0 0 1 .739.001l1.231 3.047 3.04.262c.358.031.496.488.216.717l-2.33 1.9.792 3.324c.084.352-.3.63-.603.435z" clip-rule="evenodd"></path> </svg>
+										  </span><span class="search-placemark-title-modular-hint-view__rating">5</span>
+										</span>
+									  </div>
+									</div>
+									<div class="search-placemark-title__subtitle">
+									  <span class="search-placemark-title__subtitle-item">
+										<span class="search-placemark-title-modular-hint-view">До 8:00 PM</span>
+									  </span>
+									</div>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						  </div>
 					</div>
 				</div>
-				<div class="h-full w-1/2 absolute top-0 right-0 bg-no-repeat bg-center bg-[length:90%] hidden xl:flex flex-col justify-center items-center" style="background-image: url(img/icons/icons-05.svg);">
+				<div class="h-full w-1/2 absolute top-0 right-0 bg-no-repeat bg-center bg-[length:90%] hidden flex-col justify-center items-center" style="background-image: url(img/icons/icons-05.svg);">
 					<span class="font-['hyunday-st'] text-[200px] text-blue -ml-4 mt-10">1</span>
 					<div class="text-center max-w-[280px] 2xl:mt-[7%]">
 						<span class="text-blue text-3xl" x-text="lang.implementation"></span>
@@ -54,7 +93,7 @@ import Layout from '@/layouts/Layout.astro';
 				</div>
 			</div>
 		</div>
-		<div class="container py-16">
+		<div class="container py-16 hidden">
 			<div class="flex items-center justify-center gap-16">
 				<div class="relative text-center hidden xl:block w-2/5" data-aos="fade-right">
 					<img src="img/icons/icons-06.svg" class="w-4/5 h-auto mx-auto rotate-[270deg]" alt="ALT">
@@ -175,7 +214,7 @@ import Layout from '@/layouts/Layout.astro';
 				<template x-if="param === 'ru'">
 					<span>
 						<span x-text="findWords(lang.using_this_page_to_rate, 0, 0, 'ссылки')"></span>
-						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue" target="_blank">ссылки</a>
+						<a href="https://qr.serm-karma.ru?utm_source=main" class="text-blue underline" target="_blank">ссылки</a>
 						<span x-text="findWords(lang.using_this_page_to_rate, 0, 1, 'ссылки')"></span>
 					</span>
 				</template>
